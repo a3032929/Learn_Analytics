@@ -15,15 +15,59 @@ library(ProjectTemplate)
 load.project()
 ```
 
-## R Markdown
+## Business Objectives
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Background
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Learning Analytics is a study of the "*measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the information system in which it occurs*(Shi, 2018)". Learning analytics will provide insights to the factors which influences learners retention. This will therefore enable course designers from educational institutes and MOOC (Massive open online course) providers  to make informed decisions on the design and improvements of their courses. Consequently improving the learning environment for learners and drive more influx of learners enrolling. 
 
-```{r cars}
-summary(cars)
+FutureLearn is an MOOC provider, which collaborates with universities globally to offer online courses. Since their launch in 2013, they have attracted over seven million learners across the world (www.futurelearn.com). With the insights driven from Learning Analytics, it will help FutureLearn on how to improve the retention rate and learners' engagement. 
+
+# Business objective
+There are many factors which could influence the learners' retention rate. In this study, the focus will be on the video lectures provider by FutureLearn, which are generally used to form part of a course. (why important from a business perspective, what are the problems to solve - financially strained, etc) 
+
+This study will examine the Cyber Security online course, which is divided into three weel;y blocks of study. The course consist of a combination of videos, articles, exercises, discussions, quizzes and tests. 
+
+There are a number of steps for each weekly block to complete. The first week block contains 18 steps, and the second and third week blocks contains 21 steps. (Shi, 2018) 
+
+# Inventory of Resources
+
+The CRISP-DM methodology (Cross-Industrie Standard Process for Data Mining) will be applied to achieve the objective of this study (link the CRISP-DM guide). The key areas of focus from the process are Business Understanding, Data Understanding, Data Preparation and Evaluation. 
+
+# Data Mining Goals
+
+For this study, we will investigate the videos from the course to answer the following questions:
+
+1. Is the duration of the videos related to the learners' engagement (nationally and internationally)?
+2. Is the content of the videos related to the learners' engagement (nationally and internationally)?
+3. Is there a relationship between the duration of the videos with whether transcriptions are used? (or captions)
+
+to insert reference use this notation [@RN22] - this is not working, try later.
+
+## Data Understanding 
+
+The raw data was provided by FutureLearn on their Cyber Security course. There are seven runs of data, each run of data were measured several months apart from each other. There were no descriptions for the data, therefore assumptions will be made as to what the data means. 
+
+As the study is on the video content, therefore the datafiles with the title containing 'video-stats' would be used. There are only 5 (out of 7) runs, which contains the video-stats datafiles. Therefore runs 1 and 2 will be eliminated from this study as no data are available. 
+
+Below is the list of column names in the data. 
+```{r video-stats 3}
+run3 <- cyber.security.3_video.stats
+
+names(run3)
+
+#head(run3)
 ```
+There are 13 rows for each datafile, one row corresponding to each video content throughout the course. 
+
+There are 28 columns, and a combination of columns will be selected for paritcular analysis. 
+
+The dataset is very complete with no visible missing data.
+
+The data are mostly continuous data, other than for the first two columns, which shows the step of where the video content is at and the title of the video content. 
+
+Currently no columns will be removed as all columns may contain relevant information for the study. 
+
 
 ## Including Plots
 
@@ -34,3 +78,8 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Recommendation
+May have to do some more analysis to compare with other MOOC courses
+
+# References
