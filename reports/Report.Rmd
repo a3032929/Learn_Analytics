@@ -79,33 +79,17 @@ p <- run3 %>% select(2, 4)
 p
 ```
 
-```{r p, echo=FALSE}
-q <- ggplot(data = p, aes(x=title, y=total_views))+
-  geom_bar(stat = 'identity')+
-  geom_text(aes(label=total_views), vjust=0.3, color="blue", size=3.5)+
-  coord_flip()
-q
+```{r run3totalview, echo=FALSE}
+##
 ```
 ## Finding pairs of relationships
 A scatterplot matrix will be used to visualize any pairs of relationships amongst the data.
-
-```{r}
-run3_title <- run3 %>% 
-  select(video_duration, total_views, total_downloads, total_caption_views, total_transcript_views)
-```
-```{r run3_title, echo=FALSE}
-pairs(run3_title)
-```
 
 
 ## Percentage viewed whole duration of videos
 
 We considered just the number of learners watching each video for the whole duration of the video, using the earliest video dataset (based on other datasets of run 3, this appears to roughly cover the time period between Jul 2017- Nov 2017).Figure XX shows the number of learners who have watched the videos for the whole duration.
 
-```{r run3, echo=FALSE}
-ggplot(data = run3, aes(x=video_duration, y=viewed_onehundred_percent)) + geom_point()
-```
-## 
 
 ## Data Preparation
 
