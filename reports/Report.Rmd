@@ -52,8 +52,6 @@ As the study is on the video content, therefore the datafiles with the title con
 
 Below is the list of column names in the data. 
 ```{r video-stats 3}
-run3 <- cyber.security.3_video.stats
-
 names(run3)
 ```
 There are 13 rows for each datafile, one row corresponding to each video content throughout the course. 
@@ -74,10 +72,6 @@ Currently no columns will be removed as all columns may contain relevant informa
 Figure XX shows the number of viewers per video, throughout the course. 
 Fix the labels and maybe titles
 
-```{r}
-p <- run3 %>% select(2, 4)
-p
-```
 
 ```{r run3totalview, echo=FALSE}
 ##
