@@ -55,12 +55,10 @@ Below is the list of column names in the data.
 run3 <- cyber.security.3_video.stats
 
 names(run3)
-
-#head(run3)
 ```
 There are 13 rows for each datafile, one row corresponding to each video content throughout the course. 
 
-There are 28 columns, and a combination of columns will be selected for paritcular analysis. 
+There are 28 columns, and a combination of columns will be selected for particular analysis. 
 
 The dataset is very complete with no visible missing data.
 
@@ -69,12 +67,12 @@ The data are mostly continuous data, other than for the first two columns, which
 Currently no columns will be removed as all columns may contain relevant information for the study. 
 
 
-## Including Plots
+## Percentage viewed whole duration of videos
 
-You can also embed plots, for example:
+We considered just the number of learners watching each video for the whole duration of the video, using the earliest video dataset (based on other datasets of run 3, this appears to roughly cover the time period between Jul 2017- Nov 2017).
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r run3, echo=FALSE}
+ggplot(data = run3, aes(x=video_duration, y=viewed_onehundred_percent)) + geom_point()
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
