@@ -86,6 +86,16 @@ q <- ggplot(data = p, aes(x=title, y=total_views))+
   coord_flip()
 q
 ```
+## Finding pairs of relationships
+A scatterplot matrix will be used to visualize any pairs of relationships amongst the data.
+
+```{r}
+run3_title <- run3 %>% 
+  select(video_duration, total_views, total_downloads, total_caption_views, total_transcript_views)
+```
+```{r run3_title, echo=FALSE}
+pairs(run3_title)
+```
 
 
 ## Percentage viewed whole duration of videos
@@ -95,6 +105,8 @@ We considered just the number of learners watching each video for the whole dura
 ```{r run3, echo=FALSE}
 ggplot(data = run3, aes(x=video_duration, y=viewed_onehundred_percent)) + geom_point()
 ```
+## 
+
 ## Data Preparation
 
 The 'step_position' shows the step within the course, of the location of the video. This column is listed as numerical, therefore will have to be changed to character. 
