@@ -62,20 +62,44 @@ There are 28 columns, and a combination of columns will be selected for particul
 
 The dataset is very complete with no visible missing data.
 
-The data are mostly continuous data, other than for the first two columns, which shows the step of where the video content is at and the title of the video content. 
+The data are mostly continuous data, other than for the first two columns, which shows the step of where the video content is located at and the title of the video content. 
 
 Currently no columns will be removed as all columns may contain relevant information for the study. 
 
 
+
+
+## Number of viewers per video
+
+Figure XX shows the number of viewers per video, throughout the course. 
+Fix the labels and maybe titles
+
+```{r}
+p <- run3 %>% select(2, 4)
+p
+```
+
+```{r p, echo=FALSE}
+q <- ggplot(data = p, aes(x=title, y=total_views))+
+  geom_bar(stat = 'identity')+
+  geom_text(aes(label=total_views), vjust=0.3, color="blue", size=3.5)+
+  coord_flip()
+q
+```
+
+
 ## Percentage viewed whole duration of videos
 
-We considered just the number of learners watching each video for the whole duration of the video, using the earliest video dataset (based on other datasets of run 3, this appears to roughly cover the time period between Jul 2017- Nov 2017).
+We considered just the number of learners watching each video for the whole duration of the video, using the earliest video dataset (based on other datasets of run 3, this appears to roughly cover the time period between Jul 2017- Nov 2017).Figure XX shows the number of learners who have watched the videos for the whole duration.
 
 ```{r run3, echo=FALSE}
 ggplot(data = run3, aes(x=video_duration, y=viewed_onehundred_percent)) + geom_point()
 ```
+## Data Preparation
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+The 'step_position' shows the step within the course, of the location of the video. This column is listed as numerical, therefore will have to be changed to character. 
+
+The data pre-processing codes are located in the 'munge' folder.
 
 ## Recommendation
 May have to do some more analysis to compare with other MOOC courses
