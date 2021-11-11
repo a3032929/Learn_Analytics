@@ -38,9 +38,9 @@ The CRISP-DM methodology (Cross-Industrie Standard Process for Data Mining) will
 
 For this study, we will investigate the videos from the course to answer the following questions:
 
-1. Is the duration of the videos related to the learners' engagement (nationally and internationally)?
-2. Is the content of the videos related to the learners' engagement (nationally and internationally)?
-3. Is there a relationship between the duration of the videos with whether transcriptions are used? (or captions)
+1. Does the duration of the videos have an impact on the viewing rates across different continents?
+2. Does the content of the videos have an impact on the viewing rates across different continents?
+3. Is there a correlation between duration of videos and drop out rate
 
 to insert reference use this notation [@RN22] - this is not working, try later.
 
