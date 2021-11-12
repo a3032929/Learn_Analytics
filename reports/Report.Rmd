@@ -69,7 +69,7 @@ The following initial visualizations will help determine the areas to consider f
 ## Finding pairs of relationships
 We considered just the number of learners watching each video for the whole duration of the video, using the earliest video dataset (based on other datasets of run 3, this appears to roughly cover the time period between Jul 2017- Nov 2017).
 
-The scatterplot matrices will be used to visualize any pairs of relationships within the data.
+The scatterplot matrices will be used to visualize any pairs of relationships of all of the different variables within the data.
 
 The way to interpret the scatter plot matrices:
 1) Plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
