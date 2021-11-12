@@ -62,7 +62,7 @@ The dataset is mostly complete with no visible missing data.
 
 The data are mostly continuous data, other than for the first two columns, which shows the step of where the video content is located at and the title of the video content.These two columns will be combined to allow quick reference to the order of the videos, which it appears throughout the course.  
 
-As the study is interested in the number of views across the continent and the drop out, therefore the columns relating to viewing in HD and different devices will be removed. Other remaining columns will remain as theyt may contain relevant information for the study. 
+As the study is interested in the number of views across the continent and the drop out, therefore the columns relating to viewing in HD and different devices will be removed. Other remaining columns will remain as they may contain relevant information for the study. 
 
 The following initial visualizations will help determine the areas to consider for further investigation. 
 
@@ -71,13 +71,17 @@ We considered just the number of learners watching each video for the whole dura
 
 The scatterplot matrices will be used to visualize any pairs of relationships within the data.
 
+The way to interpret the scatter plot matrices:
+1) Plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
+2) Plots above the hedings, the headings will be the x-axis, and the corresponding rows will be the y-axis. 
+
 ### Total number of views through the duration of videos
 
-Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views/ downloads/ captions used and transcribes used for each video.
+Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views/ downloads/ captions used and transcripts used for each video. It is assumed that the column '*total_transcript_views*' refer to learned reading the transcript version of the videos rather than watching the videos.
 
 (insert scatterplot matrix here)
 
-There are no obvious relationship observed between the video durations and the number of people viewing the videos. However as the total number of views increases, so does the number of downloads, captions used and transcribes used, which is to be expected. 
+There are no obvious relationship observed between the video durations and the number of people viewing the videos. However as the total number of views increases, so does the number of downloads, captions used and transcripts used, which is to be expected. 
 
 ### Percentage viewed whole duration of videos
 
@@ -85,7 +89,7 @@ Figure XX attempts to demonstrates the relationship between the video duration a
 
 (insert scatterplot matrix here)
 
-Through observation of the matrix, there are potentially interesting patterns on the far left column of plots. However the plots are very noisy and will require more data to make further statements, thererfore further investigation will be required. The other columns do not show unexpected behaviour. 
+Through observation of the matrix, there are potentially interesting patterns on the far left column of plots. However the plots are very noisy and will require more data to make further statements, therefore further investigation will be required. The other columns do not show unexpected behaviour. 
 
 ### Worldwide views of videos
 
