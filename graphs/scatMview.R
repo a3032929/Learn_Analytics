@@ -1,5 +1,5 @@
 # plot scatterplot matrix of video duration vs total views/ downloads/ captions/ transcript
-run3_title <- run3 %>% 
+run3_title <- run3unite %>% 
   select(video_duration, total_views, total_downloads, total_caption_views, total_transcript_views)
 
 pairs(run3_title)
