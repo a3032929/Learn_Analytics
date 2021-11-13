@@ -25,4 +25,4 @@
 # removed Download
 # plot scatterplot matrix of video duration vs total views/ captions/ transcript with general trend line (smooth)
 pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite,
-      main = "Total Views/ Captions/ Transcripts through the Video duration", pch = 19, upper.panel = NULL)
+      main = "Figure XX: Total Views and Features used through Video duration", pch = 19, upper.panel = NULL)
