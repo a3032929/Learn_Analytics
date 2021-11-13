@@ -127,6 +127,15 @@ the 'step_position' and the 'title' columns will be combined to allow quick refe
 
 The data pre-processing codes are located in the 'munge' folder.
 
+## Actual views from continent
+
+The actual viewings from each continent for each video is calculated. This is by taking the assumed total learners (by taking the highest figure from '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. This is the reverse percentage calculation for each continent (?)
+
+```{r}
+head(col_summary(colstouse), 3)
+```
+
+
 # Evaluation
 
 ## Number of viewers for each video topic
