@@ -135,10 +135,10 @@ The actual viewings from each continent for each video is calculated. This is by
 head(output, 3)
 ```
 
-The percentage viewed from each continent, throughout the course is calculated.Then combined with the original '*step_title*' and '*video_duration*' columns.
+The percentage viewed from each continent, throughout the course is calculated.Then combined with the original '*step_title*' and '*video_duration*' columns. Values are round to full numbers and '*NaN*' are replace with 0.
 
 ```{r}
-head(continent_pct, 3)
+head(continent_pct_ro, 3)
 ```
 
 
