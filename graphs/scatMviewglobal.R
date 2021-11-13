@@ -8,7 +8,7 @@
 pairs(~video_duration + europe_views_percentage + oceania_views_percentage + asia_views_percentage + north_america_views_percentage + 
       south_america_views_percentage + africa_views_percentage+ antarctica_views_percentage, 
       data = run3unite,
-      main = "Continent views through the Video duration", pch = 19, upper.panel = NULL)
+      main = "Figure XX: Total Continent views through Video duration", pch = 19, upper.panel = NULL)
 
 # shows density functions of each variables/ variable distribution in the diagonal
 # top half shows correlations coeeficient (Pearson) for each of the variables
