@@ -132,7 +132,13 @@ The data pre-processing codes are located in the 'munge' folder.
 The actual viewings from each continent for each video is calculated. This is by taking the assumed total learners (by taking the highest figure from '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. This is the reverse percentage calculation for each continent (?)
 
 ```{r}
-head(col_summary(colstouse), 3)
+head(output, 3)
+```
+
+The percentage viewed from each continent, throughout the course is calculated.
+
+```{r}
+head(continent_pct, 3)
 ```
 
 
