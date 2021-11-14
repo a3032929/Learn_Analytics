@@ -7,6 +7,8 @@ ggplot(dfcont, aes(x=step_title, y=Value, group=Continent, color=Continent))+
   ylab("Percentage Viewers")+
   theme(
     axis.text.x = element_text(angle = 45, hjust=1, size=8),
-    legend.text = element_text(size=8))
+    legend.text = element_text(size=8))+
+  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))
+  
                                    
 
