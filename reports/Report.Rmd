@@ -116,7 +116,12 @@ In addition, the relative views from each continent appears to be stable. There 
 
 Figure XX shows the number of viewers who have stayed to view the videos to the end.
 
-(insert scatterplot here)
+```{r scatdurationviewpct, echo=FALSE}
+ggplot(data = run3unite, aes(x=video_duration, y=viewed_onehundred_percent)) + 
+  geom_point()+
+  geom_hline(yintercept = 100)
+
+```
 
 There is potentially a pattern observed on the relationship between the video duration and the number of viewers who have stayed for the whole duration of the videos. However all the runs will need to be included to enable any statements to be made. 
 
@@ -129,7 +134,7 @@ The data pre-processing codes are located in the 'munge' folder.
 
 ## Actual views from continent
 
-The actual viewings from each continent for each video is calculated. This is by taking the assumed total learners (by taking the highest figure from '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. This is the reverse percentage calculation for each continent (?)
+The actual viewings from each continent for each video is calculated. This is by taking the assumed total learners (by taking the highest figure from '*Total Viewed*' column), divided by 100, then multiply by the current percentage viewed value from each continent. This is the reverse percentage calculation for each continent (?)
 
 ```{r}
 head(output, 3)
@@ -156,6 +161,7 @@ ggplot(dfcont, aes(x=step_title, y=Value, group=Continent, color=Continent))+
   scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))
 ```
 
+The graph shows that for certain continents (Europe, North America and Oceania), there appears to be more views, therefore more engagements, on the topics within week 2 block of the course. On the other hand, there were more engagements from the learners of Africa and Asia continent, then a steady drop of viewers throughout the course. South America showed a dramatic uptake of viewers for the 1st topic of week 2, then a reduction of engagement throughout most of the course. 
 
 # Evaluation
 
@@ -163,7 +169,7 @@ ggplot(dfcont, aes(x=step_title, y=Value, group=Continent, color=Continent))+
 
 Figure XX shows the number of viewers for each video based on the topic of the videos.
 
-```{r run3totalview, echo=FALSE}
+```{r run3totalview, echo=FALSE, fig.width=10}
 bar_topicV <- ggplot(data = run3unite, aes(x=step_title, y=total_views))+
   geom_bar(stat = 'identity', fill="#0099f9")+
   geom_text(aes(label=total_views), hjust=-0.2, size=3.5)+
@@ -178,5 +184,7 @@ bar_topicV
 
 # Recommendation
 May have to do some more analysis to compare with other MOOC courses
+
+Week 2 block is mainly on cybersecurity of payment infrastructure. Could be people are more interested on how to protect digital payments or there might be more people looking to work or already working in the cyber security / financial sector and are keen to learn about these topics. More investigation will need to be made.
 
 # References
