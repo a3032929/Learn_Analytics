@@ -1,0 +1,12 @@
+# line graph of each continent throughout course
+ggplot(dfcont, aes(x=step_title, y=Value, group=Continent, color=Continent))+
+  geom_line(size=1)+
+  geom_point(size=2)+
+  ggtitle("Figure XX: Percentage of viewers for Video Topics")+
+  theme_bw()+
+  ylab("Percentage Viewers")+
+  theme(
+    axis.text.x = element_text(angle = 45, hjust=1, size=8),
+    legend.text = element_text(size=8))
+                                   
+
