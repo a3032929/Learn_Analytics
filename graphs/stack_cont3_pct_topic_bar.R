@@ -1,5 +1,5 @@
 # stacked bar chart of each video by continent
-ggplot(dfcont, aes(x=step_title, y=Value, fill=Continent)) +
+ggplot(new_cont_3_df, aes(x=step_title, y=Value, fill=Continent)) +
   geom_bar(stat = "identity")+
   theme_classic()+
   coord_flip()+

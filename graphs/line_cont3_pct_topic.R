@@ -1,5 +1,5 @@
 # line graph of each continent throughout course
-ggplot(dfcont, aes(x=step_title, y=Value, group=Continent, color=Continent))+
+ggplot(new_cont_3_df, aes(x=step_title, y=Value, group=Continent, color=Continent))+
   geom_line(size=1)+
   geom_point(size=2)+
   ggtitle("Figure XX: Percentage of viewers for Video Topics")+

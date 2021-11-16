@@ -1,4 +1,4 @@
-col_summary <- function(colstouse) {
+col_3_summary <- function(colstouse) {
   highestview <- max(run3unite$total_views)
   colstouse <- run3unite %>% 
     select(contains("_views_percentage"))
