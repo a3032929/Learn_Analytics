@@ -1,0 +1,5 @@
+names(output_3) = c("europe_views", "oceania_views", "asia_views", "n_america_views", "s_america_views", "africa_views", "antarctica_views")
+names(output_4) = c("europe_views", "oceania_views", "asia_views", "n_america_views", "s_america_views", "africa_views", "antarctica_views")
+names(output_5) = c("europe_views", "oceania_views", "asia_views", "n_america_views", "s_america_views", "africa_views", "antarctica_views")
+names(output_6) = c("europe_views", "oceania_views", "asia_views", "n_america_views", "s_america_views", "africa_views", "antarctica_views")
+names(output_7) = c("europe_views", "oceania_views", "asia_views", "n_america_views", "s_america_views", "africa_views", "antarctica_views")
