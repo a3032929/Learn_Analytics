@@ -6,5 +6,7 @@ joint_data <- rbind(output_3_ro, output_4_ro, output_5_ro, output_6_ro, output_7
             n_america_views = sum(n_america_views),
             s_america_views = sum(s_america_views),
             africa_views = sum(africa_views),
-            antarctica_views= sum(antarctica_views))
+            antarctica_views= sum(antarctica_views)) %>% 
+  mutate_if(is.numeric, round)
 
+cache('joint_data')
