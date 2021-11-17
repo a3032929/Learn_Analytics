@@ -1,5 +1,5 @@
 # make pct for each continent
-joint_data_pct <- joint_data / joint_data %>% lapply(max) * 100
+joint_data_pct <- joint_data[3:9] / joint_data[3:9] %>% lapply(max) * 100
 
 # copy the step_title and video duration columns to new pct df
 joint_data_pct$step_title <- joint_data$step_title
