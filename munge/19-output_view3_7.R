@@ -1,0 +1,15 @@
+# call view_summary function
+output_3_view <- view_3_summary(viewstouse)
+cache('output_3_view')
+
+output_4_view <- view_4_summary(viewstouse)
+cache('output_4_view')
+
+output_5_view <- view_5_summary(viewstouse)
+cache('output_5_view')
+
+output_6_view <- view_6_summary(viewstouse)
+cache('output_6_view')
+
+output_7_view <- view_7_summary(viewstouse)
+cache('output_7_view')
