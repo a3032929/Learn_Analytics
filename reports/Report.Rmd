@@ -44,7 +44,7 @@ For this study, we will investigate the videos data from the course to answer th
 
 to insert reference use this notation [@RN22] - this is not working, try later.
 
-# Data Understanding 
+# Data Understanding (Initial Obsevration)
 
 The raw data was provided by FutureLearn on their Cyber Security course. There are seven runs of data, each run of data were measured several months apart from each other. There were no descriptions for the data, therefore assumptions will be made as to what the data means. 
 
@@ -66,6 +66,22 @@ As the study is interested in the number of views across the continent and the d
 
 The following initial visualizations will help determine the areas to consider for further investigation. 
 
+## Number of viewers for each video topic
+
+Figure XX shows the number of viewers for each video based on the topic of the videos.
+
+```{r run3_totalview_topic_bar, echo=FALSE, fig.width=10}
+ggplot(data = run3unite, aes(x=step_title, y=total_views))+
+  geom_bar(stat = 'identity', fill="#0099f9")+
+  geom_text(aes(label=total_views), hjust=-0.2, size=3.5)+
+  labs(title="Figure XX: Total number of Viewed per Video Topic")+
+  theme(plot.title = element_text(size=12,face = "bold"))+
+  theme_classic()+
+  coord_flip()+
+  scale_y_continuous(name = "Total Views")+
+  scale_x_discrete(name = "Video Topics", labels=function(x) str_wrap(x, width = 32), limits=rev)
+```
+
 ## Finding pairs of relationships
 We considered just the number of learners watching each video for the whole duration of the video, using the earliest video dataset (based on other datasets of run 3, this appears to roughly cover the time period between Jul 2017- Nov 2017).
 
@@ -73,7 +89,7 @@ The scatterplot matrices will be used to visualize any pairs of relationships of
 
 The plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
 
-### Total number of viewing and features used through the duration of videos
+## Total number of viewing and features used through the duration of videos
 
 Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, downloads/ captions/ transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
 
@@ -84,35 +100,11 @@ pairs(~video_duration + total_views + total_caption_views + total_transcript_vie
 
 There are no obvious relationship observed between the length of the videos and the amount of views and features used for the videos. However as the total number of views increases, so does the number of downloads, captions used and transcripts used, which is to be expected. 
 
-### Percentage viewed whole duration of videos
+## Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos
 
 Figure XX attempts to demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 5/10/25/50/75/95/100 percent of each videos.
 
-```{r run3_duration_pctviews_scatMx, echo=FALSE}
-pairs(~video_duration + viewed_five_percent + viewed_ten_percent + viewed_twentyfive_percent + viewed_fifty_percent + 
-        viewed_seventyfive_percent+ viewed_ninetyfive_percent + viewed_onehundred_percent, 
-      data = run3unite,
-      main = "Figure XX: Total views throughout percentage phase of the Videos", pch = 19, upper.panel = NULL)
-```
-
-Through observation of the matrix, there are potentially interesting patterns on the far left column of plots. However the plots are very noisy and will require more data to make further statements, therefore further investigation will be required. The other columns do not show unexpected behaviour. 
-
-### Worldwide views of videos
-
-Figure XX attempts to demonstrates the relationship between the video duration and the number of views from across different continents. 
-
-```{r run3_duration_cont_scatMx, echo=FALSE}
-pairs(~video_duration + europe_views_percentage + oceania_views_percentage + asia_views_percentage + north_america_views_percentage + 
-      south_america_views_percentage + africa_views_percentage+ antarctica_views_percentage, 
-      data = run3unite,
-      main = "Figure XX: Total Continent views through Video duration", pch = 19, upper.panel = NULL)
-```
-
-There are no obvious behaviours to be seen, therefore the data will be transformed to compare the views within each continent throughout the course rather than the viewings from each continent within each video.Therefore this could show the drop out rate from each continent throughout the course.
-
-In addition, the relative views from each continent appears to be stable. There appears to be some outliers from the far left column of plots. It is unlikely related to the duration of the videos because the outliers appear random, therefore further investigation will be made on whether the video topics could be related to these outliers. 
-
-## Number of viewers at 100 percent duration of the videos
+Through observation of the matrix, there are potentially interesting patterns on the far left column of plots. However the plots are very noisy and will require more data to make further statements, therefore further investigation will be required. The other columns do not show unexpected behaviour.
 
 Figure XX shows the number of viewers who have stayed to view the videos to the end.
 
@@ -136,6 +128,25 @@ There is potentially a pattern observed on the relationship between the video du
 the 'step_position' and the 'title' columns will be combined to allow quick reference to the order of the videos, which it appears throughout the course. This will also result in the 'step_position' data type being changed from numerical to character.  
 
 The data pre-processing codes are located in the 'munge' folder.
+
+## Worldwide views of videos
+
+Figure XX attempts to demonstrates the relationship between the video duration and the number of views from across different continents. 
+
+```{r stack_cont3_pct_topic_bar, echo=FALSE}
+ggplot(new_cont_3_df, aes(x=step_title, y=Value, fill=Continent)) +
+  geom_bar(stat = "identity")+
+  theme_classic()+
+  coord_flip()+
+  scale_x_discrete(name = "Percentage viewers per continent", labels=function(x) str_wrap(x, width = 32), limits=rev)+
+  ggtitle("Figure XX: Percentage of continental viewers on video topics")+
+  theme(plot.title = element_text(size=12, face="bold"))+
+  scale_y_discrete(name = "Video Topics")
+```
+
+There are no obvious behaviours to be seen, therefore the data will be transformed to compare the views within each continent throughout the course rather than the viewings from each continent within each video.Therefore this could show the drop out rate from each continent throughout the course.
+
+In addition, the relative views from each continent appears to be stable. There appears to be some outliers from the far left column of plots. It is unlikely related to the duration of the videos because the outliers appear random, therefore further investigation will be made on whether the video topics could be related to these outliers. 
 
 ## Actual views from continent
 
@@ -171,23 +182,23 @@ ggplot(new_cont_3_df, aes(x=step_title, y=Value, group=Continent, color=Continen
 
 The graph shows that for certain continents (Europe, North America and Oceania), there appears to be more views, therefore more engagements, on the topics within week 2 block of the course. On the other hand, there were more engagements from the learners of Africa and Asia continent, then a steady drop of viewers throughout the course. South America showed a dramatic uptake of viewers for the 1st topic of week 2, then a reduction of engagement throughout most of the course. 
 
+## line drop out of continent vs topic
+
+
+
+# Final investigation - include all runs
+
+## Worldwide views of videos
+
+## Actual views from continent
+
+## line drop out of continent vs topic
+
+##
+
 # Evaluation
 
-## Number of viewers for each video topic
 
-Figure XX shows the number of viewers for each video based on the topic of the videos.
-
-```{r run3_totalview_topic_bar, echo=FALSE, fig.width=10}
-ggplot(data = run3unite, aes(x=step_title, y=total_views))+
-  geom_bar(stat = 'identity', fill="#0099f9")+
-  geom_text(aes(label=total_views), hjust=-0.2, size=3.5)+
-  labs(title="Figure XX: Total number of Viewed per Video Topic")+
-  theme(plot.title = element_text(size=12,face = "bold"))+
-  theme_classic()+
-  coord_flip()+
-  scale_y_continuous(name = "Total Views")+
-  scale_x_discrete(name = "Video Topics", labels=function(x) str_wrap(x, width = 32), limits=rev)
-```
 
 # Recommendation
 May have to do some more analysis to compare with other MOOC courses
