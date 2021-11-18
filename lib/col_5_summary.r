@@ -1,3 +1,4 @@
+# get absolute value from percentages
 col_5_summary <- function(colstouse) {
   colstouse <- run5unite %>% 
     select(contains("_views_percentage"))
