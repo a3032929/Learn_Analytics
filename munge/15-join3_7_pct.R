@@ -15,4 +15,7 @@ joint_data_pct_ro <- joint_data_pct[,c(8,9,1,2,3,4,5,6,7)] %>%
 # replace NaN with 0
 joint_data_pct_ro[is.na(joint_data_pct_ro)] <- 0
 
+# rename columns
+names(joint_data_pct_ro) = c("step_title", "video_duration", "europe_views_percent", "oceania_views_percent", "asia_views_percent", "n_america_views_percent", "s_america_views_percent", "africa_views_percent", "antarctica_views_percent")
+
 cache('joint_data_pct_ro')
