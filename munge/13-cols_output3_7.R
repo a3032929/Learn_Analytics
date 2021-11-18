@@ -2,17 +2,17 @@
 output_3$step_title <- run3unite$step_title
 output_3$video_duration <- run3unite$video_duration
 
-output_4$step_title <- run3unite$step_title
-output_4$video_duration <- run3unite$video_duration
+output_4$step_title <- run4unite$step_title
+output_4$video_duration <- run4unite$video_duration
 
-output_5$step_title <- run3unite$step_title
-output_5$video_duration <- run3unite$video_duration
+output_5$step_title <- run5unite$step_title
+output_5$video_duration <- run5unite$video_duration
 
-output_6$step_title <- run3unite$step_title
-output_6$video_duration <- run3unite$video_duration
+output_6$step_title <- run6unite$step_title
+output_6$video_duration <- run6unite$video_duration
 
-output_7$step_title <- run3unite$step_title
-output_7$video_duration <- run3unite$video_duration
+output_7$step_title <- run7unite$step_title
+output_7$video_duration <- run7unite$video_duration
 
 
 # reorganise columns
