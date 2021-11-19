@@ -1,4 +1,4 @@
-ggplot(new_dur_3_df_pct, aes(video_duration, Value, color = Phase))+
+ggplot(new_dur_view_df_pct, aes(video_duration, Value, color = Phase))+
   geom_line()+
   geom_point()+
   geom_hline(yintercept = 100)+
