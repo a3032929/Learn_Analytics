@@ -21,8 +21,8 @@ output_7_view$total_views <- run7unite$total_views
 
 
 # reorganise columns
-output_3_view_ro <- output_3_view[,c(4,5,6,1,2,3)]
-output_4_view_ro <- output_4_view[,c(4,5,6,1,2,3)]
-output_5_view_ro <- output_5_view[,c(4,5,6,1,2,3)]
-output_6_view_ro <- output_6_view[,c(4,5,6,1,2,3)]
-output_7_view_ro <- output_7_view[,c(4,5,6,1,2,3)]
+output_3_view_ro <- output_3_view[,c(5,6,7,1,2,3,4)]
+output_4_view_ro <- output_4_view[,c(5,6,7,1,2,3,4)]
+output_5_view_ro <- output_5_view[,c(5,6,7,1,2,3,4)]
+output_6_view_ro <- output_6_view[,c(5,6,7,1,2,3,4)]
+output_7_view_ro <- output_7_view[,c(5,6,7,1,2,3,4)]
