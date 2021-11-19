@@ -89,6 +89,7 @@ The scatterplot matrices will be used to visualize any pairs of relationships of
 
 The plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
 
+# Question 3 Is there a correlation between duration of videos and drop out rate of the learners?
 ## Total number of viewing and features used through the duration of videos
 
 Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, downloads/ captions/ transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
@@ -108,16 +109,16 @@ Through observation of the matrix, there are potentially interesting patterns on
 
 Figure XX shows the number of viewers who have stayed to view the videos to the end.
 
-```{r run_100pct_duration_scat, echo=FALSE}
-ggplot(data = run3unite, aes(x=video_duration, y=viewed_onehundred_percent)) + 
+```{r run3_allpct_duration_scat, echo=FALSE}
+ggplot(new_dur_3_df_pct, aes(video_duration, Value, color = Phase))+
+  geom_line()+
   geom_point()+
   geom_hline(yintercept = 100)+
   ggtitle("Figure XX: Number of viewers watched 100% of videos")+
   theme_classic()+
   theme(plot.title = element_text(size=12, face="bold"))+
-  scale_y_continuous(name = "Number of viewers (100% of video duration")+
+  scale_y_continuous(name = "Percentage of viewers through phases of video duration")+
   scale_x_continuous(name = "Video Duration")
-
 ```
 
 There is potentially a pattern observed on the relationship between the video duration and the number of viewers who have stayed for the whole duration of the videos. However all the runs will need to be included to enable any statements to be made. 
@@ -129,6 +130,21 @@ the 'step_position' and the 'title' columns will be combined to allow quick refe
 
 The data pre-processing codes are located in the 'munge' folder.
 
+## Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos for all runs
+```{r run3_7allpct_duration_scat, echo=FALSE}
+ggplot(new_dur_view_df_pct, aes(video_duration, Value, color = Phase))+
+  geom_line()+
+  geom_point()+
+  geom_hline(yintercept = 100)+
+  ggtitle("Figure XX: Number of viewers watched 100% of videos")+
+  theme_classic()+
+  theme(plot.title = element_text(size=12, face="bold"))+
+  scale_y_continuous(name = "Percentage of viewers through phases of video duration")+
+  scale_x_continuous(name = "Video Duration")
+```
+
+# Question 2. Does the content of the videos have an impact on the viewing rates across different continents?
+# Data understanding
 ## Worldwide views of videos
 
 Figure XX attempts to demonstrates the relationship between the video duration and the number of views from across different continents. 
@@ -153,15 +169,7 @@ In addition, the relative views from each continent appears to be stable. There 
 
 The actual viewings from each continent for each video is calculated. This is by taking the assumed total learners (by taking the highest figure from '*Total Viewed*' column), divided by 100, then multiply by the current percentage viewed value from each continent. This is the reverse percentage calculation for each continent (?)
 
-```{r}
-head(output_3, 3)
-```
-
 The percentage viewed from each continent, throughout the course is calculated.Then combined with the original '*step_title*' and '*video_duration*' columns. Values are round to full numbers and '*NaN*' are replace with 0.
-
-```{r}
-head(continent_3_pct_ro, 3)
-```
 
 Line graph to show how the percentage viewers have changed throughout the duration of the course, based on how many viewers watched the videos throughout the course.
 
@@ -183,19 +191,47 @@ ggplot(new_cont_3_df, aes(x=step_title, y=Value, group=Continent, color=Continen
 
 The graph shows that for certain continents (Europe, North America and Oceania), there appears to be more views, therefore more engagements, on the topics within week 2 block of the course. On the other hand, there were more engagements from the learners of Africa and Asia continent, then a steady drop of viewers throughout the course. South America showed a dramatic uptake of viewers for the 1st topic of week 2, then a reduction of engagement throughout most of the course. 
 
-## line drop out of continent vs topic
-
-
-
 # Final investigation - include all runs
+# Data Prepare
+## Worldwide views of videos using all runs as bars and absolute values
+```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
+ggplot(new_cont_all_df_AbV, aes(x=step_title, y=Value, fill=Continent)) +
+  geom_bar(stat = "identity")+
+  theme_classic()+
+  coord_flip()+
+  scale_x_discrete(name = "Video Topics", labels=function(x) str_wrap(x, width = 32), limits=rev)+
+  ggtitle("Figure XX: Total continental viewers on video topics")+
+  theme(plot.title = element_text(size=12, face="bold"))+
+  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
+  scale_y_discrete(name = "Total Views per Continent")
+```
 
-## Worldwide views of videos
 
-## Actual views from continent
+## Actual views from continent using all runs and percentage
+
+```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
+ggplot(new_cont_all_df_pct, aes(x=step_title, y=Value, group=Continent, color=Continent))+
+  geom_line(size=1)+
+  geom_point(size=2)+
+  ggtitle("Figure XX: Total percentage of viewers for Video Topics")+
+  theme_bw()+
+  ylab("Percentage Viewers")+
+  theme(
+    plot.title = element_text(size=12, face="bold"),
+    axis.text.x = element_text(angle = 45, hjust=1, size=8),
+    legend.text = element_text(size=8))+
+  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
+  scale_y_continuous(name = "Percentage Viewed per continent")+
+  scale_x_discrete(name = "Video Topics")
+```
+
+
 
 ## line drop out of continent vs topic
 
-##
+## line drop out of continent vs topic
+
+
 
 # Evaluation
 
