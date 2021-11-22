@@ -24,4 +24,4 @@ run3_continuous <- new_cont_3_test %>%
   scale_y_continuous(name = "Percentage Viewed per continent")+
   scale_x_discrete(name = "Video Topics")
     
-
+cache("run3_continuous")

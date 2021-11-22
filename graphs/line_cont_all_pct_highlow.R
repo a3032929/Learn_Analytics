@@ -24,3 +24,4 @@ run_all_continuous <- new_cont_all_df_pct_order %>%
   scale_y_continuous(name = "Percentage Viewed per continent")+
   scale_x_discrete(name = "Video Topics")
 
+cache("run_all_continuous")

@@ -1,5 +1,6 @@
 # line graph of each continent throughout course using duration
-ggplot(new_cont_3_df_dur, aes(x=video_duration, y=Value, group=Continent, color=Continent))+
+line_cont3_pct_dur_V <- new_cont_3_df_dur %>% 
+  ggplot( aes(x=video_duration, y=Value, group=Continent, color=Continent))+
   geom_line(size=1)+
   geom_point(size=2)+
   ggtitle("Figure XX: Percentage of viewers for Video duration")+
@@ -12,3 +13,5 @@ ggplot(new_cont_3_df_dur, aes(x=video_duration, y=Value, group=Continent, color=
   scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
   scale_y_continuous(name = "Percentage Viewed per continent")+
   scale_x_discrete(name = "Video duration")
+
+cache("line_cont3_pct_dur_V")

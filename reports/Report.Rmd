@@ -230,19 +230,7 @@ ggplot(new_cont_all_df_pct, aes(x=step_title, y=Value, group=Continent, color=Co
 # Question 1. Does the duration of the videos have an impact on the viewing rates across different continents?
 # Data understanding
 ```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
-ggplot(new_cont_3_df_dur, aes(x=video_duration, y=Value, group=Continent, color=Continent))+
-  geom_line(size=1)+
-  geom_point(size=2)+
-  ggtitle("Figure XX: Percentage of viewers for Video duration")+
-  theme_bw()+
-  ylab("Percentage Viewers")+
-  theme(
-    plot.title = element_text(size=12, face="bold"),
-    axis.text.x = element_text(angle = 45, hjust=1, size=8),
-    legend.text = element_text(size=8))+
-  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
-  scale_y_continuous(name = "Percentage Viewed per continent")+
-  scale_x_discrete(name = "Video duration")
+line_cont3_pct_dur_V
 ```
 
 no correlation
@@ -250,25 +238,19 @@ no correlation
 prove with all runs
 
 ```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
-ggplot(joint_data_dur, aes(x=video_duration, y=Value, group=Continent, color=Continent))+
-  geom_line(size=1)+
-  geom_point(size=2)+
-  ggtitle("Figure XX: Percentage of viewers for Video duration")+
-  theme_bw()+
-  ylab("Percentage Viewers")+
-  theme(
-    plot.title = element_text(size=12, face="bold"),
-    axis.text.x = element_text(angle = 45, hjust=1, size=8),
-    legend.text = element_text(size=8))+
-  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
-  scale_y_continuous(name = "Percentage Viewed per continent")+
-  scale_x_discrete(name = "Video duration")
+line_cont_all_pct_dur_V
 ```
 
 
 ## line drop out of continent vs topic
+```{r line_cont3_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
+run3_continuous
+```
 
-## line drop out of continent vs topic
+## line drop out of continent vs topic for all runs 
+```{r line_cont_all_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
+run_all_continuous
+```
 
 
 
