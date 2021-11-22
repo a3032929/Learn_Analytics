@@ -1,7 +1,7 @@
 ---
 title: "CSC8631 Report"
 author: "Selina So"
-date: "11/11/2021"
+date: "23/11/2021"
 output: pdf_document
 ---
 
@@ -19,12 +19,12 @@ load.project()
 
 ## Background
 
-Learning Analytics is a study of the "*measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the information system in which it occurs*(Shi, 2018)". Learning analytics will provide insights to the factors which influences learners retention. This will therefore enable course designers from educational institutes and MOOC (Massive open online course) providers  to make informed decisions on the design and improvements of their courses. Consequently improving the learning environment for learners and drive more influx of learners enrolling. 
+Learning Analytics is a study of the "*measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the information system in which it occurs*(Shi, 2018)". Learning analytics will provide insights to the factors which influences learners retention. Learners' retention is one of the key drivers for institutes to implement Learning Analytics, as retaining students and their associated fees has a significant economical impact on the institutions' income (Xanthe Shacklock, 2016).  The insights from the Learning Analytics will enable course designers from educational institutes and MOOC (Massive open online course) providers to make informed decisions on the design and improvements of their courses. Consequently improving the learning environment for learners and drive more influx of learners enrolling. 
 
 FutureLearn is an MOOC provider, which collaborates with universities globally to offer online courses. Since their launch in 2013, they have attracted over seven million learners across the world (www.futurelearn.com). With the insights driven from Learning Analytics, it will help FutureLearn identify areas which will improve the retention rate and learners' engagement. 
 
 ## Business objective
-There are many factors which could influence the learners' retention rate. In this study, the focus will be on the video lectures provider by FutureLearn, which are generally used to form part of a course. (why important from a business perspective, what are the problems to solve - financially strained, etc) 
+There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement (Bote-Lorenzo, Gomez-Sanchez, 2017). In this study, the focus will be on the video lectures provider by FutureLearn, which are generally used to form part of a course.
 
 This study will examine the Cyber Security online course, which is divided into three weekly blocks of study. The course consist of a combination of videos, articles, exercises, discussions, quizzes and tests. 
 
