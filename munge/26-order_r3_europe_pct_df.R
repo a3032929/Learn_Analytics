@@ -4,3 +4,4 @@ new_cont_3_test <- continent_3_pct_ro[order(-continent_3_pct_ro$europe_views_per
   select(-video_duration) %>% 
   gather(key = Continent, value = Value, europe_views_percentage:antarctica_views_percentage) 
 
+cache('new_cont_3_test')
