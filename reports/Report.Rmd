@@ -71,15 +71,7 @@ The following initial visualizations will help determine the areas to consider f
 Figure XX shows the number of viewers for each video based on the topic of the videos.
 
 ```{r run3_totalview_topic_bar, echo=FALSE, fig.width=10}
-ggplot(data = run3unite, aes(x=step_title, y=total_views))+
-  geom_bar(stat = 'identity', fill="#0099f9")+
-  geom_text(aes(label=total_views), hjust=-0.2, size=3.5)+
-  labs(title="Figure XX: Total number of Viewed per Video Topic")+
-  theme(plot.title = element_text(size=12,face = "bold"))+
-  theme_classic()+
-  coord_flip()+
-  scale_y_continuous(name = "Total Views")+
-  scale_x_discrete(name = "Video Topics", labels=function(x) str_wrap(x, width = 32), limits=rev)
+run3_totalview_topic_bar_V
 ```
 
 ## Finding pairs of relationships
@@ -110,15 +102,7 @@ Through observation of the matrix, there are potentially interesting patterns on
 Figure XX shows the number of viewers who have stayed to view the videos to the end.
 
 ```{r run3_allpct_duration_scat, echo=FALSE}
-ggplot(new_dur_3_df_pct, aes(video_duration, Value, color = Phase))+
-  geom_line()+
-  geom_point()+
-  geom_hline(yintercept = 100)+
-  ggtitle("Figure XX: Number of viewers watched 100% of videos")+
-  theme_classic()+
-  theme(plot.title = element_text(size=12, face="bold"))+
-  scale_y_continuous(name = "Percentage of viewers through phases of video duration")+
-  scale_x_continuous(name = "Video Duration")
+run3_allpct_duration_scat_V
 ```
 
 There is potentially a pattern observed on the relationship between the video duration and the number of viewers who have stayed for the whole duration of the videos. However all the runs will need to be included to enable any statements to be made. 
@@ -132,15 +116,7 @@ The data pre-processing codes are located in the 'munge' folder.
 
 ## Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos for all runs
 ```{r run3_7allpct_duration_scat, echo=FALSE}
-ggplot(new_dur_view_df_pct, aes(video_duration, Value, color = Phase))+
-  geom_line()+
-  geom_point()+
-  geom_hline(yintercept = 100)+
-  ggtitle("Figure XX: Number of viewers watched 100% of videos")+
-  theme_classic()+
-  theme(plot.title = element_text(size=12, face="bold"))+
-  scale_y_continuous(name = "Percentage of viewers through phases of video duration")+
-  scale_x_continuous(name = "Video Duration")
+run3_7_allpct_duration_scat_V
 ```
 
 # Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
@@ -150,15 +126,7 @@ ggplot(new_dur_view_df_pct, aes(video_duration, Value, color = Phase))+
 Figure XX attempts to demonstrates the relationship between the video duration and the number of views from across different continents. 
 
 ```{r stack_cont3_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
-ggplot(output_3_abs_df, aes(x=step_title, y=Value, fill=Continent)) +
-  geom_bar(stat = "identity")+
-  theme_classic()+
-  coord_flip()+
-  scale_x_discrete(name = "Video Topics", labels=function(x) str_wrap(x, width = 32), limits=rev)+
-  ggtitle("Figure XX: Total continental viewers on video topics")+
-  theme(plot.title = element_text(size=12, face="bold"))+
-  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
-  scale_y_discrete(name = "Total Views per Continent")
+stack_cont3_AbV_topic_bar_V
 ```
 
 There are no obvious behaviours to be seen, therefore the data will be transformed to compare the views within each continent throughout the course rather than the viewings from each continent within each video.Therefore this could show the drop out rate from each continent throughout the course.
@@ -169,15 +137,7 @@ In addition, the relative views from each continent appears to be stable. There 
 # Data Prepare
 ## Worldwide views of videos using all runs as bars and absolute values
 ```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
-ggplot(new_cont_all_df_AbV, aes(x=step_title, y=Value, fill=Continent)) +
-  geom_bar(stat = "identity")+
-  theme_classic()+
-  coord_flip()+
-  scale_x_discrete(name = "Video Topics", labels=function(x) str_wrap(x, width = 32), limits=rev)+
-  ggtitle("Figure XX: Total continental viewers on video topics")+
-  theme(plot.title = element_text(size=12, face="bold"))+
-  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
-  scale_y_discrete(name = "Total Views per Continent")
+stack_cont_all_AbV_topic_bar_V
 ```
 
 
@@ -191,19 +151,7 @@ The percentage viewed from each continent, throughout the course is calculated.T
 Line graph to show how the percentage viewers have changed throughout the duration of the course, based on how many viewers watched the videos throughout the course.
 
 ```{r line_cont3_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
-ggplot(new_cont_3_df, aes(x=step_title, y=Value, group=Continent, color=Continent))+
-  geom_line(size=1)+
-  geom_point(size=2)+
-  ggtitle("Figure XX: Percentage of viewers for Video Topics")+
-  theme_bw()+
-  ylab("Percentage Viewers")+
-  theme(
-    plot.title = element_text(size=12, face="bold"),
-    axis.text.x = element_text(angle = 45, hjust=1, size=8),
-    legend.text = element_text(size=8))+
-  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
-  scale_y_continuous(name = "Percentage Viewed per continent")+
-  scale_x_discrete(name = "Video Topics")
+line_cont3_pct_topic_V
 ```
 
 The graph shows that for certain continents (Europe, North America and Oceania), there appears to be more views, therefore more engagements, on the topics within week 2 block of the course. On the other hand, there were more engagements from the learners of Africa and Asia continent, then a steady drop of viewers throughout the course. South America showed a dramatic uptake of viewers for the 1st topic of week 2, then a reduction of engagement throughout most of the course. 
@@ -212,19 +160,7 @@ The graph shows that for certain continents (Europe, North America and Oceania),
 ## Actual views from continent using all runs and percentage
 
 ```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
-ggplot(new_cont_all_df_pct, aes(x=step_title, y=Value, group=Continent, color=Continent))+
-  geom_line(size=1)+
-  geom_point(size=2)+
-  ggtitle("Figure XX: Total percentage of viewers for Video Topics")+
-  theme_bw()+
-  ylab("Percentage Viewers")+
-  theme(
-    plot.title = element_text(size=12, face="bold"),
-    axis.text.x = element_text(angle = 45, hjust=1, size=8),
-    legend.text = element_text(size=8))+
-  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
-  scale_y_continuous(name = "Percentage Viewed per continent")+
-  scale_x_discrete(name = "Video Topics")
+line_cont_all_pct_topic_V
 ```
 
 # Question 1. Does the duration of the videos have an impact on the viewing rates across different continents?

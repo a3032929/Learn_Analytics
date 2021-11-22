@@ -1,4 +1,5 @@
-ggplot(new_dur_view_df_pct, aes(video_duration, Value, color = Phase))+
+run3_7_allpct_duration_scat_V <- new_dur_view_df_pct %>% 
+  ggplot( aes(video_duration, Value, color = Phase))+ 
   geom_line()+
   geom_point()+
   geom_hline(yintercept = 100)+
@@ -7,3 +8,8 @@ ggplot(new_dur_view_df_pct, aes(video_duration, Value, color = Phase))+
   theme(plot.title = element_text(size=12, face="bold"))+
   scale_y_continuous(name = "Percentage of viewers through phases of video duration")+
   scale_x_continuous(name = "Video Duration")
+
+cache("run3_7_allpct_duration_scat_V")
+  
+  
+  

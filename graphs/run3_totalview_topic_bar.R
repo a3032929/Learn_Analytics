@@ -1,5 +1,6 @@
 # plot horizontal bar chart of video topic vs total number of viewers
-ggplot(data = run3unite, aes(x=step_title, y=total_views))+
+run3_totalview_topic_bar_V <- run3unite %>% 
+  ggplot( aes(x=step_title, y=total_views))+
   geom_bar(stat = 'identity', fill="#0099f9")+
   geom_text(aes(label=total_views), hjust=-0.2, size=3.5)+
   labs(title="Figure XX: Total number of Viewed per Video Topic")+
@@ -9,3 +10,4 @@ ggplot(data = run3unite, aes(x=step_title, y=total_views))+
   scale_y_continuous(name = "Total Views")+
   scale_x_discrete(name = "Video Topics", labels=function(x) str_wrap(x, width = 32), limits=rev)
 
+cache("run3_totalview_topic_bar_V")
