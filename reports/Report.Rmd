@@ -143,7 +143,7 @@ ggplot(new_dur_view_df_pct, aes(video_duration, Value, color = Phase))+
   scale_x_continuous(name = "Video Duration")
 ```
 
-# Question 2. Does the content of the videos have an impact on the viewing rates across different continents?
+# Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
 # Data understanding
 ## Worldwide views of videos
 
@@ -165,6 +165,23 @@ There are no obvious behaviours to be seen, therefore the data will be transform
 
 In addition, the relative views from each continent appears to be stable. There appears to be some outliers from the far left column of plots. It is unlikely related to the duration of the videos because the outliers appear random, therefore further investigation will be made on whether the video topics could be related to these outliers. 
 
+# Final investigation - include all runs
+# Data Prepare
+## Worldwide views of videos using all runs as bars and absolute values
+```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
+ggplot(new_cont_all_df_AbV, aes(x=step_title, y=Value, fill=Continent)) +
+  geom_bar(stat = "identity")+
+  theme_classic()+
+  coord_flip()+
+  scale_x_discrete(name = "Video Topics", labels=function(x) str_wrap(x, width = 32), limits=rev)+
+  ggtitle("Figure XX: Total continental viewers on video topics")+
+  theme(plot.title = element_text(size=12, face="bold"))+
+  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
+  scale_y_discrete(name = "Total Views per Continent")
+```
+
+
+# Question 2. Does the content of the videos have an impact on the viewing rates across different continents? Using percentage values
 ## Actual views from continent
 
 The actual viewings from each continent for each video is calculated. This is by taking the assumed total learners (by taking the highest figure from '*Total Viewed*' column), divided by 100, then multiply by the current percentage viewed value from each continent. This is the reverse percentage calculation for each continent (?)
@@ -190,21 +207,6 @@ ggplot(new_cont_3_df, aes(x=step_title, y=Value, group=Continent, color=Continen
 ```
 
 The graph shows that for certain continents (Europe, North America and Oceania), there appears to be more views, therefore more engagements, on the topics within week 2 block of the course. On the other hand, there were more engagements from the learners of Africa and Asia continent, then a steady drop of viewers throughout the course. South America showed a dramatic uptake of viewers for the 1st topic of week 2, then a reduction of engagement throughout most of the course. 
-
-# Final investigation - include all runs
-# Data Prepare
-## Worldwide views of videos using all runs as bars and absolute values
-```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
-ggplot(new_cont_all_df_AbV, aes(x=step_title, y=Value, fill=Continent)) +
-  geom_bar(stat = "identity")+
-  theme_classic()+
-  coord_flip()+
-  scale_x_discrete(name = "Video Topics", labels=function(x) str_wrap(x, width = 32), limits=rev)+
-  ggtitle("Figure XX: Total continental viewers on video topics")+
-  theme(plot.title = element_text(size=12, face="bold"))+
-  scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
-  scale_y_discrete(name = "Total Views per Continent")
-```
 
 
 ## Actual views from continent using all runs and percentage
