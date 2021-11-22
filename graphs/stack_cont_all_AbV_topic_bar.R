@@ -1,5 +1,6 @@
 # stacked bar chart of each video by continent of all runs
-ggplot(new_cont_all_df_AbV, aes(x=step_title, y=Value, fill=Continent)) +
+stack_cont_all_AbV_topic_bar_V <- new_cont_all_df_AbV %>% 
+  ggplot( aes(x=step_title, y=Value, fill=Continent)) +
   geom_bar(stat = "identity")+
   theme_classic()+
   coord_flip()+
@@ -9,3 +10,4 @@ ggplot(new_cont_all_df_AbV, aes(x=step_title, y=Value, fill=Continent)) +
   scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
   scale_y_discrete(name = "Total Views per Continent")
 
+cache("stack_cont_all_AbV_topic_bar_V")

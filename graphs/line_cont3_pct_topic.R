@@ -1,5 +1,6 @@
 # line graph of each continent throughout course
-ggplot(new_cont_3_df, aes(x=step_title, y=Value, group=Continent, color=Continent))+
+line_cont3_pct_topic_V <- new_cont_3_df %>% 
+  ggplot( aes(x=step_title, y=Value, group=Continent, color=Continent))+
   geom_line(size=1)+
   geom_point(size=2)+
   ggtitle("Figure XX: Percentage of viewers for Video Topics")+
@@ -14,4 +15,4 @@ ggplot(new_cont_3_df, aes(x=step_title, y=Value, group=Continent, color=Continen
   scale_x_discrete(name = "Video Topics")
   
                                    
-
+cache("line_cont3_pct_topic_V")

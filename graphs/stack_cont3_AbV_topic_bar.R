@@ -1,5 +1,6 @@
 # stacked bar chart of each video by continent for run3 absolute value
-ggplot(output_3_abs_df, aes(x=step_title, y=Value, fill=Continent)) +
+stack_cont3_AbV_topic_bar_V <- output_3_abs_df %>% 
+  ggplot( aes(x=step_title, y=Value, fill=Continent)) +
   geom_bar(stat = "identity")+
   theme_classic()+
   coord_flip()+
@@ -8,3 +9,5 @@ ggplot(output_3_abs_df, aes(x=step_title, y=Value, fill=Continent)) +
   theme(plot.title = element_text(size=12, face="bold"))+
   scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
   scale_y_discrete(name = "Total Views per Continent")
+
+cache("stack_cont3_AbV_topic_bar_V")
