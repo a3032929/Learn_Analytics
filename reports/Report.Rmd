@@ -24,9 +24,9 @@ Learning Analytics is a study of the "*measurement, collection, analysis and rep
 FutureLearn is an MOOC provider, which collaborates with universities globally to offer online courses. Since their launch in 2013, they have attracted over seven million learners across the world (www.futurelearn.com). With the insights driven from Learning Analytics, it will help FutureLearn identify areas which will improve the retention rate and learners' engagement. 
 
 ## Business objective
-There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement (Bote-Lorenzo, Gomez-Sanchez, 2017). In this study, the focus will be on the video lectures provider by FutureLearn, which are generally used to form part of a course.
+There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement (Bote-Lorenzo, Gomez-Sanchez, 2017). 
 
-This study will examine the Cyber Security online course, which is divided into three weekly blocks of study. The course consist of a combination of videos, articles, exercises, discussions, quizzes and tests. 
+This study will examine the Cyber Security online course, which is divided into three weekly blocks of study. The course consist of a combination of videos, articles, exercises, discussions, quizzes and tests. As data from videos could act as engagement indicators, therefore the focus will be on the video lectures provider by FutureLearn, which are generally used to form part of a course. 
 
 There are a number of steps to complete for each weekly block. The first week block contains 18 steps, and the second and third week blocks contains 21 steps. (Shi, 2018) 
 
@@ -36,13 +36,8 @@ The CRISP-DM methodology (Cross-Industrie Standard Process for Data Mining) will
 
 ## Data Mining Goals
 
-For this study, we will investigate the videos data from the course to answer the following questions:
 
-1. Does the duration of the videos have an impact on the viewing rates across different continents?
-2. Does the content of the videos have an impact on the viewing rates across different continents?
-3. Is there a correlation between duration of videos and drop out rate of the learners?
 
-to insert reference use this notation [@RN22] - this is not working, try later.
 
 # Data Understanding (Initial Obsevration)
 
@@ -81,6 +76,76 @@ The scatterplot matrices will be used to visualize any pairs of relationships of
 
 The plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
 
+
+For this study, we will investigate the videos data from the course to answer the following questions:
+
+1. Does the duration of the videos have an impact on the viewing rates across different continents?
+2. Does the content of the videos have an impact on the viewing rates across different continents?
+3. Is there a correlation between duration of videos and drop out rate of the learners?
+
+# Data Preparation
+
+the 'step_position' and the 'title' columns will be combined to allow quick reference to the order of the videos, which it appears throughout the course. This will also result in the 'step_position' data type being changed from numerical to character.  
+
+The data pre-processing codes are located in the 'munge' folder.
+
+The actual viewings from each continent for each video is calculated. This is by taking the assumed total learners (by taking the highest figure from '*Total Viewed*' column), divided by 100, then multiply by the current percentage viewed value from each continent. This is the reverse percentage calculation for each continent (?)
+
+The percentage viewed from each continent, throughout the course is calculated.Then combined with the original '*step_title*' and '*video_duration*' columns. Values are round to full numbers and '*NaN*' are replace with 0.
+
+
+
+## Run 3 data prep Info 
+
+## All runs data prep info 
+
+
+
+
+# Modelling
+# Run 3
+
+# Question 1. Does the duration of the videos have an impact on the viewing rates across different continents?
+# Data understanding
+```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
+line_cont3_pct_dur_V
+```
+
+no correlation
+
+## line drop out of continent vs topic
+```{r line_cont3_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
+run3_continuous
+```
+
+
+# Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
+# Data understanding
+## Worldwide views of videos
+
+Figure XX attempts to demonstrates the relationship between the video duration and the number of views from across different continents. 
+
+```{r stack_cont3_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
+stack_cont3_AbV_topic_bar_V
+```
+
+There are no obvious behaviours to be seen, therefore the data will be transformed to compare the views within each continent throughout the course rather than the viewings from each continent within each video.Therefore this could show the drop out rate from each continent throughout the course.
+
+In addition, the relative views from each continent appears to be stable. There appears to be some outliers from the far left column of plots. It is unlikely related to the duration of the videos because the outliers appear random, therefore further investigation will be made on whether the video topics could be related to these outliers. 
+
+## Actual views from continent
+
+Line graph to show how the percentage viewers have changed throughout the duration of the course, based on how many viewers watched the videos throughout the course.
+
+```{r line_cont3_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
+line_cont3_pct_topic_V
+```
+
+The graph shows that for certain continents (Europe, North America and Oceania), there appears to be more views, therefore more engagements, on the topics within week 2 block of the course. On the other hand, there were more engagements from the learners of Africa and Asia continent, then a steady drop of viewers throughout the course. South America showed a dramatic uptake of viewers for the 1st topic of week 2, then a reduction of engagement throughout most of the course. 
+
+
+
+
 # Question 3 Is there a correlation between duration of videos and drop out rate of the learners?
 ## Total number of viewing and features used through the duration of videos
 
@@ -108,31 +173,24 @@ run3_allpct_duration_scat_V
 There is potentially a pattern observed on the relationship between the video duration and the number of viewers who have stayed for the whole duration of the videos. However all the runs will need to be included to enable any statements to be made. 
 
 
-# Data Preparation
 
-the 'step_position' and the 'title' columns will be combined to allow quick reference to the order of the videos, which it appears throughout the course. This will also result in the 'step_position' data type being changed from numerical to character.  
 
-The data pre-processing codes are located in the 'munge' folder.
+# All runs
 
-## Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos for all runs
-```{r run3_7allpct_duration_scat, echo=FALSE}
-run3_7_allpct_duration_scat_V
+# Question 1. Does the duration of the videos have an impact on the viewing rates across different continents?
+prove with all runs
+
+```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
+line_cont_all_pct_dur_V
+```
+
+
+## line drop out of continent vs topic for all runs 
+```{r line_cont_all_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
+run_all_continuous
 ```
 
 # Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
-# Data understanding
-## Worldwide views of videos
-
-Figure XX attempts to demonstrates the relationship between the video duration and the number of views from across different continents. 
-
-```{r stack_cont3_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
-stack_cont3_AbV_topic_bar_V
-```
-
-There are no obvious behaviours to be seen, therefore the data will be transformed to compare the views within each continent throughout the course rather than the viewings from each continent within each video.Therefore this could show the drop out rate from each continent throughout the course.
-
-In addition, the relative views from each continent appears to be stable. There appears to be some outliers from the far left column of plots. It is unlikely related to the duration of the videos because the outliers appear random, therefore further investigation will be made on whether the video topics could be related to these outliers. 
-
 # Final investigation - include all runs
 # Data Prepare
 ## Worldwide views of videos using all runs as bars and absolute values
@@ -141,52 +199,19 @@ stack_cont_all_AbV_topic_bar_V
 ```
 
 
-# Question 2. Does the content of the videos have an impact on the viewing rates across different continents? Using percentage values
-## Actual views from continent
-
-The actual viewings from each continent for each video is calculated. This is by taking the assumed total learners (by taking the highest figure from '*Total Viewed*' column), divided by 100, then multiply by the current percentage viewed value from each continent. This is the reverse percentage calculation for each continent (?)
-
-The percentage viewed from each continent, throughout the course is calculated.Then combined with the original '*step_title*' and '*video_duration*' columns. Values are round to full numbers and '*NaN*' are replace with 0.
-
-Line graph to show how the percentage viewers have changed throughout the duration of the course, based on how many viewers watched the videos throughout the course.
-
-```{r line_cont3_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
-line_cont3_pct_topic_V
-```
-
-The graph shows that for certain continents (Europe, North America and Oceania), there appears to be more views, therefore more engagements, on the topics within week 2 block of the course. On the other hand, there were more engagements from the learners of Africa and Asia continent, then a steady drop of viewers throughout the course. South America showed a dramatic uptake of viewers for the 1st topic of week 2, then a reduction of engagement throughout most of the course. 
-
-
 ## Actual views from continent using all runs and percentage
 
 ```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
 line_cont_all_pct_topic_V
 ```
 
-# Question 1. Does the duration of the videos have an impact on the viewing rates across different continents?
-# Data understanding
-```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
-line_cont3_pct_dur_V
+
+# Question 3 Is there a correlation between duration of videos and drop out rate of the learners?
+## Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos for all runs
+```{r run3_7allpct_duration_scat, echo=FALSE}
+run3_7_allpct_duration_scat_V
 ```
 
-no correlation
-
-prove with all runs
-
-```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
-line_cont_all_pct_dur_V
-```
-
-
-## line drop out of continent vs topic
-```{r line_cont3_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
-run3_continuous
-```
-
-## line drop out of continent vs topic for all runs 
-```{r line_cont_all_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
-run_all_continuous
-```
 
 
 
