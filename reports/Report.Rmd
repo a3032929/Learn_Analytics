@@ -25,7 +25,7 @@ FutureLearn is an MOOC provider, which collaborates with universities globally t
 
 There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement (Bote-Lorenzo, Gomez-Sanchez, 2017). 
 
-This study will examine the data from the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (https://www.futurelearn.com/courses/cyber-security). The course consist of a combination of videos, articles, exercises, discussions, quizzes and tests. As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore utilize this data to aid the quality improvement of the course. To achieve this, the focus will be on the video lecture data provided by FutureLearn, which are generally used to form part of a course. 
+This study will examine the data from the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (https://www.futurelearn.com/courses/cyber-security). The course consist of a combination of videos, articles, exercises, discussions, quizzes and tests. (As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore utilize this data to aid the quality improvement of the course. To achieve this, the focus will be on the video lecture data provided by FutureLearn, which are generally used to form part of a course. )
 
 The *Cyber Security Safety at Home, Online, in Life* course is divided into three weekly blocks of study. For each weekly block, there are a number of steps to complete. The first week block contains 18 steps, and the second and third week blocks contains 21 steps. (Shi, 2018, futurelearn site) 
 
@@ -38,21 +38,22 @@ Insights into the relationship of engagements across different continents. Is th
 
 - The CRISP-DM methodology (Cross-Industrie Standard Process for Data Mining) will be applied to achieve the objective of this study (link the CRISP-DM guide). The key phases of focus from the process are Business Understanding, Data Understanding, Data Preparation and Evaluation (maybe add Modelling)
 
-- The key personnel that will be utilize for expert knowledge and as stakeholders for the study will be the University educators and teaching assistants. 
+- The key personnel that will be utilize for expert knowledge and as stakeholders for the study will be the University educators and teaching assistants. include?
 
 - The *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn. There are 53 csv data files and 7 pdf files which provides an overview of the course structure. 
 
-- hardware platforms (computing resources)
+- hardware platforms (computing resources) need to include?
 
-- The softwares used will be R, RStudio and ggplot2.
+- The softwares used will be R, RStudio and ggplot2. include?
 
 ### Requirements, assumptions, and constraints (legal issues. As part of this output, make sure that you are allowed to use the data. List the assumptions made by the project. These may be assumptions about the data that can be verified during data mining, but may also include non-verifiable assumptions about the business related to the project. It is particularly important to list the latter if it will affect the validity of the results. ???? List the constraints on the project. dataset constraints)
-
+There are legal obligations and privacy policies, such as GDPR (Data Protection) and the *Data Protection Act (2018)*, to consider before using the data. It is assumed that the data provided by FutureLearn have been agreed and approved for use in this study. To comply with the legal and ethical standards, we will ensure any identifying data observed will be anonymised to reduce the likelihood that an individual could be identified. 
 
 ## Data Mining Goals ( A data mining goal might be “Predict how many widgets a customer will buy, given their purchases over thepast three years, demographic information (age, salary, city, etc.), and the price of the item.” Describe the intended outputs of the project that enable the achievement of the business objectives. Define the criteria for a successful outcome to the project in technical terms—for example, a certain level of predictive accuracy or a propensity-to-purchase profile with a given degree of “lift.”???)
-For this study, we will investigate the data and initially decide on a set of data to analyse in more detail to understand students's engagement with the online course. This set of data will be chosen according to (a) the richness of information contained in the data, and (b) the completeness/amount of data that is available. Based on this, the most promising lines of investigation will be decided.
+For this study, we will investigate the data and initially decide on a set of data to analyse in more detail to understand students' engagement with the online course. This set of data will be chosen according to (a) the richness of information contained in the data, and (b) the completeness of the data that is available. Based on this, the most promising lines of investigation will be decided.
 
 ## Project plan (Describe the intended plan for achieving the data mining goals and thereby achieving the business goals. The plan should specify the steps to be performed during the rest of the project, including the initial selection of tools and techniques.????)
+The plan is to utilize the CRISP-DM process to understand the data and perform initial investigation of the data and to identify potential trends which provides interesting insights for Newcastle University and FutureLearn. If there are potential trends, then further in-depth analysis will be performed to understand the trends better.
 
 ### Initial assessment of tools and techniques (At the end of the first phase, an initial assessment of tools and techniques should be performed.  assess tools and techniques early in the process since the selection of tools and techniques may influence the entire project.???)
 
