@@ -24,14 +24,16 @@ Learning Analytics is a study of the "*measurement, collection, analysis and rep
 FutureLearn is an MOOC provider, which collaborates with universities globally to offer online courses. Since their launch in 2013, they have attracted over seven million learners across the world (www.futurelearn.com). With a global reach of this extent, it is therefore crucial for FutureLearn to understand their performance in engaging with learners and providing an enhanced learning experience, which will retain and improve the learners' retention rate. The insights derived from Learning Analytics will therefore enable FutureLearn to understand areas of design or improvements which could create a positive impact for FutureLearn, their collaborators and their learners, in addition, to understand the key factors that could influence the retaining of students. 
 
 ### 1.1.2 Business Objectives
-This study will investigate the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (https://www.futurelearn.com/courses/cyber-security). The course consist of a combination of videos, articles, exercises, discussions, quizzes and tests. There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement (Bote-Lorenzo, Gomez-Sanchez, 2017). Therefore in this study we will examine the data from the *Cyber Security Safety at Home, Online, in Life* course to understand the factors which could influence the learners' retention rate. *Insights into the relationship of engagements across different continents. Is the course able to reach and retain a broad range of learners from across the world, from the material provided in the course. We aim to understand the areas which appear successful and areas that don't. With this insight, informed decisions could be made on areas where improvements could be made (reword).  
+This study will investigate the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (https://www.futurelearn.com/courses/cyber-security). There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement (Bote-Lorenzo, Gomez-Sanchez, 2017). Therefore in this study we will examine the data from the *Cyber Security Safety at Home, Online, in Life* course to understand the factors which could influence the learners' retention rate. *Insights into the relationship of engagements across different continents. Is the course able to reach and retain a broad range of learners from across the world, from the material provided in the course. We aim to understand the areas which appear successful and areas that don't. With this insight, informed decisions could be made on areas where improvements could be made (reword).  
 
 
 ## 1.2 Assess situation (e resources, constraints, assumptions, and other factors that should be considered in determining the data analysis goal and project plan.?? This task involves more detailed fact-finding about all of the resources, constraints, assumptions, and other factors that should be considered in determining the data analysis goal and in developing the project plan.)
 
-The *Cyber Security Safety at Home, Online, in Life* course is divided into three weekly blocks of study. For each weekly block, there are a number of steps to complete. The first week block contains 18 steps, and the second and third week blocks contains 21 steps. (Shi, 2018, futurelearn site) 
+The *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University). There are 53 csv data files, which provides information on the learners and the course. The remaining 7 pdf files provides an overview of the course structure. 
 
-(As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore utilize this data to aid the quality improvement of the course. To achieve this, the focus will be on the video lecture data provided by FutureLearn, which are generally used to form part of a course. )
+The course is divided into three weekly blocks of study. For each weekly block, there are a number of steps to complete. The first week block contains 18 steps, and the second and third week blocks contains 21 steps. (Shi, 2018, futurelearn site). The blocks consist of a combination of videos, articles, exercises, discussions, quizzes and tests for the learners to complete throughout the course.
+
+The 53 csv data files are split into 7 runs. Each run represents different time-frames of when the data were collected throughout the course, between mid 2016 - mid 2018. All runs consists of the following datafiles: *'Archetype-survey-responses', 'Enrolments', 'Leaving-survey-responses', 'Question-response', 'Step-activity', 'Weekly-sentiment-survey-response, 'Team-members', 'Video-stats'*, with the exception of run 1 not containing the  *'Team-members', 'Video-stats'* datafiles, and run 2 not containing the *'Video-stats'* datafile.
 
 ### 1.2.1 Inventory of Resources 
 
@@ -46,7 +48,7 @@ The following sections will list the resources available to the project.
 
 - The CRISP-DM methodology (Cross-Industrie Standard Process for Data Mining) will be applied to structure the project life cycle (link the CRISP-DM guide). 
 
-- The *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University). There are 53 csv data files, which provides information on the learners and the course. The remaining 7 pdf files provides an overview of the course structure. 
+- 53 csv data files and 7 pdf files on the *Cyber Security Safety at Home, Online, in Life* course, provided by FutureLearn (via Newcastle University).
 
 #### 1.2.1.3 Personnel Sources
 
@@ -72,11 +74,12 @@ There are legal obligations and privacy policies, such as *GDPR (General Data Pr
 
 #### 1.2.2.2 Assumptions
 
-It is assumed that full consent to use the data for this study has been provided by FutureLearn. To comply with the legal and ethical standards, we will ensure any identifying data observed will be anonymised to reduce the likelihood that an individual could be identified. 
+The following assumptions have been made on the data:
 
-In addition, it is assumed that although *'Video_stats'* data are not provided for run 1 and 2, this does not indicate that video learning material were not used for these runs. 
+- Assumed that full consent to use the data for this study has been provided by FutureLearn. To comply with the legal and ethical standards, we will ensure any identifying data observed will be anonymised to reduce the likelihood that an individual could be identified. 
 
-As the data is provided by FutureLearn (via Newcastle University), it is assumed that the data provides an accurate and reliable reflection of the learners of the course.
+- Assumed that although *'Video_stats'* data are not provided for run 1 and 2, this does not indicate that video learning material were not used for these runs. 
+- As the data is provided by FutureLearn (via Newcastle University), it is assumed that the data provides an accurate and reliable reflection of the learners of the course.
 
 #### 1.2.2.3 Constraints
 
@@ -112,7 +115,9 @@ Loaded data in R and cached.
 
 Will consider integration of data later (joining) in data prep phase.
 
-The *Cyber Security Safety at Home, Online, in Life* course data is provided by Newcastle University (via FutureLearn). There are 53 csv data files and 7 pdf files which provides an overview of the course structure. The 53 csv datasets are located in the *'data'* folder. There are 7 runs of data, each representing different timeframes of when the data were collected throughout the course, between mid 2016 - mid 2018. Runs 3 to 7 consists of the following datafiles: *'Archetype-survey-responses', 'Enrolments', 'Leaving-survey-responses', 'Question-response', 'Step-activity', 'Weekly-sentiment-survey-response, 'Team-members', 'Video-stats'*. Run 1 consists of most datafiles expect *'Team-members', 'Video-stats'*, and run 2 consists of most datafiles except *'Video-stats'*. (Although the *'Video-stats'* data does not exist in run 1 and 2, it is assumed that videos were still provided to the learners)
+The *Cyber Security Safety at Home, Online, in Life* course data is provided by Newcastle University (via FutureLearn). There are 53 csv data files and 7 pdf files which provides an overview of the course structure. The 53 csv datasets are located in the *'data'* folder.  (Although the *'Video-stats'* data does not exist in run 1 and 2, it is assumed that videos were still provided to the learners)
+
+(As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore utilize this data to aid the quality improvement of the course. To achieve this, the focus will be on the video lecture data provided by FutureLearn, which are generally used to form part of a course. )
 
 *Describe all the various data used for the project, and include any selection requirements for more detailed data. The data collection report should also define whether some attributes are relatively more important than others. Remember that any assessment of data quality should be made not just of the individual data sources but also of any data that results from merging data sources. Because of inconsistencies between the sources, merged data may present problems that do not exist in the individual data sources.)*
 
