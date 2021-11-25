@@ -120,31 +120,38 @@ Git is a useful software to ensure that all creations and changes are tracked. T
 
 The 53 csv data files of the *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University) and are loaded and cached in the *'data'* folder, as designed by the ProjectTemplate package.  
 
-There are 7 runs of data. Each run of data were measured several months apart from each other, between mid 2016 - mid 2018. Below is a brief description of each set of data files:
+There are 7 runs of data. Each run of data were measured several months apart from each other, between mid 2016 - mid 2018. Below is a brief description of each set of data files *(and why they were discarded (e.g. too many missing data points; not clear what data means without further background information, hence not being used for further analysis))*. :
 
-- *'Archetype-survey-responses'*: 
+- *'Archetype-survey-responses'*: The data files consists of two sets of Id-related columns, a datetime column and a categorical column *'archetype'*. As no descriptions was provided, therefore it is difficult to deduce the real meaning of the archetype data without further information. In addition, the datafiles for runs 1 to 3 are either empty or incomplete.
 
+- *'Enrolments'*: The data files contains information of learners' ID, enrollment and unenrollment datetime. In addition, categorical data on the gender, country, age, education and employment status and detected country. There are information on datetime of *'fully_participated_at'* and *'purchased_statement_at'*, however without further information it is unclear what these columns mean. There are many *'Unknown'* in the data files.
 
+- *'Leaving-survey-responses'*: The data files contains information about learner ID, leaving date, and learners' feedback, which was given as what is assumed to be pre-set selection of feedback options. It contains information on the last step completed when response was provided, however are incomplete as many rows contain missing data. The datafiles for runs 1 to 3 are empty.
 
-- *'Enrolments'*: 
-- *'Leaving-survey-responses'*: 
-- *'Question-response'*: 
-- *'Step-activity'*: 
-- *'Weekly-sentiment-survey-response'*: 
-- *'Team-members'* (not included in run 1): 
-- *'Video-stats'* (not included in run 1 and 2): 
+- *'Question-response'*: The data files contain information of the learners' ID and the quiz questions which the learners have attempted plus the submission date. There is a *'correct'* column containing boolean datatype of 'True/ False' which represents whether the learners have answered corrected. There is a *'response'* column which contains a selection of numerical values and a *'cloze_response'* which appears to be empty, therefore one cannot interpret what this column means. It is unclear whether the learners have to answer all questions correct, as there is more than 1 number in the *'response'* column, to obtain a 'True/ False' under the *'correct'* column. Therefore further information is required. 
 
-ADD HERE: Short description and why they were discarded (e.g. too many missing data points; not clear what data means without further background information, hence not being used for further analysis). 
+- *'Step-activity'*: This data file contains information on the learner_id and the datetime of when they had first visit and last completed a particular step. There are missing data under the *'last_completed_at'* column.
+
+- *'Weekly-sentiment-survey-response'*: the data files contain an ID column, with the datetime of the individuals' responses. It is unclear what does the IDs refer to as they do not specify that the column is for learners' ID, therefore more information is required. The *'reason'* column contains free text, which is interesting. However run 1 to 4 data files are empty, run 5 contains only 1 incomplete data and the remaining runs (6 and 7) contains a mixture of incomplete and unstructured text data for the free-text *'reason'* column.
+
+- *'Team-members'* (not included in run 1): the data files contain Ids and the team role and user role of the individuals. The *'first_name'* and *'last_name'* columns have been anonymised to remove the names of the individuals. 
+
+- *'Video-stats'* (not included in run 1 and 2): the data files contain information on the video topics, and numerical data on the number of viewers, devices and features used to view the videos, how long have individuals watched the videos and the percentage of viewers from different continents. 
+
+. 
 
 ### 2.1.1 Initial data file selection
 
-ADD HERE: The data files called '_survey' contained information about learner ID, leaving date, and learners' feedback, which was given as what is assumed to be pre-set selection of feedback options. These data would have been useful to combine with the data from the video stats files. However, when we looked at the 'feedback words' as they provide  a direct source of feedback that could be analysed using Natural Language Processing (NLP), we found that the data quality isn't good enough as there isn't enough diversity within the data to draw conclusions about the student's engagement with the course. The pre-selection only allowed learners to select from a very narrow range of options, which were too high level to provide meaningful insight into the sentiments of the learners. 
+The initial data file(s) of interest was(were) the *'Weekly-sentiment-survey-response'* data. These data would have been useful to combine with the data from the *'Leaving-survey-responses'* data files. The *'reason'* column was interesting as they contained free text therefore provided a direct source of feedback that could be analysed using Natural Language Processing (NLP). However, after closer observation, it appears that the data contained positively biased views of the individuals' experience with the course. The unstructured free text were also of poor quality as they contained incomplete sentences, single word feedback with lack of context and text that contains random symbols. In addition, there were many missing feedback data and due to only runs 6 and 7 containing a small selection of feedback, there is therefore insufficient data to draw substantial conclusions with the data. The *'Leaving-survey-responses'* data files also contains pre-selected responses, which indicates that the learners were only allowed to select from a very narrow range of opinions, therefore it does not provide meaningful insight into the sentiments of the learners. Lastly, the two sets of data files do not contain the same type of ID columns. The *'Leaving-survey-responses'* data files contained *'Learner_ID'*, which can be assumed that the responses were from the learners. The *'Weekly-sentiment-survey-response'* data files contained *'ID'*, which we cannot assume that the responses were from the learners only, as other data files (such as, the *'Team-members'* data files) have already shown that 'educators', 'mentors', etc all have an ID number assigned to them. The responses could potentially come from individuals with conflicted interest with the course, therefore the responses will not be a reliable source of information to use to draw conclusions on the course. 
+
 
 ### 2.1.2 Final data file selection
 
 (As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore utilize this data to aid the quality improvement of the course. To achieve this, the focus will be on the video lecture data provided by FutureLearn, which are generally used to form part of a course.) As the study is focussed on the use of video material, the data files with the title containing '*video.stats*' will be used. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data are available. 
 
 Will consider integration of data later (joining) in data prep phase.
+
+Need to update
 
 ## 2.2 Describe data (Examine the “gross” or “surface” properties of the acquired data and report on the results.  including the format of the data, the quantity of data (for example, the number of records and fields in each table), the identities of the fields, and any other surfacefeatures which have been discovered. Evaluate whether the data acquired satisfies the relevant requirements. Volumetric analysis of data, Attribute types and values, Check accessibility and availability of attributes: Check attribute types (numeric, symbolic, taxonomy, etc. Check attribute value ranges  Analyze attribute correlations  Understand the meaning of each attribute and attribute value in business terms  For each attribute, compute basic statistics (e.g., compute distribution, average, max, min, standard deviation, variance, mode, skewness, etc.)  Analyze basic statistics and relate the results to their meaning in business terms Decide if the attribute is relevant for the specific data mining goal)
 
