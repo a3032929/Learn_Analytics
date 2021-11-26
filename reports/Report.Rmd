@@ -159,20 +159,21 @@ names(run3)
 ```
 There are 13 rows of data in each '*video.stats*' data file, one row corresponding to each video content throughout the course. 
 
-There are 28 columns. The first column of each data file describes the weekly block and the step position of where a particular video is located within the course. The second column contains strings of data which refers to the video title, therefore one can deduce the topic of the video. The remaining columns (columns 3 - 28) contain numerical data, of which some contains percentage values. The data sets are mostly complete with no visible missing data. The format, variables and completeness of the data files are all consistent. Therefore merging of the data files from the other runs could be performed as ease. 
+There are 28 columns. The first column of each dataset describes the weekly block and the step position of where a particular video is located within the course. The second column contains strings of data which refers to the video title, therefore one can deduce the topic of the video. The remaining columns (columns 3 - 28) contain numerical data, of which some contains percentage values. Care will have to be taken when merging the runs together for the columns containing percentage values. The weighted average percentages will be calculated to account for the relative frequency of some factors in the dataset (reword!!), therefore the weighted average percentage will be more accurate than calculating the average percentage.
 
-The data files contain information on the video topics and the number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file satisfies the business objective requirements of the project.  
+The dataset contains information on the video topics and the number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file satisfies the business objective requirements of the project.  
 
 *The data surrounding the percentage of devices (and features) used for the videos will not be selected for this study (due to time constraints, etc) (Do I include the data on using captions...) a combination of columns will be selected for each individual analysis. *
 
-
-
+```{r}
+summary(run3)
+```
 
 
 
 ## 2.3 Explore data (This task addresses data mining questions using querying, visualization, and reporting techniques. These include distribution of key attributes (for example, the target attribute of a prediction task) relationshipsbetween pairs or small numbers of attributes, results of simple aggregations, properties of significantsub-populations, and simple statistical analyses. These analyses may directly address the data mining goals; they may also contribute to or refine the data description and quality reports, and feed into the transformation and other data preparation steps needed for further analysis.Describe results of this task, including first findings or initial hypothesis and their impact on the remainder of the project. If appropriate, include graphs and plots to indicate data characteristics that suggest furtherexamination of interesting data subsets.Analyze properties of interesting attributes in detail (e.g., basic statistics, interesting sub-populations:  Identify characteristics of sub-populations/ Form suppositions for future analysis  Consider and evaluate information and findings in the data descriptions report  Form a hypothesis and identify actions Transform the hypothesis into a data mining goal, if possible  Clarify data mining goals or make them more precise. A “blind” search is not necessarily useless, but a more directed search toward business objectives is preferable. Perform basic analysis to verify the hypothesis)
 
-As the study is interested in the number of views across the continent and the drop out, therefore the columns relating to viewing in HD and different devices will be removed. Other remaining columns will remain as they may contain relevant information for the study. 
+These two columns will be combined to allow quick reference to the order of which the videos appears throughout the course. 
 
 The following initial visualizations will help determine the areas to consider for further investigation. 
 
@@ -184,14 +185,7 @@ Figure XX shows the number of viewers for each video based on the topic of the v
 run3_totalview_topic_bar_V
 ```
 
-## Finding pairs of relationships
-We considered just the number of learners watching each video for the whole duration of the video, using the earliest video data set. Based on enrolment time stamps in data set cyber-security-3_enrolments.csv, this appears to roughly cover the time period between Jul 2017- Nov 2017.
-
-The scatterplot matrices will be used to visualize any pairs of relationships of all of the different variables within the data.
-
-For the plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
-
-[QUESTION: Why do you add the description of scatterplots here and directly underneath the questions? DO you really need the scatterplots here? Or is the overview figure above and the description of column titles enough to formulate your questions?]
+### 2.3.1 Hypothesis
 
 For this study, we will investigate the videos data from the course to answer the following questions:
 
@@ -199,21 +193,27 @@ For this study, we will investigate the videos data from the course to answer th
 2. Does the content of the videos have an impact on the viewing rates across different continents?
 3. Is there a correlation between duration of videos and drop out rate of the learners?
 
-## 2.4 Verify data quality (Examine the quality of the data, addressing questions such as: Is the data complete (does it cover all the cases required)? Is it correct, or does it contain errors and, if there are errors, how common are they? Are there missing values in the data? If so, how are they represented, where do they occur, and how common are they? List the results of the data quality verification; if quality problems exist, list possible solutions. Solutions to data quality problems generally depend heavily on both data and business knowledge. Identify special values and catalog their meaning Review keys, attributes  Check coverage (e.g., whether all possible values are represented)  Check keys  Verify that the meanings of attributes and contained values fit together  Identify missing attributes and blank fields  Establish the meaning of missing data  Check for attributes with different values that have similar meanings (e.g., low fat, diet)  Check spelling and format of values (e.g., same value but sometimes beginning with a lower-case letter, sometimes with an upper-case letter)  Check for deviations, and decide whether a deviation is “noise” or may indicate an interesting phenomenon Check for plausibility of values, (e.g., all fields having the same or nearly the same values)Noise and inconsistencies between sources  Check consistencies and redundancies between different sources Plan for dealing with noise  Detect the type of noise and which attributes are affected Good idea! Remember that it may be necessary to exclude some data since they do not exhibit either positive or negative behavior)
 
-ADD HERE: The data sets from each run have been compared and it was found that they all contain the same number of rows and columns, and the labels for rows and columns are consistent across all 5 runs.
+## 2.4 Data Quality
+
+The data sets from each run have been compared and it was found that they all contain the same number of rows and columns, and the labels for rows and columns are consistent across all 5 runs. The data sets are mostly complete with no visible missing data. The format, variables and completeness of the data files are all consistent. Therefore the quality of the data is good and the merging of the data files from the other runs could be performed as ease.
+
+Columns *'unknown_device_percentage'* and *'antarctica_views_percentage'* contain values of 0. This can be assumed that the data provider has found no learners using unknown devices and there are no learners from the Antarctica, which is reasonable as according to the *World Population Review*, there is roughly 1000-4000 seasonal residents in the Antarctica (worldpopulationreview.com/continents/antarctica-population). Therefore we can assume that the values of 0 are accurate under the *'antarctica_views_percentage'* column. 
+
 
 
 
 # 3. Data Preparation - Q1 Does the duration of the videos have an impact on the viewing rates across different continents?
 
-## Run 3
+## Run 3 data prep
 
 ## 3.1 Dataset (These are the dataset(s) produced by the data preparation phase, which will be used for modeling or the major analysis work of the project.Describe the dataset(s) that will be used for the modeling and the major analysis work of the project)
 
 ## 3.2 Select data (Decide on the data to be used for analysis. Criteria include relevance to the data mining goals, quality, and technical constraints such as limits on data volume or data types. Note that data selection covers selectionof attributes (columns) as well as selection of records (rows) in a table. Rationale for inclusion/exclusion: List the data to be included/excluded and the reasons for these decisions.)
 
-These two columns will be combined to allow quick reference to the order of which the videos appears throughout the course. 
+
+
+As the study is interested in the number of views across the continent and the drop out, therefore the columns relating to viewing in HD and different devices will be removed. Other remaining columns will remain as they may contain relevant information for the study. 
 
 ## 3.3 Clean data (Raise the data quality to the level required by the selected analysis techniques. This may involve selection of clean subsets of the data, the insertion of suitable defaults, or more ambitious techniques such as the estimation of missing data by modeling.Describe what decisions and actions were taken to address the data quality problems reported during the Verify Data Quality task of the Data Understanding phase. Transformations of the data for cleaning purposes and the possible impact on the analysis results should be considered.)
 
@@ -227,8 +227,6 @@ the 'step_position' and the 'title' columns will be combined to allow quick refe
 
 The data pre-processing codes are located in the 'munge' folder.
 
-[DELETE THIS PARAGRAPH]The total number of viewings from each continent for each video is calculated. This is by taking the total number of learners (by taking the '*Total Viewed*' column), divided by 100, then multiply by the current percentage viewed value from each continent. This is the reverse percentage calculation for each continent (?)
-
 [REPLACE WITH THIS] The total number of viewings from each continent for each video is calculated. This is calculated for each video (i.e. each row) by taking the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. An example is the calculation of total views of the first video from African viewers, which is calculated as (*Total Viewed*[row 2]/100)x*africa_views_percentage*[row 2].
 
 The percentage viewed from each continent throughout the course is calculated by [ADD DESCRIPTION OF HOW YOU CALCULATED IT].These values were then combined with the original '*step_title*' and '*video_duration*' columns. Values are rounded to full numbers [HOW MANY DECIMAL POINTS INSTEAD OF FULL NUMBERS, e.g values are given as numbers with no decimal points] and '*NaN*' are replaced with 0, as these result from the viewings across Antarctica (*antarctica_views_percentage*), which were 0 across all runs.
@@ -240,7 +238,7 @@ The percentage viewed from each continent throughout the course is calculated by
 
 
 # 4. Modelling - Question 1. Does the duration of the videos have an impact on the viewing rates across different continents?
-## 4.1 Assess model (r interprets the models according to his domain knowledge, the data mining success criteria, and the desired test design. The data mining engineer judges the success of the application of modeling and discovery techniques technically; he contacts business analysts and domain experts later in order to discuss the data mining results in the business context???????)
+## 4.1 Assess model (r interprets the models according to his domain knowledge, the data mining success criteria, and the desired test design. The data mining engineer judges the success of the application of modeling and discovery techniques technically; he contacts business analysts and domain experts later in order to discuss the data mining results in the business context????)
 ## State conclusions regarding patterns in the data (if any); sometimes the model reveals important facts about the data without a separate assessment process (e.g., that the output or conclusion is duplicated in one of the inputs)
 
 ## Run 3 modelling
@@ -339,7 +337,11 @@ line_cont_all_pct_topic_V
 
 ## Run 3 Modelling
 
-### Total number of viewing and features used through the duration of videos
+### Total number of viewing and features used through the duration of videos (DELETE??)
+
+The scatterplot matrix will be used to visualize any pairs of relationships of all of the different variables within the data. For the plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
+
+[QUESTION: Why do you add the description of scatterplots here and directly underneath the questions? DO you really need the scatterplots here? Or is the overview figure above and the description of column titles enough to formulate your questions?]
 
 Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, downloads/ captions/ transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
 
