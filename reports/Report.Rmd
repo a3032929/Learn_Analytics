@@ -150,7 +150,7 @@ The initial data file(s) of interest was(were) the *'Weekly-sentiment-survey-res
 As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore utilize the video data to understand students' engagement with the course, and consequently the retention rate of the learners throughout the course. This will enable the course provider to make informed decisions on the design and improvements of the course. To achieve this, the focus will be on the '*video.stats*' data files provided by FutureLearn. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data are available. There appears to be no missing values from the data, therefore the data files for '*video.stats*' are very complete. 
 
 
-## 2.2 Describe data (Examine the “gross” or “surface” properties of the acquired data and report on the results.  including the format of the data, the quantity of data (for example, the number of records and fields in each table), the identities of the fields, and any other surfacefeatures which have been discovered. Evaluate whether the data acquired satisfies the relevant requirements. Volumetric analysis of data, Attribute types and values, Check accessibility and availability of attributes: Check attribute types (numeric, symbolic, taxonomy, etc. Check attribute value ranges  Analyze attribute correlations  Understand the meaning of each attribute and attribute value in business terms  For each attribute, compute basic statistics (e.g., compute distribution, average, max, min, standard deviation, variance, mode, skewness, etc.)  Analyze basic statistics and relate the results to their meaning in business terms Decide if the attribute is relevant for the specific data mining goal)
+## 2.2 Describe data 
 
 Displaying below is the list of column names of the '*video.stats*'.
 
@@ -165,9 +165,22 @@ The dataset contains information on the video topics and the number of viewers. 
 
 *The data surrounding the percentage of devices (and features) used for the videos will not be selected for this study (due to time constraints, etc) (Do I include the data on using captions...) a combination of columns will be selected for each individual analysis. *
 
+*UNSURE ABOUT THE FOLLOWING STATS AND SUMMARY TEXT - SHOULD IT BE IN*
+*For each attribute, compute basic statistics (e.g., compute distribution, average, max, min, standard deviation, variance, mode, skewness, etc.)  Analyze basic statistics and relate the results to their meaning in business terms Decide if the attribute is relevant for the specific data mining goal)* Below is a basic summary of the types of data and distribution of each variable. 
+
 ```{r}
 summary(run3)
 ```
+
+- There some skewness in the *'total_views'* data, ranging from a minimum of 446 total views to 1659 total views. By analysing the number of viewers for each topic, it potentially show whether certain topics attract more viewers. 
+
+- There are some skewness of the data in columns *'asia_views_percentage'* and *'africa_views_percentage'*, therefore further investigation can potentially show if there are higher drop out rates from certain continents compared to others
+
+- The video duration are likely to be measured in minutes, however the durations spans across a large range of minutes, from 37 minutes (> 1 hours) to 426 minutes (just over 7 hours). The average length of the video is 231 minutes (almost 4 hours). The duration of the video could possibly impact the learners' engagement to the course.
+
+- From the 'viewed_percent' columns, it is clear from the summary that there is a downward trend in the number of viewers throughout the duration of the videos. Further analysis may help to identify if there should be a optimum duration of the video materials in order to keep learners engaged.
+
+- ie. why not use data on device - There are 6 columns which refer to the types of devices the learners have used to watched the videoes. There are minimal data for columns *'console_device_percentage'* and *'tv_device_percentage'* and zero values recorded for *'unknown_device_percentage'*, therefore there is insufficient data to draw on how the use of certain devices affect the learners' engagement. In addition, the data does not show which continent prefers watching the videos from certain devices. 
 
 
 
@@ -177,7 +190,7 @@ These two columns will be combined to allow quick reference to the order of whic
 
 The following initial visualizations will help determine the areas to consider for further investigation. 
 
-### Total number of viewing and features used through the duration of videos (DELETE??)
+### Total number of viewing and features used through the duration of videos (TO DELETE??)
 
 The scatterplot matrix will be used to visualize any pairs of relationships of all of the different variables within the data. For the plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
 
@@ -191,7 +204,6 @@ pairs(~video_duration + total_views + total_caption_views + total_transcript_vie
 ```
 
 There are no obvious relationship observed between the length of the videos and the amount of views and features used for the videos. However as the total number of views increases, so does the number of downloads, captions used and transcripts used, which is to be expected.
-
 
 
 ## Number of viewers for each video topic
@@ -209,6 +221,9 @@ For this study, we will investigate the videos data from the course to answer th
 1. Does the duration of the videos have an impact on the viewing rates across different continents?
 2. Does the content of the videos have an impact on the viewing rates across different continents?
 3. Is there a correlation between duration of videos and drop out rate of the learners?
+
+
+
 
 
 ## 2.4 Data Quality
