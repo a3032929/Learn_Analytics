@@ -157,9 +157,10 @@ The merging of the data files from the other runs will be considered later throu
 
 ## 2.2 Describe data (Examine the “gross” or “surface” properties of the acquired data and report on the results.  including the format of the data, the quantity of data (for example, the number of records and fields in each table), the identities of the fields, and any other surfacefeatures which have been discovered. Evaluate whether the data acquired satisfies the relevant requirements. Volumetric analysis of data, Attribute types and values, Check accessibility and availability of attributes: Check attribute types (numeric, symbolic, taxonomy, etc. Check attribute value ranges  Analyze attribute correlations  Understand the meaning of each attribute and attribute value in business terms  For each attribute, compute basic statistics (e.g., compute distribution, average, max, min, standard deviation, variance, mode, skewness, etc.)  Analyze basic statistics and relate the results to their meaning in business terms Decide if the attribute is relevant for the specific data mining goal)
 
-Below is the list of column names in the data. 
-```{r video-stats 3}
-names(run3unite)
+Displaying below is the list of column names of the '*video.stats*'.
+
+```{r video-stats 3, echo=FALSE}
+names(run3)
 ```
 There are 13 rows for each datafile, one row corresponding to each video content throughout the course. 
 
