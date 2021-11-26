@@ -5,6 +5,10 @@ run3 <- cyber.security.3_video.stats
 
 cache('run3')
 
+# check number of rows and columns in dataframe
+nrow(run3)
+ncol(run3)
+
 # set run3 video.stats data to run3unite
 # combine step_position and title together
 run3unite <- cyber.security.3_video.stats %>% 

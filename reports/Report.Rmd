@@ -149,11 +149,6 @@ The initial data file(s) of interest was(were) the *'Weekly-sentiment-survey-res
 
 As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore utilize the video data to understand students' engagement with the course, and consequently the retention rate of the learners throughout the course. This will enable the course provider to make informed decisions on the design and improvements of the course. To achieve this, the focus will be on the '*video.stats*' data files provided by FutureLearn. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data are available. There appears to be no missing values from the data, therefore the data files for '*video.stats*' are very complete. 
 
-*Should I move below paragraph to 'select data' in data prep phase???*
-The data files, as explained above, contain information on the video topics and the number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. *The data surrounding the percentage of devices (and features) used for the videos will not be selected for this study (due to time constraints, etc) (Do I include the data on using captions...)*
-
-The merging of the data files from the other runs will be considered later through the project.
-
 
 ## 2.2 Describe data (Examine the “gross” or “surface” properties of the acquired data and report on the results.  including the format of the data, the quantity of data (for example, the number of records and fields in each table), the identities of the fields, and any other surfacefeatures which have been discovered. Evaluate whether the data acquired satisfies the relevant requirements. Volumetric analysis of data, Attribute types and values, Check accessibility and availability of attributes: Check attribute types (numeric, symbolic, taxonomy, etc. Check attribute value ranges  Analyze attribute correlations  Understand the meaning of each attribute and attribute value in business terms  For each attribute, compute basic statistics (e.g., compute distribution, average, max, min, standard deviation, variance, mode, skewness, etc.)  Analyze basic statistics and relate the results to their meaning in business terms Decide if the attribute is relevant for the specific data mining goal)
 
@@ -162,13 +157,18 @@ Displaying below is the list of column names of the '*video.stats*'.
 ```{r video-stats 3, echo=FALSE}
 names(run3)
 ```
-There are 13 rows for each datafile, one row corresponding to each video content throughout the course. 
+There are 13 rows of data in each '*video.stats*' data file, one row corresponding to each video content throughout the course. 
 
-There are 28 columns, and a combination of columns will be selected for each individual analysis. 
+There are 28 columns. The first column of each data file describes the weekly block and the step position of where a particular video is located within the course. The second column contains strings of data which refers to the video title, therefore one can deduce the topic of the video. The remaining columns (columns 3 - 28) contain numerical data, of which some contains percentage values. The data sets are mostly complete with no visible missing data. The format, variables and completeness of the data files are all consistent. Therefore merging of the data files from the other runs could be performed as ease. 
 
-The data sets are mostly complete with no visible missing data.
+The data files contain information on the video topics and the number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file satisfies the business objective requirements of the project.  
 
-The first column of each data set describes the step number of each video. The second column is a string which the video title. These two columns will be combined to allow quick reference to the order of which the videos appears throughout the course. Columns 3-28 consist of continuous data.
+*The data surrounding the percentage of devices (and features) used for the videos will not be selected for this study (due to time constraints, etc) (Do I include the data on using captions...) a combination of columns will be selected for each individual analysis. *
+
+
+
+
+
 
 ## 2.3 Explore data (This task addresses data mining questions using querying, visualization, and reporting techniques. These include distribution of key attributes (for example, the target attribute of a prediction task) relationshipsbetween pairs or small numbers of attributes, results of simple aggregations, properties of significantsub-populations, and simple statistical analyses. These analyses may directly address the data mining goals; they may also contribute to or refine the data description and quality reports, and feed into the transformation and other data preparation steps needed for further analysis.Describe results of this task, including first findings or initial hypothesis and their impact on the remainder of the project. If appropriate, include graphs and plots to indicate data characteristics that suggest furtherexamination of interesting data subsets.Analyze properties of interesting attributes in detail (e.g., basic statistics, interesting sub-populations:  Identify characteristics of sub-populations/ Form suppositions for future analysis  Consider and evaluate information and findings in the data descriptions report  Form a hypothesis and identify actions Transform the hypothesis into a data mining goal, if possible  Clarify data mining goals or make them more precise. A “blind” search is not necessarily useless, but a more directed search toward business objectives is preferable. Perform basic analysis to verify the hypothesis)
 
@@ -206,12 +206,14 @@ ADD HERE: The data sets from each run have been compared and it was found that t
 
 
 # 3. Data Preparation - Q1 Does the duration of the videos have an impact on the viewing rates across different continents?
+
+## Run 3
+
 ## 3.1 Dataset (These are the dataset(s) produced by the data preparation phase, which will be used for modeling or the major analysis work of the project.Describe the dataset(s) that will be used for the modeling and the major analysis work of the project)
 
 ## 3.2 Select data (Decide on the data to be used for analysis. Criteria include relevance to the data mining goals, quality, and technical constraints such as limits on data volume or data types. Note that data selection covers selectionof attributes (columns) as well as selection of records (rows) in a table. Rationale for inclusion/exclusion: List the data to be included/excluded and the reasons for these decisions.)
 
-*Copied from data understanding part*???
-The data files, as explained above, contain information on the video topics and the number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. *The data surrounding the percentage of devices (and features) used for the videos will not be selected for this study (due to time constraints, etc) (Do I include the data on using captions...)*
+These two columns will be combined to allow quick reference to the order of which the videos appears throughout the course. 
 
 ## 3.3 Clean data (Raise the data quality to the level required by the selected analysis techniques. This may involve selection of clean subsets of the data, the insertion of suitable defaults, or more ambitious techniques such as the estimation of missing data by modeling.Describe what decisions and actions were taken to address the data quality problems reported during the Verify Data Quality task of the Data Understanding phase. Transformations of the data for cleaning purposes and the possible impact on the analysis results should be considered.)
 
@@ -232,21 +234,17 @@ The data pre-processing codes are located in the 'munge' folder.
 The percentage viewed from each continent throughout the course is calculated by [ADD DESCRIPTION OF HOW YOU CALCULATED IT].These values were then combined with the original '*step_title*' and '*video_duration*' columns. Values are rounded to full numbers [HOW MANY DECIMAL POINTS INSTEAD OF FULL NUMBERS, e.g values are given as numbers with no decimal points] and '*NaN*' are replaced with 0, as these result from the viewings across Antarctica (*antarctica_views_percentage*), which were 0 across all runs.
 
 
-
-## Run 3 data prep Info 
-
 ## All runs data prep info 
 
 
 
 
-# 4. Modelling
+# 4. Modelling - Question 1. Does the duration of the videos have an impact on the viewing rates across different continents?
 ## 4.1 Assess model (r interprets the models according to his domain knowledge, the data mining success criteria, and the desired test design. The data mining engineer judges the success of the application of modeling and discovery techniques technically; he contacts business analysts and domain experts later in order to discuss the data mining results in the business context???????)
 ## State conclusions regarding patterns in the data (if any); sometimes the model reveals important facts about the data without a separate assessment process (e.g., that the output or conclusion is duplicated in one of the inputs)
 
-## Run 3
+## Run 3 modelling
 
-## Question 1. Does the duration of the videos have an impact on the viewing rates across different continents?
 
 ```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
 line_cont3_pct_dur_V
@@ -260,7 +258,35 @@ run3_continuous
 ```
 
 
-## Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
+## All runs modelling
+
+prove with all runs
+
+```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
+line_cont_all_pct_dur_V
+```
+
+
+### line drop out of continent vs topic for all runs 
+```{r line_cont_all_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
+run_all_continuous
+```
+
+
+
+
+# 5. Data Preparation -  Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
+
+## Run3 Data prep
+
+## All run data prep
+
+
+
+# 6. Modelling - Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
+
+## Run 3 modelling
+
 ### Worldwide views of videos
 
 Figure XX attempts to demonstrates the relationship between the video duration and the number of views from across different continents. 
@@ -284,9 +310,35 @@ line_cont3_pct_topic_V
 The graph shows that for certain continents (Europe, North America and Oceania), there appears to be more views, therefore more engagements, on the topics within week 2 block of the course. On the other hand, there were more engagements from the learners of Africa and Asia continent, then a steady drop of viewers throughout the course. South America showed a dramatic uptake of viewers for the 1st topic of week 2, then a reduction of engagement throughout most of the course. 
 
 
+## All run modelling
+
+### Worldwide views of videos using all runs as bars and absolute values
+```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
+stack_cont_all_AbV_topic_bar_V
+```
 
 
-## Question 3 Is there a correlation between duration of videos and drop out rate of the learners?
+### Actual views from continent using all runs and percentage
+
+```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
+line_cont_all_pct_topic_V
+```
+
+
+
+
+
+# 7. Data Preparation -Question 3 Is there a correlation between duration of videos and drop out rate of the learners?
+
+## Run 3 Data prep
+
+## All run data prep
+
+
+# 8. Modelling -Question 3 Is there a correlation between duration of videos and drop out rate of the learners?
+
+## Run 3 Modelling
+
 ### Total number of viewing and features used through the duration of videos
 
 Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, downloads/ captions/ transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
@@ -314,42 +366,12 @@ There is potentially a pattern observed on the relationship between the video du
 
 
 
+## All runs modelling
 
-## All runs
-
-## Question 1. Does the duration of the videos have an impact on the viewing rates across different continents?
-prove with all runs
-
-```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
-line_cont_all_pct_dur_V
-```
-
-
-### line drop out of continent vs topic for all runs 
-```{r line_cont_all_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
-run_all_continuous
-```
-
-## Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
-### Worldwide views of videos using all runs as bars and absolute values
-```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
-stack_cont_all_AbV_topic_bar_V
-```
-
-
-### Actual views from continent using all runs and percentage
-
-```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
-line_cont_all_pct_topic_V
-```
-
-
-## Question 3 Is there a correlation between duration of videos and drop out rate of the learners?
 ### Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos for all runs
 ```{r run3_7allpct_duration_scat, echo=FALSE}
 run3_7_allpct_duration_scat_V
 ```
-
 
 
 
