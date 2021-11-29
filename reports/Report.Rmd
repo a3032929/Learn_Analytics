@@ -239,35 +239,34 @@ Columns *'unknown_device_percentage'* and *'antarctica_views_percentage'* contai
 
 # 3. Data Preparation - Q1 Does the duration of the videos have an impact on the viewing rates across different continents?
 
-## Run 3 data prep
+## Run 3 data prep - Dataset (These are the dataset(s) produced by the data preparation phase, which will be used for modeling or the major analysis work of the project.Describe the dataset(s) that will be used for the modeling and the major analysis work of the project)
 
-## 3.1 Dataset (These are the dataset(s) produced by the data preparation phase, which will be used for modeling or the major analysis work of the project.Describe the dataset(s) that will be used for the modeling and the major analysis work of the project)
+## 3.1 Select data 
 
+The first hypothesis will investigate on whether the duration of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the length of the videos will have a negative or positive impact on the learners' engagement globally. The key columns for this investigation will be *'video_duration', 'total_views', 'europe_views_percentage', 'oceania_views_percentage', 'asia_views_percentage', 'north_america_views_percentage', 'south_america_views_percentage', 'africa_views_percentage' and 'antarctica_views_percentage'* from the *'video_stats'* dataset.
 
-## 3.2 Select data (Decide on the data to be used for analysis. Criteria include relevance to the data mining goals, quality, and technical constraints such as limits on data volume or data types. Note that data selection covers selectionof attributes (columns) as well as selection of records (rows) in a table. Rationale for inclusion/exclusion: List the data to be included/excluded and the reasons for these decisions.)
+The continent columns currently shows the split percentage of viewers from each continent for each video. This does not show whether there are any impact on the viewing rates across the continents. It only shows what proportion of the viewers for a particular video topic relates to a particular continent.
 
+To see how the viewing rates changes within each continent throughout the course, we would need to transform the values from these columns, so that the total number of viewings from each continent for each video is calculated. Therefore, we will see how the number of viewers within each of the continents changes throughout the course. (???)
 
-
-As the study is interested in the number of views across the continent and the drop out, therefore the columns relating to viewing in HD and different devices will be removed. Other remaining columns will remain as they may contain relevant information for the study. 
-
-## 3.3 Clean data (Raise the data quality to the level required by the selected analysis techniques. This may involve selection of clean subsets of the data, the insertion of suitable defaults, or more ambitious techniques such as the estimation of missing data by modeling.Describe what decisions and actions were taken to address the data quality problems reported during the Verify Data Quality task of the Data Understanding phase. Transformations of the data for cleaning purposes and the possible impact on the analysis results should be considered.)
-
-
-## 3.4 construct data (such as the production of derived attributes or entire new records, or transformed values for existing attributes. Derived attributes are new attributes that are constructed from one or more existing attributes in the same record. Example: area = length * width.Describe the creation of completely new records. Example: Create records for customers who made no purchase during the past year. There was no reason to have such records in the raw data, but for modeling purposes it might make sense to explicitly represent the fact that certain customers made zero purchases.)
+## 3.2 Clean data
 
 
-## 3.5 Integrate data (methods whereby information is combined from multiple tables or records to create new records or values.Merged data also covers aggregations. Aggregation refers to operations in which new values are computed by summarizing information from multiple records and/or tables)
+## 3.3 Construct data 
+
+In order to calculate the total number of viewings from each continent for each video (i.e. each row), a function (**col_3_summary**) was developed to take the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. An example is the calculation of total views of the first video from African viewers, which is calculated as (*Total Viewed*[row 2]/100) x *africa_views_percentage*[row 2]. The resulting data frame is stored in the *'cache'* folder.
+
+The resulting data frame then undergoes another transformation to calculate the percentage for each new continent value. For example, for the Europe views, we will take a new value from the Europe column and divide it by the highest value from within Europe, then multiply by 100 to calculate the percentage of viewers from within the continent for each video.
 
 
-## 3.6 Format data (Formatting transformations refer to primarily syntactic modifications made to the data that do not change its meaning, but might be required by the modeling tool.Some tools have requirements on the order of the attributes, such as the first field being a unique identifier for each record or the last field being the outcome field the model is to predict. It might be important to change the order of the records in the dataset. Perhaps the modeling tool requires that the records be sorted according to the value of the outcome attribute)
+## 3.4 Integrate data (methods whereby information is combined from multiple tables or records to create new records or values.Merged data also covers aggregations. Aggregation refers to operations in which new values are computed by summarizing information from multiple records and/or tables)
 
-the 'step_position' and the 'title' columns will be combined to allow quick reference to the order of the videos. This will also result in the 'step_position' data type being changed from numerical to character.  
 
-The data pre-processing codes are located in the 'munge' folder.
+## 3.5 Format data (Formatting transformations refer to primarily syntactic modifications made to the data that do not change its meaning, but might be required by the modeling tool.Some tools have requirements on the order of the attributes, such as the first field being a unique identifier for each record or the last field being the outcome field the model is to predict. It might be important to change the order of the records in the dataset. Perhaps the modeling tool requires that the records be sorted according to the value of the outcome attribute)
 
-[REPLACE WITH THIS] The total number of viewings from each continent for each video is calculated. This is calculated for each video (i.e. each row) by taking the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. An example is the calculation of total views of the first video from African viewers, which is calculated as (*Total Viewed*[row 2]/100)x*africa_views_percentage*[row 2].
 
 The percentage viewed from each continent throughout the course is calculated by [ADD DESCRIPTION OF HOW YOU CALCULATED IT].These values were then combined with the original '*step_title*' and '*video_duration*' columns. Values are rounded to full numbers [HOW MANY DECIMAL POINTS INSTEAD OF FULL NUMBERS, e.g values are given as numbers with no decimal points] and '*NaN*' are replaced with 0, as these result from the viewings across Antarctica (*antarctica_views_percentage*), which were 0 across all runs.
+
 
 
 ## All runs data prep info 
