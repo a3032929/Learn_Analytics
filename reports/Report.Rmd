@@ -197,7 +197,7 @@ Figure XX shows the number of viewers for each video based on the topic of the v
 ```{r run3_totalview_topic_bar, echo=FALSE, fig.width=10}
 run3_totalview_topic_bar_V
 ```
-hi
+
 The bar chart clearly indicated that as the learners progresses throughout the course, there is also a drop of viewers watching the videos too. As the learners are watching from different continents, we will therefore investigate if this trend continues in a similar manner for the learners from different continents and whether certain topics appear to attract learners more. 
 
 ### 2.3.2 Total number of viewing and features used through the duration of videos (TO DELETE??)
