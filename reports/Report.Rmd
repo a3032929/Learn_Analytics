@@ -138,12 +138,9 @@ There are 7 runs of data. Each run of data were measured several months apart fr
 
 - *'Video-stats'* (not included in run 1 and 2): the data files contain information on the video topics, and numerical data on the number of viewers, devices and features used to view the videos, how long have individuals watched the videos and the percentage of viewers from different continents. 
 
-. 
-
 ### 2.1.1 Initial data file selection
 
 The initial data file(s) of interest was(were) the *'Weekly-sentiment-survey-response'* data. These data would have been useful to combine with the data from the *'Leaving-survey-responses'* data files to potentially obtain a mixture of feedback which will provide constructive information for the course provider. The *'reason'* column was interesting as they contained free text therefore provided a direct source of feedback that could be analysed using Natural Language Processing (NLP). However, after closer observation, it appears that the data contained positively biased views of the individuals' experience with the course. The unstructured free text were also of poor quality as they contained incomplete sentences, single word feedback with lack of context and text that contains random symbols. In addition, there were many missing feedback data and due to only runs 6 and 7 containing a small selection of feedback, there is therefore insufficient data to draw substantial conclusions with the data. The *'Leaving-survey-responses'* data files also contains pre-selected responses, which indicates that the learners were only allowed to select from a very narrow range of opinions, therefore it does not provide meaningful insight into the sentiments of the learners. Lastly, the two sets of data files do not contain the same type of ID columns. The *'Leaving-survey-responses'* data files contained *'Learner_ID'*, which can be assumed that the responses were from the learners. The *'Weekly-sentiment-survey-response'* data files contained *'ID'*, which we cannot assume that the responses were from the learners only, as other data files (such as, the *'Team-members'* data files) have already shown that 'educators', 'mentors', etc all have an ID number assigned to each one of them. The responses could potentially come from individuals with conflicted interest with the course, therefore the responses will not be a reliable source of information to use to draw conclusions on the course. 
-
 
 ### 2.1.2 Final data file selection
 
@@ -183,57 +180,60 @@ summary(run3)
 - ie. why not use data on device - There are 6 columns which refer to the types of devices the learners have used to watched the videoes. There are minimal data for columns *'console_device_percentage'* and *'tv_device_percentage'* and zero values recorded for *'unknown_device_percentage'*, therefore there is insufficient data to draw on how the use of certain devices affect the learners' engagement. In addition, the data does not show which continent prefers watching the videos from certain devices. 
 
 
+## 2.3 Explore data 
 
-## 2.3 Explore data (This task addresses data mining questions using querying, visualization, and reporting techniques. These include distribution of key attributes (for example, the target attribute of a prediction task) relationshipsbetween pairs or small numbers of attributes, results of simple aggregations, properties of significantsub-populations, and simple statistical analyses. These analyses may directly address the data mining goals; they may also contribute to or refine the data description and quality reports, and feed into the transformation and other data preparation steps needed for further analysis.Describe results of this task, including first findings or initial hypothesis and their impact on the remainder of the project. If appropriate, include graphs and plots to indicate data characteristics that suggest furtherexamination of interesting data subsets.Analyze properties of interesting attributes in detail (e.g., basic statistics, interesting sub-populations:  Identify characteristics of sub-populations/ Form suppositions for future analysis  Consider and evaluate information and findings in the data descriptions report  Form a hypothesis and identify actions Transform the hypothesis into a data mining goal, if possible  Clarify data mining goals or make them more precise. A “blind” search is not necessarily useless, but a more directed search toward business objectives is preferable. Perform basic analysis to verify the hypothesis)
+The following initial visualizations will explore the data and help determine the areas to consider for further investigation. As the first set of video data begins from run 3, therefore the run 3 data will be used for the initial exploration.
 
-These two columns will be combined to allow quick reference to the order of which the videos appears throughout the course. 
+The two first columns *'step_position'* and *'title'* will be combined to allow quick reference to the order of which the videos appears throughout the course. This new column will be called *'step_title'*
 
-The following initial visualizations will help determine the areas to consider for further investigation. 
+### 2.3.1 Number of viewers for each video topic
 
-### Total number of viewing and features used through the duration of videos (TO DELETE??)
+*For this study, we will investigate the course data and initially decide on a set of data to analyse in more detail to understand students' engagement with the online course. This set of data will be chosen according to (a) the richness of information contained in the data, and (b) the completeness of the data that is available. Based on this, the most promising lines of investigation will be decided. The goal is to derive insight from the data on engagement and retention during the course which will enable the Newcastle University and FutureLearn to potentially modify and improve the course content to achieve optimise learner engagement and retention. (This is achieved by identifying correlations between the factors and the learners????)The dataset contains information on the video topics and the number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file satisfies the business objective requirements of the project.*  
 
-The scatterplot matrix will be used to visualize any pairs of relationships of all of the different variables within the data. For the plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
+Part of the data mining goal is to understand whether there is a trend on learners' engagement, we will look at how the number of viewers have changed throughout the course. 
 
-[QUESTION: Why do you add the description of scatterplots here and directly underneath the questions? DO you really need the scatterplots here? Or is the overview figure above and the description of column titles enough to formulate your questions?]
-
-Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, downloads/ captions/ transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
-
-```{r run3_duration_features_scatMx, echo=FALSE}
-pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite,
-      main = "Figure XX: Total Views and Features used through Video duration", pch = 19, upper.panel = NULL)
-```
-
-There are no obvious relationship observed between the length of the videos and the amount of views and features used for the videos. However as the total number of views increases, so does the number of downloads, captions used and transcripts used, which is to be expected.
-
-
-## Number of viewers for video duration
-
-```{r run3_duration_pctview_scatMx, echo=FALSE}
-pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
-        viewed_seventyfive_percent + viewed_onehundred_percent, data = run3unite,
-      labels = c("Video duration", "25% viewed", "50% viewed", "75% viewed", "100% viewed"),
-      main = "Figure XX: Total Percentage viewed used through Video duration", pch = 19, upper.panel = NULL)
-```
-
-
-## Number of viewers for each video topic
-
-Figure XX shows the number of viewers for each video based on the topic of the videos.
+Figure XX shows the number of viewers for each video based on the topic of the videos and the total of views for each other these videos.
 
 ```{r run3_totalview_topic_bar, echo=FALSE, fig.width=10}
 run3_totalview_topic_bar_V
 ```
 
-### 2.3.1 Hypothesis
+The bar chart clearly indicated that as the learners progresses throughout the course, there is also a drop of viewers watching the videos too. As the learners are watching from different continents, we will therefore investigate if this trend continues in a similar manner for the learners from different continents and whether certain topics appear to attract learners more. 
 
-For this study, we will investigate the videos data from the course to answer the following questions:
+### 2.3.2 Total number of viewing and features used through the duration of videos (TO DELETE??)
+
+The scatterplot matrix will be used to visualize any pairs of relationships of all of the different variables within the data. For the plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
+
+*[QUESTION: Why do you add the description of scatterplots here and directly underneath the questions? DO you really need the scatterplots here? Or is the overview figure above and the description of column titles enough to formulate your questions?]*
+
+Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, *downloads*/ captions/ transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
+
+```{r run3_duration_features_scatMx, echo=FALSE}
+pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite,
+      main = "Figure XX: Total Views and Features used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.8)
+```
+
+There are no obvious relationship observed between the length of the videos and the amount of views and features used for the videos. However as the total number of views increases, so does the number of downloads, captions used and transcripts used, which is to be expected. As there is no obvious relationship in the attributes (??), we will therefore exclude this from our study.
+
+### 2.3.3 Number of viewers for video duration
+
+Figure XX will demonstrate how the percentage of viewers have changed throughout the duration of the videos. 
+
+```{r run3_duration_pctview_scatMx, echo=FALSE}
+pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
+        viewed_seventyfive_percent + viewed_onehundred_percent, data = run3unite,
+      labels = c("Video duration", "25% viewed", "50% viewed", "75% viewed", "100% viewed"),
+      main = "Figure XX: Total Percentage viewed used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.8)
+```
+The key plots of interest is on the left column. The y-axis for the percentage of viewers is decreasing throughout the duration of the videos. Further investigation will look at how large in decrease and at what point bthroughout the duration of the videos, do we see the largest drop of viewers. This can show how engaged can learners stay for and if the duration of the videos have an impact of how long the learners stay engaged for.
+
+### 2.3.4 Hypothesis
+
+From the initial exploration, it has shown a number of interesting areas which we would like to further analyse, particularly around the viewing rates from learners of different continents and whether the video topics and length of the videos are a contributing factor to the learners' retention rate. Therefore we will investigate the videos data from the course to answer the following questions:
 
 1. Does the duration of the videos have an impact on the viewing rates across different continents?
 2. Does the content of the videos have an impact on the viewing rates across different continents?
 3. Is there a correlation between duration of videos and drop out rate of the learners?
-
-
-
 
 
 ## 2.4 Data Quality
@@ -243,13 +243,12 @@ The data sets from each run have been compared and it was found that they all co
 Columns *'unknown_device_percentage'* and *'antarctica_views_percentage'* contain values of 0. This can be assumed that the data provider has found no learners using unknown devices and there are no learners from the Antarctica, which is reasonable as according to the *World Population Review*, there is roughly 1000-4000 seasonal residents in the Antarctica (worldpopulationreview.com/continents/antarctica-population). Therefore we can assume that the values of 0 are accurate under the *'antarctica_views_percentage'* column. 
 
 
-
-
 # 3. Data Preparation - Q1 Does the duration of the videos have an impact on the viewing rates across different continents?
 
 ## Run 3 data prep
 
 ## 3.1 Dataset (These are the dataset(s) produced by the data preparation phase, which will be used for modeling or the major analysis work of the project.Describe the dataset(s) that will be used for the modeling and the major analysis work of the project)
+
 
 ## 3.2 Select data (Decide on the data to be used for analysis. Criteria include relevance to the data mining goals, quality, and technical constraints such as limits on data volume or data types. Note that data selection covers selectionof attributes (columns) as well as selection of records (rows) in a table. Rationale for inclusion/exclusion: List the data to be included/excluded and the reasons for these decisions.)
 
@@ -259,9 +258,12 @@ As the study is interested in the number of views across the continent and the d
 
 ## 3.3 Clean data (Raise the data quality to the level required by the selected analysis techniques. This may involve selection of clean subsets of the data, the insertion of suitable defaults, or more ambitious techniques such as the estimation of missing data by modeling.Describe what decisions and actions were taken to address the data quality problems reported during the Verify Data Quality task of the Data Understanding phase. Transformations of the data for cleaning purposes and the possible impact on the analysis results should be considered.)
 
+
 ## 3.4 construct data (such as the production of derived attributes or entire new records, or transformed values for existing attributes. Derived attributes are new attributes that are constructed from one or more existing attributes in the same record. Example: area = length * width.Describe the creation of completely new records. Example: Create records for customers who made no purchase during the past year. There was no reason to have such records in the raw data, but for modeling purposes it might make sense to explicitly represent the fact that certain customers made zero purchases.)
 
+
 ## 3.5 Integrate data (methods whereby information is combined from multiple tables or records to create new records or values.Merged data also covers aggregations. Aggregation refers to operations in which new values are computed by summarizing information from multiple records and/or tables)
+
 
 ## 3.6 Format data (Formatting transformations refer to primarily syntactic modifications made to the data that do not change its meaning, but might be required by the modeling tool.Some tools have requirements on the order of the attributes, such as the first field being a unique identifier for each record or the last field being the outcome field the model is to predict. It might be important to change the order of the records in the dataset. Perhaps the modeling tool requires that the records be sorted according to the value of the outcome attribute)
 

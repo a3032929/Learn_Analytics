@@ -12,4 +12,4 @@ pairs(~video_duration + viewed_five_percent + viewed_ten_percent + viewed_twenty
 pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
         viewed_seventyfive_percent + viewed_onehundred_percent, data = run3unite,
       labels = c("Video duration", "25% viewed", "50% viewed", "75% viewed", "100% viewed"),
-      main = "Figure XX: Total Percentage viewed used through Video duration", pch = 19, upper.panel = NULL)
+      main = "Figure XX: Total Percentage viewed used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.8)
