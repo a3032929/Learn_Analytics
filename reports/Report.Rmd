@@ -206,6 +206,16 @@ pairs(~video_duration + total_views + total_caption_views + total_transcript_vie
 There are no obvious relationship observed between the length of the videos and the amount of views and features used for the videos. However as the total number of views increases, so does the number of downloads, captions used and transcripts used, which is to be expected.
 
 
+## Number of viewers for video duration
+
+```{r run3_duration_pctview_scatMx, echo=FALSE}
+pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
+        viewed_seventyfive_percent + viewed_onehundred_percent, data = run3unite,
+      labels = c("Video duration", "25% viewed", "50% viewed", "75% viewed", "100% viewed"),
+      main = "Figure XX: Total Percentage viewed used through Video duration", pch = 19, upper.panel = NULL)
+```
+
+
 ## Number of viewers for each video topic
 
 Figure XX shows the number of viewers for each video based on the topic of the videos.
