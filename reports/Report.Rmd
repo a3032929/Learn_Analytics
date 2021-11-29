@@ -401,7 +401,7 @@ There is potentially a pattern observed on the relationship between the video du
 ## All runs modelling
 
 ### Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos for all runs
-```{r run3_7allpct_duration_scat, echo=FALSE}
+```{r run3_7_allpct_duration_scat_V, echo=FALSE}
 run3_7_allpct_duration_scat_V
 ```
 
