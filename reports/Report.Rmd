@@ -290,11 +290,6 @@ line_cont3_pct_dur_V
 
 no correlation
 
-### line drop out of continent vs topic
-```{r line_cont3_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
-run3_continuous
-```
-
 
 ## All runs modelling
 
@@ -303,13 +298,6 @@ prove with all runs
 ```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
 line_cont_all_pct_dur_V
 ```
-
-
-### line drop out of continent vs topic for all runs 
-```{r line_cont_all_pct_highlow, echo=FALSE, fig.width=11, fig.height=7}
-run_all_continuous
-```
-
 
 
 
