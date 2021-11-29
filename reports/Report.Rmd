@@ -176,7 +176,9 @@ summary(run3)
 
 - There are some skewness of the data in columns *'asia_views_percentage'* and *'africa_views_percentage'*, therefore further investigation can potentially show if there are higher drop out rates from certain continents compared to others
 
-- The video duration are likely to be measured in minutes, however the durations spans across a large range of minutes, from 37 minutes (> 1 hours) to 426 minutes (just over 7 hours). The average length of the video is 231 minutes (almost 4 hours). The duration of the video could possibly impact the learners' engagement to the course.
+REPLACE THIS: - The video duration are likely to be measured in minutes, however the durations spans across a large range of minutes, from 37 minutes (> 1 hours) to 426 minutes (just over 7 hours). The average length of the video is 231 minutes (almost 4 hours). The duration of the video could possibly impact the learners' engagement to the course.
+
+WITH THIS: - The unit for the values of the video duration is not included in the files. The most likely units would be minutes or seconds. Looking at the shortest and longest videos, the range could be either 37 min to 426 min (~7 hours), or 37 seconds to 426 seconds (~7 min). It is unlikely that any single video would last 7 hours, hence it is assumed that the duration is given in seconds. The average time of videos is 231 min (~4 min), which is a realistic value for an online course.
 
 - From the 'viewed_percent' columns, it is clear from the summary that there is a downward trend in the number of viewers throughout the duration of the videos. Further analysis may help to identify if there should be a optimum duration of the video materials in order to keep learners engaged.
 
