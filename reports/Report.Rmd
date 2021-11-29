@@ -186,7 +186,7 @@ The two first columns *'step_position'* and *'title'* will be combined to allow 
 
 ### 2.3.1 Number of viewers for each video topic
 
-Part of the data mining goal is to understand whether there is a trend on learners' engagement, we will look at how the number of viewers have changed throughout the course. 
+Part of the data mining goal is to understand whether there is a trend on learners' engagement, therefore we will look at how the number of viewers have changed throughout the course. 
 
 Figure XX shows the number of viewers for each video based on the topic of the videos and the total of views for each other these videos.
 
@@ -200,16 +200,14 @@ The bar chart clearly indicated that as the learners progresses throughout the c
 
 The scatterplot matrix will be used to visualize any pairs of relationships of all of the different variables within the data. For the plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
 
-*[QUESTION: Why do you add the description of scatterplots here and directly underneath the questions? DO you really need the scatterplots here? Or is the overview figure above and the description of column titles enough to formulate your questions?]*
-
-Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, *downloads*/ captions/ transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
+Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, captions and transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
 
 ```{r run3_duration_features_scatMx, echo=FALSE}
 pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite,
-      main = "Figure XX: Total Views and Features used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.8)
+      main = "Figure XX: Total Views and Features used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.7)
 ```
 
-There are no obvious relationship observed between the length of the videos and the amount of views and features used for the videos. However as the total number of views increases, so does the number of downloads, captions used and transcripts used, which is to be expected. As there is no obvious relationship in the attributes (??), we will therefore exclude this from our study.
+There are no obvious relationship observed between the length of the videos and the amount of views and features used for the videos. However as the total number of views increases, so does the number of  captions used and transcripts used, which is to be expected. As there is no obvious relationship in the attributes (??), we will therefore not continue with investigating on the features used in our study.
 
 ### 2.3.3 Number of viewers for video duration
 
@@ -219,9 +217,9 @@ Figure XX will demonstrate how the percentage of viewers have changed throughout
 pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
         viewed_seventyfive_percent + viewed_onehundred_percent, data = run3unite,
       labels = c("Video duration", "25% viewed", "50% viewed", "75% viewed", "100% viewed"),
-      main = "Figure XX: Total Percentage viewed used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.8)
+      main = "Figure XX: Total Percentage viewed used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.7)
 ```
-The key plots of interest is on the left column. The y-axis for the percentage of viewers is decreasing throughout the duration of the videos. Further investigation will look at how large in decrease and at what point bthroughout the duration of the videos, do we see the largest drop of viewers. This can show how engaged can learners stay for and if the duration of the videos have an impact of how long the learners stay engaged for.
+The key plots of interest are on the left column. The y-axis for the percentage of viewers is decreasing throughout the duration of the videos. Further investigation will look at how large the decrease is (??) and at what point throughout the duration of the videos, do we see the largest drop of viewers. This can show how engaged can learners stay for and if the duration of the videos have an impact of how long the learners stay engaged for.
 
 ### 2.3.4 Hypothesis
 
@@ -236,7 +234,7 @@ From the initial exploration, it has shown a number of interesting areas which w
 
 The data sets from each run have been compared and it was found that they all contain the same number of rows and columns, and the labels for rows and columns are consistent across all 5 runs. The data sets are mostly complete with no visible missing data. The format, variables and completeness of the data files are all consistent. Therefore the quality of the data is good and the merging of the data files from the other runs could be performed as ease.
 
-Columns *'unknown_device_percentage'* and *'antarctica_views_percentage'* contain values of 0. This can be assumed that the data provider has found no learners using unknown devices and there are no learners from the Antarctica, which is reasonable as according to the *World Population Review*, there is roughly 1000-4000 seasonal residents in the Antarctica (worldpopulationreview.com/continents/antarctica-population). Therefore we can assume that the values of 0 are accurate under the *'antarctica_views_percentage'* column. 
+Columns *'unknown_device_percentage'* and *'antarctica_views_percentage'* contain values of 0. This can be assumed that the data provider has found no learners using unknown devices and there are no learners from the Antarctica, which is reasonable as according to the *World Population Review*, there is roughly 1000-4000 seasonal residents in the Antarctica (worldpopulationreview.com/continents/antarctica-population). Therefore we can assume that the values of 0 are accurate under the *'antarctica_views_percentage'* column. (should I remove device comment if no analysis on devices??)
 
 
 # 3. Data Preparation - Q1 Does the duration of the videos have an impact on the viewing rates across different continents?
