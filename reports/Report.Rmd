@@ -243,7 +243,7 @@ Columns *'unknown_device_percentage'* and *'antarctica_views_percentage'* contai
 ## Run 3 data prep - Dataset 
 ## 3.1 Select data 
 
-The first hypothesis will investigate on whether the duration of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the length of the videos will have a negative or positive impact on the learners' engagement globally. The key columns for this investigation will be *'video_duration', 'total_views', 'europe_views_percentage', 'oceania_views_percentage', 'asia_views_percentage', 'north_america_views_percentage', 'south_america_views_percentage', 'africa_views_percentage' and 'antarctica_views_percentage'* from the *'video_stats'* dataset.
+The first hypothesis will investigate on whether the duration of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the length of the videos will have a negative or positive impact on the learners' engagement globally. The key columns for this investigation will be *'video_duration', 'total_views', 'europe_views_percentage', 'oceania_views_percentage', 'asia_views_percentage', 'north_america_views_percentage', 'south_america_views_percentage', 'africa_views_percentage' and 'antarctica_views_percentage'* from the *'video_stats'* dataset, which has been assigned to the *'run3unite'* variable.
 
 
 ```{r, echo=FALSE}
@@ -282,9 +282,9 @@ The resulting dataframe is then transformed to a 'long' format, i.e., a column f
 ## All runs data prep - Dataset 
 ## 3.5 Integrate data 
 
-The same data on the number of viewers from the continents will also be investigated for the data of all of the runs together. 
+The same data on the number of viewers from the continents will also be investigated for the data of all of the runs together. The *'video_stats'* data from all runs have been assigned to their corresponding variables, i.e. *'run4unite', 'run5unite', 'run6unite', 'run7unite'*.
 
-The same pre-processing steps will be undertaken as for run 3, to calculate the actual number of viewers within each continent for each video. Then the percentage viewers within each continent will be calculated too. The additional step will be, prior to calculating the percentage of viewers within each continent, the sum of the total actual viewers for all runs will be added together. Therefore the calculated percentages of viewers will be more accurate than taking the average percentage from each runs. 
+The same columns will be used for this investigation and the samepre-processing steps will be undertaken as for run 3, to calculate the actual number of viewers within each continent for each video. Then the percentage viewers within each continent will be calculated too. The additional step will be, prior to calculating the percentage of viewers within each continent, to sum of the total actual viewers for all runs for it to be added together. Therefore the calculated percentages of viewers will be more accurate than taking the average percentage from each runs. 
 
 Finally the dataframe will be transformed to a 'long' format to enable plotting of the data.
 
@@ -315,7 +315,9 @@ As expected, Fig XX for all of the runs supported the outcome of run 3, in which
 ## Run3 Data prep
 
 ## 5.1 Select Data
-The second hypothesis will investigate on whether the topics and content of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the learners from certain continents engages better with certain topics from the course or whether the learners find certain topics less interesting. The key columns for this investigation will be *'video_duration', 'total_views', 'europe_views_percentage', 'oceania_views_percentage', 'asia_views_percentage', 'north_america_views_percentage', 'south_america_views_percentage', 'africa_views_percentage' and 'antarctica_views_percentage'* from the *'video_stats'* dataset.
+The second hypothesis will investigate on whether the topics and content of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the learners from certain continents engages better with certain topics from the course or whether the learners find certain topics less interesting. As discussed in *'2.3 Explore data'*, the two first columns *'step_position'* and *'title'* will be combined to allow quick reference to the order of which the videos appears throughout the course. This new column will be called *'step_title'* The key columns for this investigation will be *'step_title', 'total_views', 'europe_views_percentage', 'oceania_views_percentage', 'asia_views_percentage', 'north_america_views_percentage', 'south_america_views_percentage', 'africa_views_percentage' and 'antarctica_views_percentage'* from the *'video_stats'* dataset.
+
+from the *'video_stats'* dataset, which has been assigned to the *'run3unite'* variable.
 
 The continent columns currently shows the split percentage of viewers from each continent for each video. This does not show whether there are any impact on the viewing rates across the continents. It only shows what proportion of the viewers for a particular video topic relates to a particular continent.
 
