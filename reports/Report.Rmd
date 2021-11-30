@@ -374,7 +374,8 @@ The same data, but with the percentage number of viewers from each continent, we
 ```{r line_cont3_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
 line_cont3_pct_topic_V
 ```
-The line chart shows a steady drop of viewers throughout the course. More learners from Oceania have continued in the course and watched the videos compared to Europe. 
+
+The line chart shows a steady drop of viewers throughout the course. More learners from Oceania have continued in the course and watched the videos compared to Europe. The lowest percentage of viewers are predominately from Asia and Africa. 
 
 There is an outlier on video *'2.1_Welcome to Week 2: payment security'*, which appears to come from South America. The outlier is showing a sudden increase of viewers from South America for this particular topic in the second block of the course.
 
@@ -389,12 +390,15 @@ From the initial observation of the graph, the trend of the viewers from all run
 
 With the runs combined, there are two videos, in which the number of viewers slightly increased compared to the previous video, these are *'1.19_Staying safe online: personal perspectives'* and *'3.2_Devices in the future house'*.
 
-The percentage viewers from each continent of all the runs were plotted on a line chart. Each line represent different continents.
+Just as for run 3, the percentage viewers from each continent of all the runs were plotted on a line chart. Each line represent different continents.
 
 ```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
 line_cont_all_pct_topic_V
 ```
 
+The line chart with the data from all runs still shows a steady drop of viewers throughout the course. However the gao between the percentage of learners from Oceania and Europe are a lot closer compared to what was seen in run 3. Both the Oceania and Europe percentages of viewers decrease at a similar rate. It is clearer that the lowest percentage of viewers are from Asia and Africa. 
+
+There is still an outlier on video *'2.1_Welcome to Week 2: payment security'*, from South America. The outlier is showing a smaller increase of viewers from South America for this particular topic in the second block of the course, with all the runs combined. 
 
 
 
