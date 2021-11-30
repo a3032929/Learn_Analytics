@@ -315,9 +315,20 @@ As expected, Fig XX for all of the runs supported the outcome of run 3, in which
 ## Run3 Data prep
 
 ## 5.1 Select Data
-The second hypothesis will investigate on whether the topics and content of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the learners from certain continents engages better with certain topics from the course or whether the learners find certain topics less interesting. As discussed in *'2.3 Explore data'*, the two first columns *'step_position'* and *'title'* will be combined to allow quick reference to the order of which the videos appears throughout the course. This new column will be called *'step_title'*. The key columns for this investigation will be *'step_title', 'total_views', 'europe_views_percentage', 'oceania_views_percentage', 'asia_views_percentage', 'north_america_views_percentage', 'south_america_views_percentage', 'africa_views_percentage' and 'antarctica_views_percentage'* from the *'video_stats'* dataset. The *'video_stats'* dataset, has previously been assigned to the *'run3unite'* variable, and now also includes the new column *'step_title'*.
+The second hypothesis will investigate on whether the topics and content of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the learners from certain continents engages better with certain topics from the course or whether the learners find certain topics less interesting. 
 
-The continent columns currently shows the split percentage of viewers from each continent for each video. This does not show whether there are any impact on the viewing rates across the continents. It only shows what proportion of the viewers for a particular video topic relates to a particular continent.
+For the same reasons as the data preparation for question 1, the continent columns within the *'video_stats'* dataset currently shows the split percentage of viewers from each continent for each video. However for this investigation, we want to use the actual number of viewers from each continent. This has already been calculated for question 1 and can be re-used for question 2. 
+
+As discussed in *'2.3 Explore data'*, the two first columns *'step_position'* and *'title'* from the *'video_stats'* dataset will be combined to allow quick reference to the order of which the videos appears throughout the course. This new column will be called *'step_title'*. 
+
+
+
+
+
+
+
+
+will transform the data is the same manner as question 1, and calculate theThis does not show whether there are any impact on the viewing rates across the continents. It only shows what proportion of the viewers for a particular video topic relates to a particular continent.
 
 To see how the viewing rates changes within each continent throughout the course, we would need to transform the values from these columns, so that the total number of viewings from each continent for each video is calculated. Therefore, we will see how the number of viewers within each of the continents changes throughout the course. (???)
 
