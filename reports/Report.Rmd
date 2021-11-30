@@ -292,21 +292,21 @@ Finally the dataframe will be transformed to a 'long' format to enable plotting 
 # 4. Modelling 
 ## Run 3 modelling
 
+The following plots is to determine whether the duration of the videos have an impact on the viewing rates across different continents. The new run 3 dataframe was plotted on to a scatter plot.
 
 ```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
 line_cont3_pct_dur_V
 ```
 
-no correlation
+There appears to be no correlation between the duration of the videos and the number of viewers from each continents. Before we can say that there is no correlation, the same plot will be plotted using the new dataframe with the number of viewers from each continent for all runs. 
 
 
 ## All runs modelling
 
-prove with all runs
-
 ```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
 line_cont_all_pct_dur_V
 ```
+As expected, there is a strong indication that there is no correlation between the duration of the videos and the number of viewers from each continents. Therefore we can investigate on whether there are correlations between the topics of the video and the number of viewers from each continents. 
 
 
 # Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values

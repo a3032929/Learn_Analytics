@@ -12,6 +12,6 @@ line_cont3_pct_dur_V <- new_cont_3_df_dur %>%
     legend.text = element_text(size=8))+
   scale_color_hue(labels=c("Africa", "Antarctica", "Asia", "Europe", "N. America", "Oceania", "S. America"))+
   scale_y_continuous(name = "Percentage Viewed per continent")+
-  scale_x_discrete(name = "Video duration")
+  scale_x_continuous(name = "Video duration")
 
 cache("line_cont3_pct_dur_V")
