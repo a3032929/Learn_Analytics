@@ -21,25 +21,30 @@ load.project()
 ### 1.1.1 Background
 Learning Analytics is a study of the "*measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the information system in which it occurs*(Shi, 2018)". The benefits of Learning Analytics is that it will provide insights to the factors which influences learners' retention. Learners' retention is one of the key drivers for institutes to implement Learning Analytics, as retaining students and their associated fees has a significant economical impact on the institutions' income (Xanthe Shacklock, 2016).  The insights from the Learning Analytics will enable course designers from educational institutes and MOOC (Massive open online course) providers to make informed decisions on the design and improvements of their courses, thus improving the learning environment for learners and drive more influx of learners enrolling. 
 
-FutureLearn is an MOOC provider, which collaborates with universities globally to offer online courses. Since their launch in 2013, they have attracted over seven million learners across the world (www.futurelearn.com). With a global reach of this extent, it is therefore crucial for FutureLearn to understand their performance in engaging with learners and providing an enhanced learning experience, which will retain and improve the learners' retention rate. The insights derived from Learning Analytics will therefore enable FutureLearn to understand areas of design or improvements which could create a positive impact for FutureLearn, their collaborators and their learners, in addition, to understand the key factors that could influence the retaining of students. 
+FutureLearn is an MOOC provider, which collaborates with universities globally to offer online courses. Since their launch in 2013, they have attracted over seven million learners across the world (www.futurelearn.com). With a global reach of this extent, it is therefore crucial for FutureLearn to understand their performance in engaging with learners and providing an enhanced learning experience, which will retain and improve the learners' retention rate. The insights derived from Learning Analytics will therefore enable FutureLearn to understand areas of design or improvements which could create a positive impact for FutureLearn, their collaborators and their learners, in addition, to understand the key factors that could influence the retention rate of students. 
 
 ### 1.1.2 Business Objectives
-This study will investigate the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (https://www.futurelearn.com/courses/cyber-security). There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement (Bote-Lorenzo, Gomez-Sanchez, 2017). Therefore in this study we will examine the data from the *Cyber Security Safety at Home, Online, in Life* course to understand the factors which could influence the learners' retention rate. *Insights into the relationship of engagements across different continents. Is the course able to reach and retain a broad range of learners from across the world, from the material provided in the course. We aim to understand the areas which appear successful and areas that don't. With this insight, informed decisions could be made on areas where improvements could be made (reword)*.  
+This study will investigate the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (https://www.futurelearn.com/courses/cyber-security). There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement (Bote-Lorenzo, Gomez-Sanchez, 2017). In this study, we will examine data from the *Cyber Security Safety at Home, Online, in Life* course to understand the factors which influence the learners' retention rate. We will look into if and how the continent the learners come from has an impact on the engagement of learners with the course. This insight will help to ensure that informed decisions can be taken to ensure the course appeals to learners from across the world. 
+
+<!-- *Insights into the relationship of engagements across different continents. Is the course able to reach and retain a broad range of learners from across the world, from the material provided in the course. We aim to understand the areas which appear successful and areas that don't. With this insight, informed decisions could be made on areas where improvements could be made (reword)*.   -->
 
 
 ## 1.2 Assess situation 
 
-The *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University). There are 53 csv data files, which provides information on the learners and the course. The remaining 7 pdf files provides an overview of the course structure. 
+The *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University). There are 53 .csv data files which provide information on the learners and the course. The remaining 7 .pdf files provide an overview of the course structure.
 
-The course is divided into three weekly blocks of study. For each weekly block, there are a number of steps to complete. The first week block contains 18 steps, and the second and third week blocks contains 21 steps. (Shi, 2018, futurelearn site). The blocks consist of a combination of videos, articles, exercises, discussions, quizzes and tests for the learners to complete throughout the course.
+The course is divided into three weekly blocks of study. For each weekly block, there are a number of steps to complete. The first week block contains 18 steps, and the second and third week blocks contains 21 steps. (Shi, 2018, futurelearn site). Each blocks consist of a combination of videos, articles, exercises, discussions, quizzes and tests for the learners to complete throughout the course.
 
-The 53 csv data files are split into 7 runs. Each run represents different time-frames of when the data were collected throughout the course, between mid 2016 - mid 2018. All runs consists of the following datafiles: *'Archetype-survey-responses', 'Enrolments', 'Leaving-survey-responses', 'Question-response', 'Step-activity', 'Weekly-sentiment-survey-response, 'Team-members', 'Video-stats'*, with the exception of run 1 not containing the  *'Team-members', 'Video-stats'* datafiles, and run 2 not containing the *'Video-stats'* datafile.
+The 53 .csv data files are split into 7 runs. Each run represents different time-frames of when the data was collected. All courses ran between mid-2016 and mid-2018. All runs consists of the following data files: *'Archetype-survey-responses', 'Enrolments', 'Leaving-survey-responses', 'Question-response', 'Step-activity', 'Weekly-sentiment-survey-response, 'Team-members', 'Video-stats'*, with the exception of run 1, which does not contain the  *'Team-members'* and *'Video-stats'* datafiles, and run 2, which does not contain the *'Video-stats'* data file.
 
 ### 1.2.1 Inventory of Resources 
 
 The following sections will list the resources available to the project.
 
 #### 1.2.1.1 Software Sources
+
+The following software packages have been used:
+
 - R
 - RStudio
 - Git
@@ -48,13 +53,13 @@ The use of these software sources are described below under *'1.2.2.1 Requiremen
 
 #### 1.2.1.2 Sources of Data and Knowledge
 
-- The CRISP-DM methodology (Cross-Industrie Standard Process for Data Mining) will be applied to structure the project life cycle (link the CRISP-DM guide). 
+- The CRISP-DM methodology (Cross-Industry Standard Process for Data Mining) will be applied to structure the project life cycle ([*TO DO] link the CRISP-DM guide*). 
 
-- 53 csv data files and 7 pdf files on the *Cyber Security Safety at Home, Online, in Life* course, provided by FutureLearn (via Newcastle University).
+- 53 .csv data files and 7 .pdf files on the *Cyber Security Safety at Home, Online, in Life* course, provided by FutureLearn (via Newcastle University).
 
 #### 1.2.1.3 Personnel Sources
 
-The following personnel will be utilized for expert domain knowledge and technical support (as well as to provide stakeholder guidance from a business perspective - add?)
+The following personnel will be used for expert domain knowledge and technical support as well as to gain stakeholder guidance on the business perspective.
 
 - Newcastle University lecturers (Dr Matthew Forshaw and Joe Matthews)  
 - External teaching experts
@@ -65,74 +70,86 @@ The following personnel will be utilized for expert domain knowledge and technic
 
 Applying best programming practice is crucial for this project to enable reproducibility. Therefore the following software and packages will be implemented to apply best practice:
 
-- R: used for all data analysis 
-- RStudio: integrated development environment to develop report 
-- ProjectTemplate: a R package to automate project file structure
-- RMarkdown: a R package to produce the report
-- ggplot2: a R package to produce data visualizations
-- Git: will be used for version control
+- R: Used for all data analysis 
+- RStudio: Integrated development environment to develop report 
+- ProjectTemplate: R package to automate project file structure
+- RMarkdown: R package to produce the report
+- ggplot2: R package to produce data visualizations
+- Git: Used for version control
 
-There are legal obligations and privacy policies, such as *GDPR (General Data Protection Regulation)* and the *Data Protection Act (2018)*, to consider before using the data. 
+There are legal obligations and privacy policies, such as *GDPR (General Data Protection Regulation)* and the *Data Protection Act (2018)*, to consider before using the data ([*TODO: check link to where this is discussed ]* see Section 1.2.2.2 Assumptions). 
 
 #### 1.2.2.2 Assumptions
 
 The following assumptions have been made on the data:
 
-- Assumed that full consent to use the data for this study has been provided by FutureLearn. To comply with the legal and ethical standards, we will ensure any identifying data observed will be anonymised to reduce the likelihood that an individual could be identified. 
+- Assumed that full consent to use the data for this study has been provided by FutureLearn. To comply with the legal and ethical standards, we will ensure any potentially identifying data will be anonymised to reduce the likelihood that an individual could be identified. 
 
 - Assumed that although *'Video_stats'* data are not provided for run 1 and 2, this does not indicate that video learning material were not used for these runs. 
 
-- As the data is provided by FutureLearn (via Newcastle University), it is assumed that the data provides an accurate and reliable reflection of the learners of the course.
+- As the data is provided by FutureLearn (via Newcastle University), it is assumed that the data provides an accurate and reliable reflection of the learners taking the course.
 
-- There were no descriptions for the data, therefore assumptions will be made as to what the data means.
+- There were no descriptions for the data, therefore assumptions will be made as to what the data means. The assumptions are clearly stated in the appropriate sections. 
 
 #### 1.2.2.3 Constraints
 
 The project is to be completed by 3rd December 2021. 
 
-Due to the time constraints, the key phases from the CRISP-DM methodology which require focus are *Business Understanding*, *Data Understanding*, *Data Preparation* and *Evaluation*. (If time allows, then the *Modelling* phase will be included too - include?) *remove? this whole bit on crisp-dm*
+Due to the time constraints, the key phases from the CRISP-DM methodology which require focus are *Business Understanding*, *Data Understanding*, *Data Preparation* and *Evaluation*. 
+
+<!-- [*TO DO: REMOVE THE FOLLOWING SENTENCE, LEAVE THE SENTENCE BEFORE:*] (If time allows, then the *Modelling* phase will be included too - include?) *remove? this whole bit on crisp-dm* -->
 
 
 ## 1.3 Data Mining Goals 
 For this study, we will investigate the course data and initially decide on a set of data to analyse in more detail to understand students' engagement with the online course. This set of data will be chosen according to (a) the richness of information contained in the data, and (b) the completeness of the data that is available. Based on this, the most promising lines of investigation will be decided. 
 
-The goal is to derive insight from the data on engagement and retention during the course which will enable the Newcastle University and FutureLearn to potentially modify and improve the course content to achieve optimise learner engagement and retention. (This is achieved by identifying correlations between the factors and the learners????)
+The goal is to derive insight from the data on engagement and retention during the course which will enable  Newcastle University and FutureLearn to potentially modify and improve the course content to achieve optimised learner engagement and retention. 
+
+<!-- [*TO DO: I SUGGEST DELETING THE FOLLOWING SENTENCE:*](This is achieved by identifying correlations between the factors and the learners????) -->
 
 
-## 1.4 Project plan (Describe the intended plan for achieving the data mining goals and thereby achieving the business goals. The plan should specify the steps to be performed during the rest of the project, including the initial selection of tools and techniques.????)
+## 1.4 Project plan 
 
-We will utilize the CRISP-DM process to understand the data and ensuring that the insights meet the business objectives. We will perform initial investigation of the data (using a combination of simple descriptive statistical and visualization techniques??), identify potential trends to form hypotheses. Depending on the outcome of the previous phase, this shall initiate further in-depth analysis with the vision of providing better understanding and interesting insights for Newcastle University and FutureLearn.  
+<!-- (Describe the intended plan for achieving the data mining goals and thereby achieving the business goals. The plan should specify the steps to be performed during the rest of the project, including the initial selection of tools and techniques.????) -->
+
+We will utilize the CRISP-DM process to understand the data and ensuring that the insights meet the business objectives. We will perform initial investigation of the data (using a combination of simple descriptive statistical and visualization techniques) to identify potential trends and form hypotheses. Depending on the outcome of the previous phase, this shall initiate further in-depth analysis with the vision of providing better understanding and valuable insights for Newcastle University and FutureLearn.  
 
 Throughout the course of the study and depending on the outcome of the results, certain phases of the CRISP-DM methodology will be re-iterated multiply times, to further support the previous findings. 
 
-### 1.4.1 Initial assessment of tools and techniques (At the end of the first phase, an initial assessment of tools and techniques should be performed. assess tools and techniques early in the process since the selection of tools and techniques may influence the entire project.???)
+### 1.4.1 Initial assessment of tools and techniques 
 
-The use of the CRISP-DM methodlogy is useful to provide structure to the lifecycle of this study and ensuring the analysis remains relevant to the business objective.
+<!-- (At the end of the first phase, an initial assessment of tools and techniques should be performed. assess tools and techniques early in the process since the selection of tools and techniques may influence the entire project.???) -->
 
-R was very useful in enabling the analysis of the data. In addition, the packages provided by R allow the project to be reproducible with minimal effort. The key package being ProjectTemplate, which can automatically build the directory to structure the project and the files, and can automatically load data and libraries.
+The use of the CRISP-DM methodology is useful to provide structure to the lifecycle of this study and ensuring the analysis remains relevant to the business objective.
+
+R was very useful in enabling the analysis of the data. In addition, the packages provided by R allow the project to be reproducible with minimal effort. The key package is ProjectTemplate, which can automatically build the directory to structure the project and the files, and can automatically load data and libraries.
 
 Git is a useful software to ensure that all creations and changes are tracked. Therefore one can revert back to a specific version of the project or change if required.
 
-*(Simple statistical description and visualisation of the data will provide insight into the nature and quality of available data, and will enable fast decisions on the next steps in the analysis.) include?? personnel??*
+Simple statistical description and visualisation of the data provides insight into the nature and quality of available data, and will enable fast decisions on the next steps in the analysis.
+
+Discussions with domain experts provided technical support for the delivery of the data analysis, and critical feedback to ensure the project objectives are aligned to the requirements of key stakeholders.
 
 
 # 2. Data Understanding (Initial Observation)
 
 ## 2.1 Collect initial data 
 
-The 53 csv data files of the *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University) and are loaded and cached in the *'data'* folder, as designed by the ProjectTemplate package.  
+The 53 .csv data files of the *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University) and are loaded and cached in the *'data'* folder, as designed by the ProjectTemplate package.  
 
-There are 7 runs of data. Each run of data were measured several months apart from each other, between mid 2016 - mid 2018. Below is a brief description of each set of data files *(and why they were discarded (e.g. too many missing data points; not clear what data means without further background information, hence not being used for further analysis))*. :
+There are 7 runs of data. Each run of data was measured several months apart from each other, between mid-2016 and mid-2018. Below is a brief description and qualitative assessment of each set of data files.
 
-- *'Archetype-survey-responses'*: The data files consists of two sets of Id-related columns, a datetime column and a categorical column *'archetype'*. As no descriptions was provided, therefore it is difficult to deduce the real meaning of the archetype data without further information. In addition, the datafiles for runs 1 to 3 are either empty or incomplete.
+<!-- *(and why they were discarded (e.g. too many missing data points; not clear what data means without further background information, hence not being used for further analysis))*. : -->
 
-- *'Enrolments'*: The data files contains information of learners' ID, enrollment and unenrollment datetime. In addition, categorical data on the gender, country, age, education and employment status and detected country. There are information on datetime of *'fully_participated_at'* and *'purchased_statement_at'*, however without further information it is unclear what these columns mean. There are many *'Unknown'* in the data files.
+- *'Archetype-survey-responses'*: The data files consist of two sets of Id-related columns, a datetime column and a categorical column *'archetype'*. As no descriptions were provided, it is difficult to deduce the exact meaning of the archetype data without further information. In addition, the data files for runs 1-3 are either empty or incomplete.
 
-- *'Leaving-survey-responses'*: The data files contains information about learner ID, leaving date, and learners' feedback, which was given as what is assumed to be pre-set selection of feedback options. It contains information on the last step completed when response was provided, however are incomplete as many rows contain missing data. The datafiles for runs 1 to 3 are empty.
+- *'Enrolments'*: The data files contain information of learners' ID, enrollment and unenrollment date and time stamps. In addition, the files contain categorical data on gender, country, age, education and employment status and detected country. The columns *'fully_participated_at'* and *'purchased_statement_at'* contain date and time stamps, however the significance of these columns is unclear without further information. There are many *'Unknown'* in the data files.
 
-- *'Question-response'*: The data files contain information of the learners' ID and the quiz questions which the learners have attempted plus the submission date. There is a *'correct'* column containing boolean datatype of 'True/ False' which represents whether the learners have answered corrected. There is a *'response'* column which contains a selection of numerical values and a *'cloze_response'* which appears to be empty, therefore one cannot interpret what this column means. It is unclear whether the learners have to answer all questions correct, as there is more than 1 number in the *'response'* column, to obtain a 'True/ False' under the *'correct'* column. Therefore further information is required. 
+- *'Leaving-survey-responses'*: The data files contain information about learner ID, leaving date, and learners' feedback, which was given as what is assumed to be pre-set selection of feedback options. The assumption was made as the comments all fall within a small set of answers (e.g. 'I prefer not to say', 'The course required more time than I realised', 'The course was too hard', 'Other'). It contains information on the last step completed when response was provided, however the data is incomplete as many rows contain missing data. The data files for runs 1 to 3 are empty.
 
-- *'Step-activity'*: This data file contains information on the learner_id and the datetime of when they had first visit and last completed a particular step. There are missing data under the *'last_completed_at'* column.
+- *'Question-response'*: The data files contain information of the learners' ID and the quiz questions which the learners have attempted, plus the submission date. There is a *'correct'* column containing boolean datatype of 'True/ False' which represents whether the learners have answered correctly. There is a *'response'* column which contains a selection of numerical values and a *'cloze_response'* which appears to be empty, therefore the meaning of this column is unclear. It is unclear whether the learners have to answer all questions correct, as there is more than 1 number in the *'response'* column, to obtain a 'True/ False' under the *'correct'* column. Therefore further information is required in order to analyse these data sets. 
+=
+- *'Step-activity'*: This data file contains information on the learner_id and the date and time stamps of when they had first visit and last completed a particular step. There are missing data under the *'last_completed_at'* column.
 
 - *'Weekly-sentiment-survey-response'*: the data files contain an ID column, with the datetime of the individuals' responses. It is unclear what does the IDs refer to as they do not specify that the column is for learners' ID, therefore more information is required. The *'reason'* column contains free text, which is interesting. However run 1 to 4 data files are empty, run 5 contains only 1 incomplete data and the remaining runs (6 and 7) contains a mixture of incomplete and unstructured text data for the free-text *'reason'* column.
 
