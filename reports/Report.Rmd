@@ -101,6 +101,7 @@ Due to the time constraints, the key phases from the CRISP-DM methodology which 
 
 
 ## 1.3 Data Mining Goals 
+
 For this study, we will investigate the course data and initially decide on a set of data to analyse in more detail to understand students' engagement with the online course. This set of data will be chosen according to (a) the richness of information contained in the data, and (b) the completeness of the data that is available. Based on this, the most promising lines of investigation will be decided. 
 
 The goal is to derive insight from the data on engagement and retention during the course which will enable  Newcastle University and FutureLearn to potentially modify and improve the course content to achieve optimised learner engagement and retention. 
@@ -148,22 +149,22 @@ There are 7 runs of data. Each run of data was measured several months apart fro
 - *'Leaving-survey-responses'*: The data files contain information about learner ID, leaving date, and learners' feedback, which was given as what is assumed to be pre-set selection of feedback options. The assumption was made as the comments all fall within a small set of answers (e.g. 'I prefer not to say', 'The course required more time than I realised', 'The course was too hard', 'Other'). It contains information on the last step completed when response was provided, however the data is incomplete as many rows contain missing data. The data files for runs 1 to 3 are empty.
 
 - *'Question-response'*: The data files contain information of the learners' ID and the quiz questions which the learners have attempted, plus the submission date. There is a *'correct'* column containing boolean datatype of 'True/ False' which represents whether the learners have answered correctly. There is a *'response'* column which contains a selection of numerical values and a *'cloze_response'* which appears to be empty, therefore the meaning of this column is unclear. It is unclear whether the learners have to answer all questions correct, as there is more than 1 number in the *'response'* column, to obtain a 'True/ False' under the *'correct'* column. Therefore further information is required in order to analyse these data sets. 
-=
-- *'Step-activity'*: This data file contains information on the learner_id and the date and time stamps of when they had first visit and last completed a particular step. There are missing data under the *'last_completed_at'* column.
 
-- *'Weekly-sentiment-survey-response'*: the data files contain an ID column, with the datetime of the individuals' responses. It is unclear what does the IDs refer to as they do not specify that the column is for learners' ID, therefore more information is required. The *'reason'* column contains free text, which is interesting. However run 1 to 4 data files are empty, run 5 contains only 1 incomplete data and the remaining runs (6 and 7) contains a mixture of incomplete and unstructured text data for the free-text *'reason'* column.
+- *'Step-activity'*: This data file contains information on the learner_id and the date and time stamps of when they had first visit and last completed a particular step. There is missing data in the *'last_completed_at'* column.
 
-- *'Team-members'* (not included in run 1): the data files contain Ids and the team role and user role of the individuals. The *'first_name'* and *'last_name'* columns have been anonymised to remove the names of the individuals. 
+- *'Weekly-sentiment-survey-response'*: the data files contain an ID column, with the date and time stamps of the individuals' responses. It is unclear what the IDs refer to as they do not specify that the column is for learners' ID, therefore more information is required. The *'reason'* column contains free text, which is interesting. However data files from run 1-4 are empty, run 5 contains only 1 incomplete data row and the remaining runs (6 and 7) contain a mixture of incomplete and unstructured text data for the free-text *'reason'* column.
 
-- *'Video-stats'* (not included in run 1 and 2): the data files contain information on the video topics, and numerical data on the number of viewers, devices and features used to view the videos, how long have individuals watched the videos and the percentage of viewers from different continents. 
+- *'Team-members'* (not available for run 1): the data files contain IDs, the team role and user role of the individuals. The *'first_name'* and *'last_name'* columns have been anonymised by the provider of the data file by removing the names of the individual learners and replacing them with the words 'First' and 'Last' for the columns *'first_name'* and	*'last_name'*, respectively. 
+
+- *'Video-stats'* (not included in run 1 and 2): the data files contain information on the video topics, and numerical data on the number of viewers per video, devices and features used to view the videos, how long  individuals watched the videos and the percentage of viewers from each continent. The contents of this data file will be examined in more detail in Section 2.2.
 
 ### 2.1.1 Initial data file selection
 
-The initial data file(s) of interest was(were) the *'Weekly-sentiment-survey-response'* data. These data would have been useful to combine with the data from the *'Leaving-survey-responses'* data files to potentially obtain a mixture of feedback which will provide constructive information for the course provider. The *'reason'* column was interesting as they contained free text therefore provided a direct source of feedback that could be analysed using Natural Language Processing (NLP). However, after closer observation, it appears that the data contained positively biased views of the individuals' experience with the course. The unstructured free text were also of poor quality as they contained incomplete sentences, single word feedback with lack of context and text that contains random symbols. In addition, there were many missing feedback data and due to only runs 6 and 7 containing a small selection of feedback, there is therefore insufficient data to draw substantial conclusions with the data. The *'Leaving-survey-responses'* data files also contains pre-selected responses, which indicates that the learners were only allowed to select from a very narrow range of opinions, therefore it does not provide meaningful insight into the sentiments of the learners. Lastly, the two sets of data files do not contain the same type of ID columns. The *'Leaving-survey-responses'* data files contained *'Learner_ID'*, which can be assumed that the responses were from the learners. The *'Weekly-sentiment-survey-response'* data files contained *'ID'*, which we cannot assume that the responses were from the learners only, as other data files (such as, the *'Team-members'* data files) have already shown that 'educators', 'mentors', etc all have an ID number assigned to each one of them. The responses could potentially come from individuals with conflicted interest with the course, therefore the responses will not be a reliable source of information to use to draw conclusions on the course. 
+The initial data file of interest was the *'Weekly-sentiment-survey-response'* data. These data would have been useful to combine with the data from the *'Leaving-survey-responses'* data files to potentially obtain a mixture of feedback which will provide direct insight into the learners' experience to the course provider. The *'reason'* column was interesting as it contains free text, therefore provided a direct source of feedback that could be analysed using Natural Language Processing (NLP). However, after an initial assessment, it appears that the data contained positively biased views of the individuals' experience with the course. The unstructured free text were also of poor quality as they contained incomplete sentences, single word feedback with lack of context and text that contains random symbols. In addition, there were many missing feedback data and due to only runs 6 and 7 containing a small selection of feedback, there is therefore insufficient data to draw substantial conclusions with the data. The *'Leaving-survey-responses'* data files also contain pre-selected responses, which indicates that the learners were only allowed to select from a very narrow range of opinions. We concluded that the data file does not provide meaningful insight into the sentiments of the learners. Lastly, the two sets of data files do not contain the same type of ID columns. The *'Leaving-survey-responses'* data files contained *'Learner_ID'*, which leads to the assumption that the responses were provided by the learners. The *'Weekly-sentiment-survey-response'* data files contained *'ID'*, which we cannot assume that the responses were from the learners only, as other data files (such as, the *'Team-members'* data files) have already shown that 'educators', 'mentors', etc all have an ID number assigned to each one of them. The responses could potentially come from individuals with conflicted interest with the course, therefore the responses will not be a reliable source of information to draw conclusions on the course. 
 
 ### 2.1.2 Final data file selection
 
-As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore utilize the video data to understand students' engagement with the course, and consequently the retention rate of the learners throughout the course. This will enable the course provider to make informed decisions on the design and improvements of the course. To achieve this, the focus will be on the '*video.stats*' data files provided by FutureLearn. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data are available. There appears to be no missing values from the data, therefore the data files for '*video.stats*' are very complete. 
+As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore use the video data to understand students' engagement with the course, and consequently the retention rate of the learners throughout the course. This will enable the course provider to make informed decisions on the design and improvements of the course. To achieve this, the focus will be on the '*video.stats*' data files provided by FutureLearn. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data is available. There appears to be no missing values from the data, therefore the data files for '*video.stats*' are complete. 
 
 
 ## 2.2 Describe data 
@@ -175,29 +176,27 @@ names(run3)
 ```
 There are 13 rows of data in each '*video.stats*' data file, one row corresponding to each video content throughout the course. 
 
-There are 28 columns. The first column of each dataset describes the weekly block and the step position of where a particular video is located within the course. The second column contains strings of data which refers to the video title, therefore one can deduce the topic of the video. The remaining columns (columns 3 - 28) contain numerical data, of which some contains percentage values. Care will have to be taken when merging the runs together for the columns containing percentage values. The weighted average percentages will be calculated to account for the relative frequency of some factors in the dataset (reword!!), therefore the weighted average percentage will be more accurate than calculating the average percentage.
+There are 28 columns. The first column of each dataset describes the weekly block and the step position of where a particular video is located within the course. The second column contains strings of data which refers to the video title, which we assume describes the video content. The remaining columns (columns 3-28) contain numerical data, some of which are percentage values. Care will have to be taken when merging the runs together for the columns containing percentage values. The percentage values are averaged across runs using the weighted average to account for the different number of learners in each run. 
 
-The dataset contains information on the video topics and the number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file satisfies the business objective requirements of the project.  
+We will make two assumptions for this project: (1) The number of views is equal to the number of learners, i.e. they either do not include the views of tutors or hosts or these are neglible, and (2) each viewer only viewed each video once. The data files contain information on the video topics and the absolute number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file provide a rich source of information to gain insight into the learners behaviour to inform the business objectives of the project. Due to time constraints during this project, the data on the type of devices, downloads, as well as the number of HD users will not be selected for this study. These columns may be interesting for further analysis on how to optimise the content of videos to ensure they are in the right format and have the correct features.
 
-*The data surrounding the percentage of devices (and features) used for the videos will not be selected for this study (due to time constraints, etc) (Do I include the data on using captions...) a combination of columns will be selected for each individual analysis. *
+<!-- For each attribute, basic statistics have been computed for run 3. <!-- Analyze basic statistics and relate the results to their meaning in business terms Decide if the attribute is relevant for the specific data mining goal)*  --> 
+<!-- [I WOULD TAKE APPENDIX A OUT AND LEAVE THE DESCRIPTION BELOW] Appendix A shows a basic summary of the types of data and distribution of each variable. -->
 
-*UNSURE ABOUT THE FOLLOWING STATS AND SUMMARY TEXT - SHOULD IT BE IN*
-*For each attribute, compute basic statistics (e.g., compute distribution, average, max, min, standard deviation, variance, mode, skewness, etc.)  Analyze basic statistics and relate the results to their meaning in business terms Decide if the attribute is relevant for the specific data mining goal)* Appendix A shows a basic summary of the types of data and distribution of each variable. 
+- Basic statistical analysis shows that there is some skewness in the *'total_views'* data, ranging from a minimum of 446 total views to 1659 total views. By analysing the number of learners for each topic, it potentially show whether certain topics attract more viewers. 
 
-- There some skewness in the *'total_views'* data, ranging from a minimum of 446 total views to 1659 total views. By analysing the number of viewers for each topic, it potentially show whether certain topics attract more viewers. 
+- Basic statistical analysis shows that there is some skewness of the data in columns *'asia_views_percentage'* and *'africa_views_percentage'*, therefore further investigation can potentially show if there are higher drop out rates from some continents compared to others.
 
-- There are some skewness of the data in columns *'asia_views_percentage'* and *'africa_views_percentage'*, therefore further investigation can potentially show if there are higher drop out rates from certain continents compared to others
+- The unit for the values of the video duration is included in the course overview .pdf files. The shortest and longest videos ranges from 37 seconds to 426 seconds (~7 min). The average time of videos is 231 seconds (~4 min). The duration of the video could possibly impact the learners' engagement to the course.
 
-- The unit for the values of the video duration is included in the course overview pdf files. The shortest and longest videos ranges from 37 seconds to 426 seconds (~7 min). The average time of videos is 231 seconds (~4 min). The duration of the video could possibly impact the learners' engagement to the course.
+- From the 'viewed_percent' columns, it is clear from the summary that there is a downward trend in the number of viewers throughout the duration of the videos. Further analysis may help to identify if a maximal duration of the video exist in order to keep learners engaged.
 
-- From the 'viewed_percent' columns, it is clear from the summary that there is a downward trend in the number of viewers throughout the duration of the videos. Further analysis may help to identify if there should be a optimum duration of the video materials in order to keep learners engaged.
-
-- ie. why not use data on device - There are 6 columns which refer to the types of devices the learners have used to watched the videoes. There are minimal data for columns *'console_device_percentage'* and *'tv_device_percentage'* and zero values recorded for *'unknown_device_percentage'*, therefore there is insufficient data to draw on how the use of certain devices affect the learners' engagement. In addition, the data does not show which continent prefers watching the videos from certain devices. 
+<!-- - ie. why not use data on device - There are 6 columns which refer to the types of devices the learners have used to watched the videos. There are minimal data for columns *'console_device_percentage'* and *'tv_device_percentage'* and zero values recorded for *'unknown_device_percentage'*, therefore there is insufficient data to draw on how the use of certain devices affect the learners' engagement. In addition, the data does not show which continent prefers watching the videos from certain devices.  -->
 
 
 ## 2.3 Explore data 
 
-The following initial visualizations will explore the data and help determine the areas to consider for further investigation. As the first set of video data begins from run 3, therefore the run 3 data will be used for the initial exploration.
+The following initial visualisations will be used to explore the data and help determine the areas to consider for further investigation. As the first set of video data begins from run 3, the data file 'cyber-security-3_video-stats.csv' will be used for the initial exploration.
 
 The two first columns *'step_position'* and *'title'* will be combined to allow quick reference to the order of which the videos appears throughout the course. This new column will be called *'step_title'*
 
@@ -205,30 +204,32 @@ The two first columns *'step_position'* and *'title'* will be combined to allow 
 
 Part of the data mining goal is to understand whether there is a trend on learners' engagement, therefore we will look at how the number of viewers have changed throughout the course. 
 
-Figure XX shows the number of viewers for each video based on the topic of the videos and the total of views for each other these videos.
+Figure XX shows the number of viewers for each video based on the topic of the videos and the total of views for each other these videos (run 3 data).
 
-```{r run3_totalview_topic_bar, echo=FALSE, , fig.width=11, fig.height=7}
+```{r run3_totalview_topic_bar, echo=FALSE, , fig.width=11, fig.height=5.5}
 run3_totalview_topic_bar_V
 ```
 
-The bar chart clearly indicated that as the learners progresses throughout the course, there is also a drop of viewers watching the videos too. As the learners are watching from different continents, we will therefore investigate if this trend continues in a similar manner for the learners from different continents and whether certain topics appear to attract learners more. 
+The bar chart clearly indicated that as the learners progresses throughout the course, there is a drop of viewers watching the videos. As the learners are watching from different continents, we will investigate if this trend continues in a similar manner for the learners from different continents and whether certain topics appear to attract learners more. 
 
 ### 2.3.2 Total number of viewing and features used through the duration of videos (TO DELETE??)
 
-The scatterplot matrix will be used to visualize any pairs of relationships of all of the different variables within the data. For the plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
+A scatterplot matrix will be used to visualize any pairs of relationships. For the plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
 
-Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, captions and transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
+Figure XX attempts to demonstrate the relationships between the length of the videos and the number of views, captions and transcripts for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
 
 ```{r run3_duration_features_scatMx, echo=FALSE, fig.width=11, fig.height=7}
 pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite,
       main = "Figure XX: Total Views and Features used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.7)
 ```
 
-There are no obvious relationship observed between the length of the videos and the amount of views and features used for the videos. However as the total number of views increases, so does the number of  captions used and transcripts used, which is to be expected. As there is no obvious relationship in the attributes (??), we will therefore not continue with investigating on the features used in our study.
+There are no obvious relationships observed between the length of the videos and the amount of views and features used for the videos. As the total number of views increases, so does the number of  captions used and transcripts used, which is to be expected. As there are no unexpected patterns that would indicate a dependence of e.g. the number of transcript reads on video duration, we will not continue with investigating these columns in our study.
 
 ### 2.3.3 Number of viewers for video duration
 
-Figure XX will demonstrate how the percentage of viewers have changed throughout the duration of the videos. 
+[CAN THE FIGURE BE REPLACED BY THE FIGURE OF RUN 3 IN SECTION MODELLING?]
+
+Figure XX is a scatterplot matrix of the video duration and the percentage of viewers who watched 25%, 50%, 75% and 100% of the video.
 
 ```{r run3_duration_pctview_scatMx, echo=FALSE, fig.width=11, fig.height=7}
 pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
@@ -236,7 +237,7 @@ pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
       labels = c("Video duration", "25% viewed", "50% viewed", "75% viewed", "100% viewed"),
       main = "Figure XX: Total Percentage viewed used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.7)
 ```
-The key plots of interest are on the left column. The y-axis for the percentage of viewers is decreasing throughout the duration of the videos. Further investigation will look at how large the decrease is (??) and at what point throughout the duration of the videos, do we see the largest drop of viewers. This can show how engaged can learners stay for and if the duration of the videos have an impact of how long the learners stay engaged for.
+The key plots of interest are on the left column. The y-axis for the percentage of viewers is decreasing throughout the duration of the videos. Further investigation will look at how large the decrease is (??) and at what point throughout the duration of the videos do we see the largest drop of viewers. This can show how engaged can learners stay for and if the duration of the videos have an impact of how long the learners stay engaged for.
 
 ### 2.3.4 Hypothesis
 
@@ -311,7 +312,7 @@ Finally the dataframe will be transformed to a 'long' format to enable plotting 
 
 The following plots is to determine whether the duration of the videos have an impact on the viewing rates across different continents. The new run 3 dataframe was plotted on to a scatter plot.
 
-```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
+```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
 line_cont3_pct_dur_V
 ```
 
@@ -320,7 +321,7 @@ There appears to be no correlation between the duration of the videos and the nu
 
 ## All runs modelling
 
-```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
+```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
 line_cont_all_pct_dur_V
 ```
 As expected, Fig XX for all of the runs supported the outcome of run 3, in which there is no correlation between the duration of the videos and the number of viewers from each continents. *Again the graph does show that there are a higher percentage of viewers from Europe and Oceania for most videos than from Asia and Africa.??? Therefore the duration of the videos appears to not have a direct impact on keeping learners' engaged or keeping the learners to stay throughout the video (??)* We will investigate on whether there are correlations between the topics of the video and the number of viewers from each continents. 
@@ -388,7 +389,7 @@ There are three videos, in which the number of viewers slightly increased compar
 
 The same data, but with the percentage number of viewers from each continent, were plotted on a line chart. Each line represent different continents.
 
-```{r line_cont3_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
+```{r line_cont3_pct_topic, echo=FALSE, fig.width=11, fig.height=6}
 line_cont3_pct_topic_V
 ```
 
@@ -400,7 +401,7 @@ We will plot these graphs again using the data from all of the runs combined tog
 
 ## All run modelling
 
-```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
+```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=5}
 stack_cont_all_AbV_topic_bar_V
 ```
 From the initial observation of the graph, the trend of the viewers from all runs combined, follow the same pattern as for run 3 viewers. With the largest drop in viewers occuring throughout week one of the course. From the actual data, the drop in viewers throughout week one is very similar to run 2, from 7458 (at the start of week one) to 3154 (end of week one), which equates to 57.7% in week one alone. Then a smaller gradual decrease of viewers between week two to week three, from 2816 to 1910, which is 32.2%. Again, this is a very similar drop that was seen in run 3. 
@@ -409,7 +410,7 @@ With the runs combined, there are two videos, in which the number of viewers sli
 
 Just as for run 3, the percentage viewers from each continent of all the runs were plotted on a line chart. Each line represent different continents.
 
-```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
+```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=6}
 line_cont_all_pct_topic_V
 ```
 
@@ -498,10 +499,10 @@ Week 2 block is mainly on cybersecurity of payment infrastructure. Could be peop
 # 10. References
 
 
-# 11. Appendix A - Summery of *'Video_stats'* from run 3
+<!-- # 11. Appendix A - Summery of *'Video_stats'* from run 3 -->
 
-```{r}
-summary(run3)
-```
+<!-- ```{r} -->
+<!-- summary(run3) -->
+<!-- ``` -->
 
 
