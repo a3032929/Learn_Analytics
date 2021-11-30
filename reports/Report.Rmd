@@ -298,7 +298,7 @@ The following plots is to determine whether the duration of the videos have an i
 line_cont3_pct_dur_V
 ```
 
-There appears to be no correlation between the duration of the videos and the number of viewers from each continents. Before we can say that there is no correlation, the same plot will be plotted using the new dataframe with the number of viewers from each continent for all runs. 
+There appears to be no correlation between the duration of the videos and the number of viewers from each continents. The perecntage of viewers from all continents fluctuate and appears to be independent to the duration of the videos. *The graph does show that there are a higher percentage of viewers from Europe and Oceania for most videos than from Asia and Africa, however this is not the concern of this question????*. Before we can say that there is no correlation, the same plot will be plotted using the new dataframe with the number of viewers from each continent for all runs. 
 
 
 ## All runs modelling
@@ -306,7 +306,7 @@ There appears to be no correlation between the duration of the videos and the nu
 ```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=7}
 line_cont_all_pct_dur_V
 ```
-As expected, there is a strong indication that there is no correlation between the duration of the videos and the number of viewers from each continents. Therefore we can investigate on whether there are correlations between the topics of the video and the number of viewers from each continents. 
+As expected, Fig XX for all of the runs supported the outcome of run 3, in which there is no correlation between the duration of the videos and the number of viewers from each continents. *Again the graph does show that there are a higher percentage of viewers from Europe and Oceania for most videos than from Asia and Africa.??? Therefore the duration of the videos appears to not have a direct impact on keeping learners' engaged or keeping the learners to stay throughout the video (??)* We will investigate on whether there are correlations between the topics of the video and the number of viewers from each continents. 
 
 
 # Question 2. Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
