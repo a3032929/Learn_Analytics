@@ -190,7 +190,7 @@ Part of the data mining goal is to understand whether there is a trend on learne
 
 Figure XX shows the number of viewers for each video based on the topic of the videos and the total of views for each other these videos.
 
-```{r run3_totalview_topic_bar, echo=FALSE, fig.width=10}
+```{r run3_totalview_topic_bar, echo=FALSE, , fig.width=11, fig.height=7}
 run3_totalview_topic_bar_V
 ```
 
@@ -202,7 +202,7 @@ The scatterplot matrix will be used to visualize any pairs of relationships of a
 
 Figure XX scatterplot matrix attempts to demonstrate the relationships between the length of the videos and the amount of views and features (for example, captions and transcripts) used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
 
-```{r run3_duration_features_scatMx, echo=FALSE}
+```{r run3_duration_features_scatMx, echo=FALSE, fig.width=11, fig.height=7}
 pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite,
       main = "Figure XX: Total Views and Features used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.7)
 ```
@@ -213,7 +213,7 @@ There are no obvious relationship observed between the length of the videos and 
 
 Figure XX will demonstrate how the percentage of viewers have changed throughout the duration of the videos. 
 
-```{r run3_duration_pctview_scatMx, echo=FALSE}
+```{r run3_duration_pctview_scatMx, echo=FALSE, fig.width=11, fig.height=7}
 pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
         viewed_seventyfive_percent + viewed_onehundred_percent, data = run3unite,
       labels = c("Video duration", "25% viewed", "50% viewed", "75% viewed", "100% viewed"),
@@ -328,7 +328,7 @@ The columns of the new dataset will be renamed to the corresponding continents. 
 as_tibble(output_3_abs[1:3,c(1,3:9)])
 ```
 
-Secondly, we want to plot a scatter plot to show how the percentage of viewers have changed throughout the course. Same as for question, as mentioned in *'3.2 Construct Data'*, we will take the dataset with the actual number of viewers, then transform it to show the percentage for each new continent value. The resulting percentage data frame is stored in the *'cache'*
+Secondly, we want to plot a line graph to show how the percentage of viewers have changed throughout the course. Same as for question, as mentioned in *'3.2 Construct Data'*, we will take the dataset with the actual number of viewers, then transform it to show the percentage for each new continent value. The resulting percentage data frame is stored in the *'cache'*
 
 
 ## 5.3 Clean data
@@ -357,40 +357,39 @@ The resulting dataframe will be transformed and used for plotting.
 
 ## Run 3 modelling
 
-### Worldwide views of videos
+The video topics will be reordered to the same order as how they run throughout the course for the plots. This will show how the number of viewers have changed throughout the course. 
 
-The video topics will be reordered to the same order as how they run throughout the course for the plots. 
-
-Figure XX attempts to demonstrates the relationship between the video duration and the number of views from across different continents. 
+Figure XX is a bar chart to show the relationship between the video topics and the number of viewers from across different continents. The colours in each bar, are split according to the continent of the viewers, as shown in the key. 
 
 ```{r stack_cont3_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
 stack_cont3_AbV_topic_bar_V
 ```
 
-There are no obvious correlations to be seen, therefore the data which allows comparison of the views within each continent throughout the course rather than the viewings from each continent within each video will be assessed in the further analysis. This will show the drop out rate from each continent throughout the course, rather than the relative number of viewings from each continent for each video.
+There are clear observations that the number of viewers decrease throughout the course. The largest drop in viewers occur throughout week one of the course, of which the number of viewers fell from 1659 to just over 700 viewers by the end of the first block, which is roughly 54.5% drop in viewers within a week. The drop from week two to week three is not as severe, from 694 to just under 450 viewers by the last video of the course, which is roughly 34.4% drop throughout week two to week three.
 
-In addition, the relative views from each continent appears to be stable. There appears to be some outliers from the far left column of plots. It is unlikely to be related to the duration of the videos because the outliers appear random, therefore further investigation will be made on whether the video topics could be related to these outliers. 
+There are three videos, in which the number of viewers slightly increased compared to the previous video, for example, for video *'1.19_Staying safe online: personal perspectives', '3.2_Devices in the future house'* and *'3.15_Exploring security: the Access Control Live Lab'*.
 
-### Actual [DO YOU MEAN ACTUAL, OR ABSOLUTE, OR WOULD IT BE BETTER TO CALL IT SOMETHING LIKE 'Comparison of views per video for each continent'] views from continent
-
-Line graph to show how the percentage viewers have changed throughout the duration of the course, based on how many viewers watched the videos throughout the course.
+The same data, but with the percentage number of viewers from each continent, were plotted on a line chart. Each line represent different continents.
 
 ```{r line_cont3_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
 line_cont3_pct_topic_V
 ```
+The line chart shows a steady drop of viewers throughout the course. More learners from Oceania have continued in the course and watched the videos compared to Europe. 
 
-The graph shows that for certain continents (Europe, North America and Oceania), there appears to be more views, therefore more engagements, on the topics within week 2 block of the course. On the other hand, there were more engagements from the learners of Africa and Asia continent, then a steady drop of viewers throughout the course. South America showed a dramatic uptake of viewers for the 1st topic of week 2, then a reduction of engagement throughout most of the course. 
+There is an outlier on video *'2.1_Welcome to Week 2: payment security'*, which appears to come from South America. The outlier is showing a sudden increase of viewers from South America for this particular topic in the second block of the course.
 
+We will plot these graphs again using the data from all of the runs combined together to see if the same trends appear.
 
 ## All run modelling
 
-### Worldwide views of videos using all runs as bars and absolute values
 ```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
 stack_cont_all_AbV_topic_bar_V
 ```
+From the initial observation of the graph, the trend of the viewers from all runs combined, follow the same pattern as for run 3 viewers. With the largest drop in viewers occuring throughout week one of the course. From the actual data, the drop in viewers throughout week one is very similar to run 2, from 7458 (at the start of week one) to 3154 (end of week one), which equates to 57.7% in week one alone. Then a smaller gradual decrease of viewers between week two to week three, from 2816 to 1910, which is 32.2%. Again, this is a very similar drop that was seen in run 3. 
 
+With the runs combined, there are two videos, in which the number of viewers slightly increased compared to the previous video, these are *'1.19_Staying safe online: personal perspectives'* and *'3.2_Devices in the future house'*.
 
-### Actual views from continent using all runs and percentage
+The percentage viewers from each continent of all the runs were plotted on a line chart. Each line represent different continents.
 
 ```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=7}
 line_cont_all_pct_topic_V
@@ -442,7 +441,7 @@ Through observation of the matrix, there are potentially interesting patterns on
 
 Figure XX shows the number of viewers who have stayed to view the videos to the end.
 
-```{r run3_allpct_duration_scat, echo=FALSE}
+```{r run3_allpct_duration_scat, echo=FALSE, fig.width=11, fig.height=7}
 run3_allpct_duration_scat_V
 ```
 
@@ -453,7 +452,7 @@ There is potentially a pattern observed on the relationship between the video du
 ## All runs modelling
 
 ### Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos for all runs
-```{r run3_7_allpct_duration_scat_V, echo=FALSE}
+```{r run3_7_allpct_duration_scat_V, echo=FALSE, fig.width=11, fig.height=7}
 run3_7_allpct_duration_scat_V
 ```
 
