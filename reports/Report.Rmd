@@ -335,6 +335,7 @@ As expected, Fig XX for all of the runs supported the outcome of run 3, in which
 ## Run3 Data prep
 
 ## 5.1 Select Data
+
 The second hypothesis will investigate on whether the topics and content of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the learners from certain continents engages better with certain topics from the course or whether the learners find certain topics less interesting. 
 
 For the same reasons as the data preparation for question 1, the continent columns within the *'video_stats'* dataset currently shows the split percentage of viewers from each continent for each video. However for this investigation, we want to firstly plot a bar chart using the actual number of viewers (*why?*) from each continent (for example, total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent). This has already been calculated for question 1, as mentioned in *'3.2 Construct Data'*, and will be re-used for question 2. 
@@ -426,30 +427,43 @@ There is still an outlier on video *'2.1_Welcome to Week 2: payment security'*, 
 # 7. Data Preparation 
 
 ## Run 3 Data prep
-
 ## 7.1 Select Data
-The first hypothesis will investigate on whether the duration of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the length of the videos will have a negative or positive impact on the learners' engagement globally. The key columns for this investigation will be *'video_duration', 'total_views', 'europe_views_percentage', 'oceania_views_percentage', 'asia_views_percentage', 'north_america_views_percentage', 'south_america_views_percentage', 'africa_views_percentage' and 'antarctica_views_percentage'* from the *'video_stats'* dataset.
 
-The continent columns currently shows the split percentage of viewers from each continent for each video. This does not show whether there are any impact on the viewing rates across the continents. It only shows what proportion of the viewers for a particular video topic relates to a particular continent.
+The last hypothesis will investigate whether there are any correlations between the duration of the videos and drop out rate of the learners. Therefore, we want to understand whether the length of the videos will have an impact on how much of the entire video the learners will watch. For example, how many learners have viewed 25% or 50% or 75% or the entire duration of the videos. This could potentially indicate whether the course provider should consider the length of the videos to keeping learners engaged. 
 
-To see how the viewing rates changes within each continent throughout the course, we would need to transform the values from these columns, so that the total number of viewings from each continent for each video is calculated. Therefore, we will see how the number of viewers within each of the continents changes throughout the course. (???)
+The key columns for this investigation will be *'video_duration', 'total_views', 'viewed_twentyfive_percentage', 'viewed_fifty_percentage', 'viewed_seventyfive_percentage', and 'viewed_onehundred_percentage'* from the *'video_stats'* dataset. 
+
+The range of 'viewed_percentage' columns shows the percentage of viewers who have viewed 25%/ 50%/ 75% and 100% of the videos.  
+
+The 5%/ 10% and 95% range of 'viewed_percentage' columns have been excluded from this investigation because the selected columns provided an even split of data collection points. 5% and 10% are too early into the videos to really provide much information (??) and 95% is very close to 100%, that we can assume if viewers were to watch 95% of the video, they will likely to continue to the entire 100% of the video. 
+
 ## 7.2 Clean data
-These values were then combined with the original '*video_duration*' column and reorganised so that the columns match the original dataset. Values are rounded to full numbers [HOW MANY DECIMAL POINTS INSTEAD OF FULL NUMBERS, e.g values are given as numbers with no decimal points???]. During the calculation of the percentages, the values from the *'antarctica_views_percentage'* have resulted in *NaN*' values, therefore these are replaced with 0, as the original values within *'antarctica_views_percentage'* were 0 across, therefore we know they are real zero values. 
 
-## 7.3 Construct Data
-In order to calculate the total number of viewings from each continent for each video (i.e. each row), a function (**col_3_summary**) was developed to take the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. An example is the calculation of total views of the first video from African viewers, which is calculated as (*Total Viewed*[row 2]/100) x *africa_views_percentage*[row 2]. The resulting data frame is stored in the *'cache'* folder and the table (number ref) shows the actual number of viewers from each continent.
+(IS THIS FOR JOINING ALL RUNS??) 
 
-The resulting data frame then undergoes another transformation to calculate the percentage for each new continent value. For example, for the Europe views, we will take a new value from the Europe column and divide it by the highest value from within Europe, then multiply by 100 to calculate the percentage of viewers from within the continent for each video. The resulting percentage data frame is stored in the *'cache'*
-## 7.4 Integrate Data
-The same data on the number of viewers from the continents will also be investigated for the data of all of the runs together. 
+As the values within the 'viewed_percentage' columns shows the percentage of viewers, we will need to create a new dataset that contains the actual number of viewers (why??). Using a similar function to question 1 and question 2, we will take the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each cell of the 'viewed_percentage' columns. This will calculate the actual number of viewers who have watched 25%/ 50%/ 75% and 100% of the videos. 
 
-The same pre-processing steps will be undertaken as for run 3, to calculate the actual number of viewers within each continent for each video. Then the percentage viewers within each continent will be calculated too. The additional step will be, prior to calculating the percentage of viewers within each continent, the sum of the total actual viewers for all runs will be added together. Therefore the calculated percentages of viewers will be more accurate than taking the average percentage from each runs. 
+The new dataset is then combined with the original '*video_duration*' column and reorganised so that the columns match the original dataset. Values are rounded to full numbers [HOW MANY DECIMAL POINTS INSTEAD OF FULL NUMBERS, e.g values are given as numbers with no decimal points???]. The resulting data frame is stored in the *'cache'* folder. 
 
-Finally the dataframe will be transformed to a 'long' format to enable plotting of the data.
-## 7.5 Format Data
-The resulting dataframe is then transformed to a 'long' format, i.e., a column for every variable, and a row for every observation (www.datacarpentry.org), to enable the use of ggplot2 to plot the data. This is shown in the next section *'4. Modelling'*.
+The new dataset then undergoes another transformation to calculate the percentage for each of the 'viewed_percentage' columns. The resulting percentage data frame is stored in the *'cache'* 
 
-## All run data prep
+This dataset will then be combined with the *’video_duration’* column, and then the dataset will be reorganised so that the columns match the original dataset. The columns of the new dataset will be renamed to the corresponding percentage viewed. 
+
+We will use this dataset to plot a line graph to show how the percentage of viewers have changed against the duration of the videos.  
+
+## 7.3 Construct Data (REDUNDANT???)
+
+## 7.4 Format Data 
+
+The resulting dataframe is then transformed to a 'long' format to enable the use of ggplot2 to plot the data.  
+## All run data prep 
+## 7.5 Integrate Data 
+
+We will take the same data from all of the runs to perform the same investigation. 
+
+The same pre-processing steps will be undertaken as for run 3, to calculate the actual number of viewers from each 'viewed_percentage' columns for each run. The sum of the total actual viewers for each 'viewed_percentage' columns in all runs will be added together, then the percentage of viewers for each 'viewed_percentage' columns will be calculated and stored in *’cache’*. This combines the data from all seven runs together. 
+
+Finally the dataframe will be transformed to a 'long' format to enable plotting of the data. 
 
 
 # 8. Modelling 
@@ -457,41 +471,52 @@ The resulting dataframe is then transformed to a 'long' format, i.e., a column f
 ## Run 3 Modelling
 
 
-### Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos
+Figure XX attempts to demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 25%/ 50%/ 75% and 100% of each videos. 
 
-Figure XX attempts to demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 5/10/25/50/75/95/100 percent of each videos.
+Each line represents how many learners have watched a certain percentage of the videos. This is plotted against the duration of the videos on the x-axis. 
 
-Through observation of the matrix, there are potentially interesting patterns on the far left column of plots. However the plots are very noisy and will require more data to make further statements, therefore further investigation will be required. The other columns do not show unexpected behaviour.
-
-Figure XX shows the number of viewers who have stayed to view the videos to the end.
 
 ```{r run3_allpct_duration_scat, echo=FALSE, fig.width=11, fig.height=7}
 run3_allpct_duration_scat_V
 ```
 
-There is potentially a pattern observed on the relationship between the video duration and the number of viewers who have stayed for the whole duration of the videos. However the data is too noisy due to the relatively low number of learners for some continents, and all the runs will need to be included to enable more reliable statements to be made. 
+The graph shows that there is a steady drop off of learners watching the entire video. Majority of the drop off of learners happen between 75% and 100% way in to the videos.  
 
-
+There appears to be a tendency of learners to drop off more if the videos are longer too.  
 
 ## All runs modelling
 
-### Percentage viewed whole duration of videos/ Number of viewers at 100 percent duration of the videos for all runs
 ```{r run3_7_allpct_duration_scat_V, echo=FALSE, fig.width=11, fig.height=7}
 run3_7_allpct_duration_scat_V
 ```
 
+This graph shows the drop off rate for all runs and it appears to show very similar behaviour of the learners drop off rate as was seen in run 3. 
 
 
 # 9. Evaluation
 ## 9.1 Evaluate results (assesses the degree to which the model meets the business objectives and seeks to determine if there is some business reason why this model is deficient. Another option is to test the model(s) on test applications in the real application, if time and budget constraints permit.assesses other data mining results generated. Data mining results involve models that are necessarily related to the original business objectives and all other findings that are not necessarily related to the original business objectives, but might also unveil additional challenges, information, or hints for future directions.Summarize assessment results in terms of business success criteria, including a final statement regarding whether the project already meets the initial business objectives.After assessing models with respect to business success criteria, the generated models that meet the selected criteria become the approved models.???) think about history of data is it still relevant
 
-Preview of videos allowed on website - does not influence the results.
+The study was to understand the potential factors that could affect the learners’ engagement to a course through the video material provided.  
 
-Given more time, we could do further analysis to gain insights about the learners' from continents which have stayed engaged. 
+Question 1, the results shown in both run 3 and all the runs combined, appears to indicate that there are no correlations between the length of the videos and how engaged the learners from each continent were.  
+
+Question 2, the results clearly shows that most learners will watch the first video of the course, and the number of learners viewing the videos throughout the course drop significantly within the first week. However between week two and three the drop off of learners are not as high. It is unclear whether the data provided by FutureLearn also collects the number of learners watching preview of videos for the course. Or whether FutureLearn gives free access to their learning material for a short period of time, which could reflect on the sudden drop of learners watching the videos within the first week. WHAT WERE THE TOPICS OF THESE BLOCK WEEKS? 
+
+The line chart in question 2, also indicates that there is a clear interest for video 2.1 from learners based in South America. The topic was on XXXXX. Given more time, we could do further analysis to gain insights about the learners' from continents to understand whether there are other factors which could affect the learners’ engagement for certain topics, there factors could include political factors of the continent, types of jobs and interest in cyber security within those continents.  
+
+Question 3, may show that the long a video is the higher risk of the learners’ signing off the videos earlier during the videos. As most learners drop off after 75% way into a video, this could help course designers and providers to decide whether to ensure that important course content are placed earlier on the videos. If the decision is to be made to make important content to appear towards the end of the videos, then a contents page could be provided in the video, to inform the learners what to expect throughout a video and this could potentially keep learners more engaged throughout the video. Depending on the interest of the content, it could affect the number of learners watching the entire length of the videos. 
+
+Overall, from the study, it appears that learners engagement with the course decreases throughout the course (and throughout the duration of the videos). Most learners appear to stop viewing the videos after the first week of the course. For the serious learners, they are likely to stay on for week two and week three, hence we see a smaller drop off rate to the course for those two weeks.  
 
 ## 9.2 Review process ( resulting models appear to be satisfactory and to satisfy business needs. It is now appropriate to do a more thorough review of the data mining engagement in order to determine if there is any important factor or task that has somehow been overlooked.Summarize the process review and highlight activities that have been missed and those that should be repeated)
 
 ## 9.3 Determine next steps (Depending on the results of the assessment and the process review, the project team decides how to proceed. The team decides whether to finish this project and move on to deployment, initiate further iterations, or set up new data mining projects. This task includes analyses of remaining resources and budget, which may influence the decisions.List the potential further actions, along with the reasons for and against each option.Describe the decision as to how to proceed, along with the rationale.)
+
+Given more time, the data could be combined with the XXX datafile to understand the types of learners from the continents. This could provide further insight if certain topics are of more interest for learners of certain continents.  
+
+Did we find correlations to answer the business question?? 
+
+Whats the future work?? 
 
 # Recommendation (do we need or is it for above?)
 May have to do some more analysis to compare with other MOOC courses
