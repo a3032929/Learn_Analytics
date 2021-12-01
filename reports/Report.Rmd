@@ -239,6 +239,8 @@ pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
 ```
 The key plots of interest are on the left column. The y-axis for the percentage of viewers is decreasing throughout the duration of the videos. Further investigation will look at how large the decrease is (??) and at what point throughout the duration of the videos do we see the largest drop of viewers. This can show how engaged can learners stay for and if the duration of the videos have an impact of how long the learners stay engaged for.
 
+<!-- [DO NOT CHANGE ANYTHING ABOVE THIS COMMENT] -->
+
 ### 2.3.4 Hypothesis
 
 From the initial exploration, it has shown a number of interesting areas which we would like to further analyse, particularly around the viewing rates from learners of different continents and whether the video topics and length of the videos are a contributing factor to the learners' retention rate. Therefore we will investigate the videos data from the course to answer the following questions:
