@@ -227,7 +227,7 @@ There are no obvious relationships observed between the length of the videos and
 
 ### 2.3.3 Number of viewers for video duration
 
-[CAN THE FIGURE BE REPLACED BY THE FIGURE OF RUN 3 IN SECTION MODELLING?]
+<!-- [CAN THE FIGURE BE REPLACED BY THE FIGURE OF RUN 3 IN SECTION MODELLING? YES THIS CAN BE DONE]
 
 Figure XX is a scatterplot matrix of the video duration and the percentage of viewers who watched 25%, 50%, 75% and 100% of the video.
 
@@ -237,9 +237,21 @@ pairs(~video_duration + viewed_twentyfive_percent + viewed_fifty_percent +
       labels = c("Video duration", "25% viewed", "50% viewed", "75% viewed", "100% viewed"),
       main = "Figure XX: Total Percentage viewed used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.7)
 ```
-The key plots of interest are on the left column. The y-axis for the percentage of viewers is decreasing throughout the duration of the videos. Further investigation will look at how large the decrease is (??) and at what point throughout the duration of the videos do we see the largest drop of viewers. This can show how engaged can learners stay for and if the duration of the videos have an impact of how long the learners stay engaged for.
+The key plots of interest are on the left column. The y-axis for the percentage of viewers is decreasing throughout the duration of the videos. Further investigation will look at how large the decrease is (??) and at what point throughout the duration of the videos do we see the largest drop of viewers. This can show how engaged can learners stay for and if the duration of the videos have an impact of how long the learners stay engaged for.-->
 
 <!-- [DO NOT CHANGE ANYTHING ABOVE THIS COMMENT] -->
+
+Figure XX is a line chart to demonstrate the relationship between the video duration and the percentage of viewers who watched 25%, 50%, 75% and 100% of the video.
+
+```{r run3_allpct_duration_scat, echo=FALSE, fig.width=11, fig.height=7}
+run3_allpct_duration_scat_V
+```
+
+Each line represents how many learners have watched a certain percentage of the videos. This is plotted against the duration of the videos on the x-axis.
+
+The graph shows that there is a steady drop off of learners watching the entire video. Majority of the drop off of learners happen between 75% and 100% way in to the videos. There also appears to be a tendency of learners to drop off more if the videos are longer too.
+
+Further investigation will look at the same data from all the runs combined, to understand if there is a general trend on which point throughout the duration of the videos do we see the largest drop of viewers. This can show how engaged can learners stay for and if the duration of the videos have an impact of how long the learners stay engaged for.
 
 ### 2.3.4 Hypothesis
 
@@ -426,7 +438,7 @@ There is still an outlier on video *'2.1_Welcome to Week 2: payment security'*, 
 # Question 3 Is there a correlation between duration of videos and drop out rate of the learners?
 # 7. Data Preparation 
 
-## Run 3 Data prep
+## All run data prep 
 ## 7.1 Select Data
 
 The last hypothesis will investigate whether there are any correlations between the duration of the videos and drop out rate of the learners. Therefore, we want to understand whether the length of the videos will have an impact on how much of the entire video the learners will watch. For example, how many learners have viewed 25% or 50% or 75% or the entire duration of the videos. This could potentially indicate whether the course provider should consider the length of the videos to keeping learners engaged. 
@@ -456,7 +468,7 @@ We will use this dataset to plot a line graph to show how the percentage of view
 ## 7.4 Format Data 
 
 The resulting dataframe is then transformed to a 'long' format to enable the use of ggplot2 to plot the data.  
-## All run data prep 
+
 ## 7.5 Integrate Data 
 
 We will take the same data from all of the runs to perform the same investigation. 
@@ -468,23 +480,8 @@ Finally the dataframe will be transformed to a 'long' format to enable plotting 
 
 # 8. Modelling 
 
-## Run 3 Modelling
-
-
-Figure XX attempts to demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 25%/ 50%/ 75% and 100% of each videos. 
-
-Each line represents how many learners have watched a certain percentage of the videos. This is plotted against the duration of the videos on the x-axis. 
-
-
-```{r run3_allpct_duration_scat, echo=FALSE, fig.width=11, fig.height=7}
-run3_allpct_duration_scat_V
-```
-
-The graph shows that there is a steady drop off of learners watching the entire video. Majority of the drop off of learners happen between 75% and 100% way in to the videos.  
-
-There appears to be a tendency of learners to drop off more if the videos are longer too.  
-
 ## All runs modelling
+Figure XX attempts to demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 25%/ 50%/ 75% and 100% of each videos, for the data of all runs combined.
 
 ```{r run3_7_allpct_duration_scat_V, echo=FALSE, fig.width=11, fig.height=7}
 run3_7_allpct_duration_scat_V
