@@ -3,6 +3,7 @@ title: "CSC8631 Report"
 author: "Selina So"
 date: "23/11/2021"
 output: pdf_document
+bibliography: EDA_reference.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -19,12 +20,12 @@ load.project()
 ## 1.1 Business Objectives 
 
 ### 1.1.1 Background
-Learning Analytics is a study of the "*measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the information system in which it occurs*(Shi, 2018)". The benefits of Learning Analytics is that it will provide insights to the factors which influences learners' retention. Learners' retention is one of the key drivers for institutes to implement Learning Analytics, as retaining students and their associated fees has a significant economical impact on the institutions' income (Xanthe Shacklock, 2016).  The insights from the Learning Analytics will enable course designers from educational institutes and MOOC (Massive open online course) providers to make informed decisions on the design and improvements of their courses, thus improving the learning environment for learners and drive more influx of learners enrolling. 
+Learning Analytics is a study of the *"measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the information system in which it occurs"* [@RN22]. The benefits of Learning Analytics is that it will provide insights to the factors which influences learners' retention. Learners' retention is one of the key drivers for institutes to implement Learning Analytics, as retaining students and their associated fees has a significant economical impact on the institutions' income [@RN21].  The insights from the Learning Analytics will enable course designers from educational institutes and MOOC (Massive open online course) providers to make informed decisions on the design and improvements of their courses, thus improving the learning environment for learners and drive more influx of learners enrolling. 
 
 FutureLearn is an MOOC provider, which collaborates with universities globally to offer online courses. Since their launch in 2013, they have attracted over seven million learners across the world (www.futurelearn.com). With a global reach of this extent, it is therefore crucial for FutureLearn to understand their performance in engaging with learners and providing an enhanced learning experience, which will retain and improve the learners' retention rate. The insights derived from Learning Analytics will therefore enable FutureLearn to understand areas of design or improvements which could create a positive impact for FutureLearn, their collaborators and their learners, in addition, to understand the key factors that could influence the retention rate of students. 
 
 ### 1.1.2 Business Objectives
-This study will investigate the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (https://www.futurelearn.com/courses/cyber-security). There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement (Bote-Lorenzo, Gomez-Sanchez, 2017). In this study, we will examine data from the *Cyber Security Safety at Home, Online, in Life* course to understand the factors which influence the learners' retention rate. We will look into if and how the continent the learners come from has an impact on the engagement of learners with the course. This insight will help to ensure that informed decisions can be taken to ensure the course appeals to learners from across the world. 
+This study will investigate the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (www.futurelearn.com/courses/cyber-security). There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement [@RN23]. In this study, we will examine data from the *Cyber Security Safety at Home, Online, in Life* course to understand the factors which influence the learners' retention rate. We will look into if and how the continent the learners come from has an impact on the engagement of learners with the course. This insight will help to ensure that informed decisions can be taken to ensure the course appeals to learners from across the world. 
 
 <!-- *Insights into the relationship of engagements across different continents. Is the course able to reach and retain a broad range of learners from across the world, from the material provided in the course. We aim to understand the areas which appear successful and areas that don't. With this insight, informed decisions could be made on areas where improvements could be made (reword)*.   -->
 
@@ -33,7 +34,7 @@ This study will investigate the *Cyber Security Safety at Home, Online, in Life*
 
 The *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University). There are 53 .csv data files which provide information on the learners and the course. The remaining 7 .pdf files provide an overview of the course structure.
 
-The course is divided into three weekly blocks of study. For each weekly block, there are a number of steps to complete. The first week block contains 18 steps, and the second and third week blocks contains 21 steps. (Shi, 2018, futurelearn site). Each blocks consist of a combination of videos, articles, exercises, discussions, quizzes and tests for the learners to complete throughout the course.
+The course is divided into three weekly blocks of study. For each weekly block, there are a number of steps to complete. The first week block contains 18 steps, and the second and third week blocks contains 21 steps. [@RN22] (www.futurelearn.com/courses/cyber-security). Each blocks consist of a combination of videos, articles, exercises, discussions, quizzes and tests for the learners to complete throughout the course.
 
 The 53 .csv data files are split into 7 runs. Each run represents different time-frames of when the data was collected. All courses ran between mid-2016 and mid-2018. All runs consists of the following data files: *'Archetype-survey-responses', 'Enrolments', 'Leaving-survey-responses', 'Question-response', 'Step-activity', 'Weekly-sentiment-survey-response, 'Team-members', 'Video-stats'*, with the exception of run 1, which does not contain the  *'Team-members'* and *'Video-stats'* datafiles, and run 2, which does not contain the *'Video-stats'* data file.
 
@@ -53,8 +54,7 @@ The use of these software sources are described below under *'1.2.2.1 Requiremen
 
 #### 1.2.1.2 Sources of Data and Knowledge
 
-- The CRISP-DM methodology (Cross-Industry Standard Process for Data Mining) will be applied to structure the project life cycle ([*TO DO] link the CRISP-DM guide*). 
-
+- The CRISP-DM methodology (Cross-Industry Standard Process for Data Mining) will be applied to structure the project life cycle ([*TO DO] link the CRISP-DM guide*)[@RN24]. 
 - 53 .csv data files and 7 .pdf files on the *Cyber Security Safety at Home, Online, in Life* course, provided by FutureLearn (via Newcastle University).
 
 #### 1.2.1.3 Personnel Sources
@@ -266,7 +266,7 @@ From the initial exploration, it has shown a number of interesting areas which w
 
 The data sets from each run have been compared and it was found that they all contain the same number of rows and columns, and the labels for rows and columns are consistent across all 5 runs. The data sets are mostly complete with no visible missing data. The format, variables and completeness of the data files are all consistent. Therefore the quality of the data is good and the merging of the data files from the other runs could be performed as ease.
 
-Columns *'unknown_device_percentage'* and *'antarctica_views_percentage'* contain values of 0. This can be assumed that the data provider has found no learners using unknown devices and there are no learners from the Antarctica, which is reasonable as according to the *World Population Review*, there is roughly 1000-4000 seasonal residents in the Antarctica (worldpopulationreview.com/continents/antarctica-population). Therefore we can assume that the values of 0 are accurate under the *'antarctica_views_percentage'* column. (should I remove device comment if no analysis on devices??)
+Columns *'unknown_device_percentage'* and *'antarctica_views_percentage'* contain values of 0. This can be assumed that the data provider has found no learners using unknown devices and there are no learners from the Antarctica, which is reasonable as according to the *World Population Review*, there is roughly 1000-4000 seasonal residents in the Antarctica (www.worldpopulationreview.com/continents/antarctica-population). Therefore we can assume that the values of 0 are accurate under the *'antarctica_views_percentage'* column. (should I remove device comment if no analysis on devices??)
 
 
 # Q1 Does the duration of the videos have an impact on the viewing rates across different continents?
