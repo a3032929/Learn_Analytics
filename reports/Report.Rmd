@@ -441,7 +441,7 @@ There is still an outlier on video *'2.1_Welcome to Week 2: payment security'*, 
 ## All run data prep 
 ## 7.1 Select Data
 
-The last hypothesis will investigate whether there are any correlations between the duration of the videos and drop out rate of the learners. Therefore, we want to understand whether the length of the videos will have an impact on how much of the entire video the learners will watch. For example, how many learners have viewed 25% or 50% or 75% or the entire duration of the videos. This could potentially indicate whether the course provider should consider the length of the videos to keeping learners engaged. 
+The last hypothesis will investigate whether there are any correlations between the duration of the videos and drop out rate of the learners, as we have seen in 2.3.3 using the run 3 data. We want to understand whether the length of the videos will have an impact on how much of the entire video the learners will watch. For example, how many learners have viewed 25% or 50% or 75% or the entire duration of the videos. This could potentially indicate whether the course provider should consider the length of the videos to keeping learners engaged. 
 
 The key columns for this investigation will be *'video_duration', 'total_views', 'viewed_twentyfive_percentage', 'viewed_fifty_percentage', 'viewed_seventyfive_percentage', and 'viewed_onehundred_percentage'* from the *'video_stats'* dataset. 
 
@@ -449,33 +449,20 @@ The range of 'viewed_percentage' columns shows the percentage of viewers who hav
 
 The 5%/ 10% and 95% range of 'viewed_percentage' columns have been excluded from this investigation because the selected columns provided an even split of data collection points. 5% and 10% are too early into the videos to really provide much information (??) and 95% is very close to 100%, that we can assume if viewers were to watch 95% of the video, they will likely to continue to the entire 100% of the video. 
 
-## 7.2 Clean data
+## 7.2 Construct Data
 
-(IS THIS FOR JOINING ALL RUNS??) 
+In order to combine the percentage values within the 'viewed_percentage' columns from all of the runs, we will need to create a new dataset that contains the actual number of viewers. This will be calculated using a similar function to question 1 and question 2, we will take the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each cell of the 'viewed_percentage' columns. This will calculate the actual number of viewers who have watched 25%/ 50%/ 75% and 100% of the videos. 
 
-As the values within the 'viewed_percentage' columns shows the percentage of viewers, we will need to create a new dataset that contains the actual number of viewers (why??). Using a similar function to question 1 and question 2, we will take the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each cell of the 'viewed_percentage' columns. This will calculate the actual number of viewers who have watched 25%/ 50%/ 75% and 100% of the videos. 
+The new dataset containing the total actual viewers for each 'viewed_percentage' columns in all runs will be summed/ added together, therefore combining all the data from all runs together.The resulting data frame is stored in the *'cache'*.
 
-The new dataset is then combined with the original '*video_duration*' column and reorganised so that the columns match the original dataset. Values are rounded to full numbers [HOW MANY DECIMAL POINTS INSTEAD OF FULL NUMBERS, e.g values are given as numbers with no decimal points???]. The resulting data frame is stored in the *'cache'* folder. 
+The new dataset then undergoes the final transformation to re-calculate the percentage for each of the 'viewed_percentage' column and then be combined with the *’video_duration’* column. The columns of this dataset will be reorganised and renamed to the corresponding percentage viewed so that they match the original dataset. The values are rounded to full numbers [HOW MANY DECIMAL POINTS INSTEAD OF FULL NUMBERS, e.g values are given as numbers with no decimal points???]. The resulting percentage data frame is stored in the *'cache'*. We will use this dataset to plot a line graph to show how the percentage of viewers have changed against the duration of the videos.  
+<!-- ## 7.3 Clean data (REDUNDANT???) -->
 
-The new dataset then undergoes another transformation to calculate the percentage for each of the 'viewed_percentage' columns. The resulting percentage data frame is stored in the *'cache'* 
-
-This dataset will then be combined with the *’video_duration’* column, and then the dataset will be reorganised so that the columns match the original dataset. The columns of the new dataset will be renamed to the corresponding percentage viewed. 
-
-We will use this dataset to plot a line graph to show how the percentage of viewers have changed against the duration of the videos.  
-
-## 7.3 Construct Data (REDUNDANT???)
-
-## 7.4 Format Data 
+## 7.3 Format Data 
 
 The resulting dataframe is then transformed to a 'long' format to enable the use of ggplot2 to plot the data.  
 
-## 7.5 Integrate Data 
-
-We will take the same data from all of the runs to perform the same investigation. 
-
-The same pre-processing steps will be undertaken as for run 3, to calculate the actual number of viewers from each 'viewed_percentage' columns for each run. The sum of the total actual viewers for each 'viewed_percentage' columns in all runs will be added together, then the percentage of viewers for each 'viewed_percentage' columns will be calculated and stored in *’cache’*. This combines the data from all seven runs together. 
-
-Finally the dataframe will be transformed to a 'long' format to enable plotting of the data. 
+<!-- ## 7.4 Integrate Data (REDUNDANT???) -->
 
 
 # 8. Modelling 
