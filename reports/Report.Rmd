@@ -204,7 +204,7 @@ The two first columns *'step_position'* and *'title'* will be combined to allow 
 
 Part of the data mining goal is to understand whether there is a trend on learners' engagement, therefore we will look at how the number of viewers have changed throughout the course. 
 
-Figure XX shows the number of viewers for each video based on the topic of the videos and the total of views for each other these videos (run 3 data).
+Figure XX shows the number of viewers for each video based on the topic of the videos and the absolute number of views for each other these videos (run 3 data).
 
 ```{r run3_totalview_topic_bar, echo=FALSE, , fig.width=11, fig.height=5.5}
 run3_totalview_topic_bar_V
@@ -301,7 +301,7 @@ In order to calculate the absolute number of viewings from each continent for ea
 run3_abs
 ```
 
-The resulting data frame then undergoes another transformation to calculate the percentage for each new continent value. For example, for the Europe views, we will take the absolute value from the Europe column and divide it by the highest absolute value from within Europe, then multiply by 100 to calculate the percentage of viewers from within the continent for each video. The resulting percentage data frame is stored in the *'cache'*
+The resulting data frame then undergoes another transformation to calculate the relative number of views (percentage) for each abolute continent value. For example, for the Europe views, we will take the absolute value from the Europe column and divide it by the highest absolute value from within Europe, then multiply by 100 to calculate the percentage of viewers from within the continent for each video. The resulting percentage data frame is stored in the *'cache'*
 
 
 ### 3.1.3 Clean data
@@ -323,77 +323,95 @@ Prior to calculating the percentage of viewers within each continent, to sum of 
 
 ### 3.1.5 Format data 
 
-Prior to plotting the data for each cycle, the resulting dataframes are transformed to a 'long' format, i.e., a column for every variable, and a row for every observation (www.datacarpentry.org), to enable the use of ggplot2 to plot the data (see Section xy, *'Modelling'*).
+Prior to plotting the data for each cycle, the resulting dataframes are transformed to a 'long' format, i.e., a column for every variable, and a row for every observation (www.datacarpentry.org), to enable the use of ggplot2 to plot the data (see Section 3.1.6 *'Modelling'*).
 
 
 ### 3.1.6 Modelling 
 <!-- ## Run 3 modelling -->
 
-The following plots is to determine whether the duration of the videos have an impact on the viewing rates across different continents. The new run 3 dataframe was plotted on to a scatter plot.
+[CLARIFY THIS SENTENCE: DO YOU MEAN THE NUMBER OF VIEWS WITHIN EACH CONTINENT, OR THE NUMBER OF VIEWS THAT ALLOWS YOU TO COMPARE WITHIN A VIDEO?] 
+<!-- The following plot is to determine whether the duration of the videos have an impact on the viewing rates across different continents. The new run 3 dataframe was plotted on to a scatter plot. -->
 
+Figure xy [CHECK REF] shows a plot of the relative number of views as calculated in *Section 3.1.2 Construct data*,  against the video duration, i.e. the data that allows to draw comparisons of the behaviour within a continent. This plot shows whether the viewers of a particular continent show an increased or decreased drop-out rate compared to the viewers of other continents. As described in *Section 3.1.2 Construct data*, all data is normalised to the most viewed video (Welcome to the course, 99 seconds duration).
+ 
 ```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
 line_cont3_pct_dur_V
 ```
 
-There appears to be no correlation between the duration of the videos and the number of viewers from each continents. The perecntage of viewers from all continents fluctuate and appears to be independent to the duration of the videos. *The graph does show that there are a higher percentage of viewers from Europe and Oceania for most videos than from Asia and Africa, however this is not the concern of this question????*. Before we can say that there is no correlation, the same plot will be plotted using the new dataframe with the number of viewers from each continent for all runs. 
+<!-- There appears to be no correlation between the duration of the videos and the number of viewers from each continents.  -->
+The percentage of viewers from all continents fluctuate and appears to be independent of the duration of the videos. However it appears as if viewing rates from Africa, Asia and South America show a steeper decline from the *Welcome* video to all other videos in compared to the other continents. Viewing rates from Oceania show the smallest decline. 
+Due to potential noise on the data, the same plot is plotted using the data for all runs (Figure xy [CHECk REF]) 
 
 
-## All runs modelling
+<!-- ## All runs modelling -->
 
 ```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
 line_cont_all_pct_dur_V
 ```
-As expected, Fig XX for all of the runs supported the outcome of run 3, in which there is no correlation between the duration of the videos and the number of viewers from each continents. *Again the graph does show that there are a higher percentage of viewers from Europe and Oceania for most videos than from Asia and Africa.??? Therefore the duration of the videos appears to not have a direct impact on keeping learners' engaged or keeping the learners to stay throughout the video (??)* We will investigate on whether there are correlations between the topics of the video and the number of viewers from each continents. 
+Figure XX shows the same pattern as the data of run 3 (Figure xy [CHECK REF]), in which there is no correlation between the duration of the videos and the number of viewers from each continents. However, it appears as if the steepest decline in viewing numbers can be observed for learners from Africa and Asia. South American viewing rates seemed to show a steeper decline for videos below approx. 220 seconds, whereas they increase compared to the other continents for longer video durations.  
+
+In summary, there is no clear correlation between the relative number of views within each continent and the video duration.
+
+*Again the graph does show that there are a higher percentage of viewers from Europe and Oceania for most videos than from Asia and Africa.??? Therefore the duration of the videos appears to not have a direct impact on keeping learners' engaged or keeping the learners to stay throughout the video (??)* 
+
+We will investigate on whether there are correlations between the topics of the video and the number of viewers from each continent in Section 3.2.
 
 
-## 3.3 Data Preparation and Modelling for Q2: Does the content of the videos have an impact on the viewing rates across different continents? using absolute values
-# 5. Data Preparation 
+## 3.2 Data Preparation and Modelling for Q2: Does the content of the videos have an impact on the viewing rates across different continents?
 
-## Run3 Data prep
+To answer the second question, we will investigate whether the topics of the videos have an impact on the viewing rates across different continents. This could indicate whether the learners from certain continents engage more with certain topics from the course or whether the learners find certain topics less interesting. 
 
-## 5.1 Select Data
+<!-- # 5. Data Preparation  -->
 
-The second hypothesis will investigate on whether the topics and content of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the learners from certain continents engages better with certain topics from the course or whether the learners find certain topics less interesting. 
+<!-- ## Run3 Data prep -->
 
-For the same reasons as the data preparation for question 1, the continent columns within the *'video_stats'* dataset currently shows the split percentage of viewers from each continent for each video. However for this investigation, we want to firstly plot a bar chart using the actual number of viewers (*why?*) from each continent (for example, total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent). This has already been calculated for question 1, as mentioned in *'3.2 Construct Data'*, and will be re-used for question 2. 
+### 3.2.1 Select Data
+
+For the same reasons as explained in Section 3.1.1, the continent columns within the original *'video_stats'* data sets show the percentage of viewers from different continents for each video. To answer question 2, we want to firstly plot a bar chart using the absolute number of viewers from each continent. As explained in Section 3.1.1, we calculated the absolute number of learners by dividing the '*Total Viewed*' column by 100 and multiply by the  percentage viewed value for each continent. For the first cycle of analysis, we will use the data from run 3 only. For the second cycle of analysis, we will combine data from runs 3-7.
 
 
-## 5.2 Construct Data
+### 3.2.2 Construct Data
 
-The columns of the new dataset will be renamed to the corresponding continents. This will then be combined with the *'step_title'* column, which as discussed in *'2.3 Explore data'*, consist of combining the two first columns *'step_position'* and *'title'* from the *'video_stats'* dataset,to allow quick reference to the order of which the videos appears throughout the course. The dataset will be reorganised so that the columns match the original dataset.
+The columns of the new data set will be renamed to the corresponding continents. This will then be combined with the *'step_title'* column, which as discussed in *'2.3 Explore data'*, consist of combining the two first columns *'step_position'* and *'title'* from the *'video_stats'* data set,to allow quick reference to the order of which the videos appears throughout the course. The data set will be re-organised so that the columns match the original data set. Table xy [ADD TABLE REF] shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
 
 ```{r, echo=FALSE}
 as_tibble(output_3_abs[1:3,c(1,3:9)])
 ```
 
-Secondly, we want to plot a line graph to show how the percentage of viewers have changed throughout the course. Same as for question, as mentioned in *'3.2 Construct Data'*, we will take the dataset with the actual number of viewers, then transform it to show the percentage for each new continent value. The resulting percentage data frame is stored in the *'cache'*
+Secondly, we will plot a line graph to show how the relative number of views changes throughout the course. As mentioned in *Section '3.1.2 Construct Data'*, we will take the data set with the absolute number of viewers, then calculate the relative number of view within each continent relative to the highest number of views across all videos within that continent. The resulting percentage data frame is stored in the *'cache'*.
 
 
-## 5.3 Clean data
+## 3.2.3 Clean data
 
-As in *'3.3 Clean Data'*, this new dataframe of percentage values will be combined with the '*step_title*' column and reorganised so that the columns match the original dataset. Values are rounded to full numbers [HOW MANY DECIMAL POINTS INSTEAD OF FULL NUMBERS, e.g values are given as numbers with no decimal points???]. The *NaN*' values from the *'antarctica_views_percentage'* column will be replaced with 0, as these were the real zero values. The resulting percentage data frame is stored in the *'cache'*
+As described in Section *'3.1.3 Clean Data'*, the new dataframe of percentage values will be combined with the '*step_title*' column and re-organised so that the columns match the original data set. Values are given with no decimal places to increase the readability of the results as explained in Section *'3.1.3 Clean Data'*. 
+
+The calculation of the percentages has resulted in the values from the *'antarctica_views_percentage'* being '*NaN*'. Since we know that there were no viewers from Antarctica, all '*NaN*' values have been replaced by 0. The resulting percentage data frame is stored in the *'cache'*
 
 ```{r}
 as_tibble(continent_3_pct_ro[1:3,c(1,3:9)])
 ```
 
 
-## 5.4 Format Data
+<!-- ## 3.2.4 Format Data -->
 
-The resulting dataframe will be transformed to a 'long' format to enable plotting of the data in *'6. Modelling'*.
+<!-- The resulting dataframe is transformed to a 'long' format to enable plotting of the data in Section *'3.2.6 Modelling'*. -->
+<!-- ## All run data prep -->
+<!-- ## 5.5 Integrate Data -->
+<!-- The same pre-processing steps will be undertaken for all of the runs.  The additional step will be to sum the total actual viewers for all runs, then the percentages of viewers will be calculated, just as in *'3.5 Integrate data'*.  -->
+<!-- The resulting dataframe will be transformed and used for plotting. -->
+
+### 3.2.4 Integrate data 
+
+<!-- The same data on the number of viewers from the continents will also be investigated for the data of all of the runs together.  -->
+Prior to calculating the percentage of viewers within each continent, to sum of the absolute actual viewers for all runs for it to be added together, thus ensuring that the average is weighted according to the absolute number of learners within each run.
+
+### 3.2.5 Format data 
+Prior to plotting the data for each cycle, the resulting dataframes are transformed to a 'long' format, i.e., a column for every variable, and a row for every observation (www.datacarpentry.org), to enable the use of ggplot2 to plot the data (see Section 3.1.6 *'Modelling'*).
 
 
-## All run data prep
-## 5.5 Integrate Data
+### 3.1.6 Modelling 
 
-The same pre-processing steps will be undertaken for all of the runs.  The additional step will be to sum the total actual viewers for all runs, then the percentages of viewers will be calculated, just as in *'3.5 Integrate data'*. 
-
-The resulting dataframe will be transformed and used for plotting.
-
-
-# 6. Modelling 
-
-## Run 3 modelling
+<!-- ## Run 3 modelling -->
 
 The video topics will be reordered to the same order as how they run throughout the course for the plots. This will show how the number of viewers have changed throughout the course. 
 
