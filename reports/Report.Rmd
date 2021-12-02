@@ -1,5 +1,5 @@
 ---
-title: "CSC8631 Report"
+title: "CSC8631 Learning Analytics Report"
 author: "Selina So"
 date: "02/12/2021"
 output: pdf_document
@@ -25,9 +25,7 @@ Learning Analytics is a study of the *"measurement, collection, analysis and rep
 FutureLearn is an MOOC provider, which collaborates with universities globally to offer online courses. Since their launch in 2013, they have attracted over seven million learners across the world (www.futurelearn.com). With a global reach of this extent, it is therefore crucial for FutureLearn to understand their performance in engaging with learners and providing an enhanced learning experience, which will retain and improve the learners' retention rate. The insights derived from Learning Analytics will therefore enable FutureLearn to understand areas of design or improvements which could create a positive impact for FutureLearn, their collaborators and their learners, in addition, to understand the key factors that could influence the retention rate of students. 
 
 ### 1.1.2 Business Objectives
-This study will investigate the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (www.futurelearn.com/courses/cyber-security). There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement [@RN23]. In this study, we will examine data from the *Cyber Security Safety at Home, Online, in Life* course to understand the factors which influence the learners' retention rate. We will look into if and how the continent the learners come from has an impact on the engagement of learners with the course. This insight will help to ensure that informed decisions can be taken to ensure the course appeals to learners from across the world. 
-
-<!-- *Insights into the relationship of engagements across different continents. Is the course able to reach and retain a broad range of learners from across the world, from the material provided in the course. We aim to understand the areas which appear successful and areas that don't. With this insight, informed decisions could be made on areas where improvements could be made (reword)*.   -->
+This study will investigate the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (www.futurelearn.com/courses/cyber-security). There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement [@RN23]. In this study, we will examine data from the course to understand the factors which influence the learners' retention rate. We will look into if and how the continent the learners come from has an impact on the engagement of learners with the course. This insight will help to ensure that informed decisions can be taken to ensure the course appeals to learners from across the world. 
 
 
 ## 1.2 Assess situation 
@@ -44,7 +42,7 @@ The following sections will list the resources available to the project.
 
 #### 1.2.1.1 Software Sources
 
-The following software sources have been used and are described below under *'1.2.2.1 Requirements'*:
+The following software sources have been used and are described below under section '1.2.2.1 Requirements':
 
 - R
 - RStudio
@@ -75,7 +73,7 @@ Applying best programming practice is crucial for this project to enable reprodu
 - ggplot2: R package to produce data visualizations
 - Git: Used for version control
 
-There are legal obligations and privacy policies, such as *GDPR (General Data Protection Regulation)* and the *Data Protection Act (2018)*, to consider before using the data (see Section 1.2.2.2 Assumptions).
+There are legal obligations and privacy policies, such as *GDPR (General Data Protection Regulation)* and the *Data Protection Act (2018)*, to consider before using the data (see section '1.2.2.2 Assumptions').
 
 #### 1.2.2.2 Assumptions
 
@@ -144,29 +142,31 @@ There are 7 runs of data. Each run of data was measured several months apart fro
 
 - *'Team-members'* (not available for run 1): the data files contain IDs, the team role and user role of the individuals. The *'first_name'* and *'last_name'* columns have been anonymised by the provider of the data file by removing the names of the individual learners and replacing them with the words 'First' and 'Last' for the columns *'first_name'* and	*'last_name'*, respectively. 
 
-- *'Video-stats'* (not included in run 1 and 2): the data files contain information on the video topics, and numerical data on the number of viewers per video, devices and features used to view the videos, how long  individuals watched the videos and the percentage of viewers from each continent. The contents of this data file will be examined in more detail in Section 2.2.
+- *'Video-stats'* (not included in run 1 and 2): the data files contain information on the video topics, and numerical data on the number of viewers per video, devices and features used to view the videos, how long  individuals watched the videos and the percentage of viewers from each continent. The contents of this data file will be examined in more detail in section '2.2 Describe data'.
 
 ### 2.1.1 Initial data file selection
 
-The initial data file of interest was the *'Weekly-sentiment-survey-response'* data. These data would have been useful to combine with the data from the *'Leaving-survey-responses'* data files to potentially obtain a mixture of feedback which will provide direct insight into the learners' experience to the course provider. The *'reason'* column was interesting as it contains free text, therefore provided a direct source of feedback that could be analysed using Natural Language Processing (NLP). However, after an initial assessment, it appears that the data contained positively biased views of the individuals' experience with the course. The unstructured free text were also of poor quality as they contained incomplete sentences, single word feedback with lack of context and text that contains random symbols. In addition, there were many missing feedback data and due to only runs 6 and 7 containing a small selection of feedback, there is therefore insufficient data to draw substantial conclusions with the data. The *'Leaving-survey-responses'* data files also contain pre-selected responses, which indicates that the learners were only allowed to select from a very narrow range of opinions. We concluded that the data file does not provide meaningful insight into the sentiments of the learners. Lastly, the two sets of data files do not contain the same type of ID columns. The *'Leaving-survey-responses'* data files contained *'Learner_ID'*, which leads to the assumption that the responses were provided by the learners. The *'Weekly-sentiment-survey-response'* data files contained *'ID'*, which we cannot assume that the responses were from the learners only, as other data files (such as, the *'Team-members'* data files) have already shown that 'educators', 'mentors', etc all have an ID number assigned to each one of them. The responses could potentially come from individuals with conflicted interest with the course, therefore the responses will not be a reliable source of information to draw conclusions on the course. 
+The initial data file of interest was the *'Weekly-sentiment-survey-response'* data. These data would have been useful to combine with the data from the *'Leaving-survey-responses'* data files to potentially obtain a mixture of feedback which will provide direct insight into the learners' experience to the course provider. The *'reason'* column was interesting as it contains free text, therefore provided a direct source of feedback that could be analysed using Natural Language Processing (NLP). However, after an initial assessment, it appears that the data contained positively biased views of the individuals' experience with the course. The unstructured free text were also of poor quality as they contained incomplete sentences, single word feedback with lack of context and some text contained random symbols. In addition, there were many missing feedback data and as only runs 6 and 7 contained a small selection of feedback, there is insufficient data to draw substantial conclusions with the data. The *'Leaving-survey-responses'* data files also contain pre-selected responses, which indicates that the learners were only allowed to select from a very narrow range of opinions. We concluded that the data file does not provide meaningful insight into the sentiments of the learners. Lastly, the two sets of data files do not contain the same type of ID columns. The *'Leaving-survey-responses'* data files contained *'Learner_ID'*, which leads to the assumption that the responses were provided by the learners. The *'Weekly-sentiment-survey-response'* data files contained *'ID'*, which we cannot assume that the responses were from the learners only, as other data files (such as, the *'Team-members'* data files) have already shown that 'educators', 'mentors', etc all have an ID number assigned to each one of them. The responses could potentially come from individuals with conflicted interest to the course, therefore the responses will not be a reliable source of information to draw conclusions on the course. 
 
 ### 2.1.2 Final data file selection
 
-As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore use the video data to understand students' engagement with the course, and consequently the retention rate of the learners throughout the course. This will enable the course provider to make informed decisions on the design and improvements of the course. To achieve this, the focus will be on the '*video.stats*' data files provided by FutureLearn. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data is available. There appears to be no missing values from the data, therefore the data files for '*video.stats*' are complete. 
+As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore use the video data to understand students' engagement with the course, and consequently the retention rate of the learners throughout the course. This will enable the course provider to make informed decisions on the design and improvements of the course. To achieve this, the focus will be on the '*video-stats*' data files provided by FutureLearn. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data is available. There appears to be no missing values from the data, therefore the data files for '*video-stats*' are complete. 
 
 
 ## 2.2 Describe data 
 
-Displaying below is the list of column names of the '*video.stats*'.
+Displaying below is the list of column names of the '*video-stats*'.
 
 ```{r video-stats 3, echo=FALSE}
 names(run3)
 ```
-There are 13 rows of data in each '*video.stats*' data file, one row corresponding to each video content throughout the course. 
+There are 13 rows of data in each '*video-stats*' data file, one row corresponding to each video content throughout the course. 
 
 There are 28 columns. The first column of each dataset describes the weekly block and the step position of where a particular video is located within the course. The second column contains strings of data which refers to the video title, which we assume describes the video content. The remaining columns (columns 3-28) contain numerical data, some of which are percentage values. Care will have to be taken when merging the runs together for the columns containing percentage values. The percentage values are averaged across runs using the weighted average to account for the different number of learners in each run. 
 
-We will make two assumptions for this project: (1) The number of views is equal to the number of learners, i.e. they either do not include the views of tutors or hosts or these are neglible, and (2) each viewer only viewed each video once. The data files contain information on the video topics and the absolute number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file provide a rich source of information to gain insight into the learners behaviour to inform the business objectives of the project. Due to time constraints during this project, the data on the type of devices, downloads, as well as the number of HD users will not be selected for this study. These columns may be interesting for further analysis on how to optimise the content of videos to ensure they are in the right format and have the correct features.
+We will make two assumptions for this project: (1) The number of views is equal to the number of learners, i.e. they either do not include the views of tutors or hosts or these are neglible, and (2) each viewer only viewed each video once. 
+
+The data files contain information on the video topics and the absolute number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file provide a rich source of information to gain insight into the learners behaviour to inform the business objectives of the project. Due to time constraints during this project, the data on the type of devices, downloads, as well as the number of HD users will not be selected for this study. These columns may be interesting for further analysis on how to optimise the content of videos to ensure they are in the right format and have the correct features.
 
 - Basic statistical analysis for run 3 shows that there is some skewness in the *'total_views'* data, ranging from a minimum of 446 total views to 1659 total views. By analysing the number of learners for each topic, it potentially show whether certain topics attract more viewers. 
 
@@ -174,7 +174,7 @@ We will make two assumptions for this project: (1) The number of views is equal 
 
 - The unit for the values of the video duration is included in the course overview .pdf files. The shortest and longest videos ranges from 37 seconds to 426 seconds (~7 min). The average time of videos is 231 seconds (~4 min). The duration of the video could possibly impact the learners' engagement to the course.
 
-- From the 'viewed_percent' columns, it is clear from the summary that there is a downward trend in the number of viewers throughout the duration of the videos. Further analysis may help to identify if a maximal duration of the video exist in order to keep learners engaged.
+- From the 'viewed_percent' columns, it is clear from the basic statistical analysis that there is a downward trend in the number of viewers throughout the duration of the videos. Further analysis may help to identify if a maximal duration of the video exist in order to keep learners engaged.
 
 
 ## 2.3 Explore data 
