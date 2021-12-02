@@ -3,7 +3,6 @@ line_cont_all_pct_dur_V <- joint_data_dur %>%
   ggplot( aes(x=video_duration, y=Value, group=Continent, color=Continent))+
   geom_line(size=1)+
   geom_point(size=2)+
-  ggtitle("Figure 5: Percentage of Viewers against Video duration (all runs)")+
   theme_bw()+
   ylab("Percentage Viewers")+
   theme(

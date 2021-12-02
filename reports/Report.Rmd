@@ -10,7 +10,7 @@ bibliography: EDA_reference.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo=FALSE)
 knitr::opts_knit$set(root.dir = normalizePath('..'))
 ```
 
@@ -192,7 +192,7 @@ Part of the data mining goal is to understand whether there is a trend on learne
 
 Figure 1 shows the number of viewers for each video based on the topic of the videos and the absolute number of views for each other these videos (run 3 data).
 
-```{r run3_totalview_topic_bar, echo=FALSE, , fig.width=11, fig.height=5.5}
+```{r, echo=FALSE, fig.width=11, fig.height=5.5, fig.cap="Total Number of Views per Video Topic (run 3)"}
 run3_totalview_topic_bar_V
 ```
 
@@ -204,9 +204,8 @@ A scatterplot matrix will be used to visualize any pairs of relationships. For t
 
 Figure 2 attempts to demonstrate the relationships between the length of the videos and the number of views, captions and transcripts used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
 
-```{r run3_duration_features_scatMx, echo=FALSE, fig.width=11, fig.height=7}
-pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite,
-      main = "Figure 2: Total Views and Features used through Video duration (run 3)", pch = 19, upper.panel = NULL, cex.main=0.7)
+```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Total Views and Features used through Video duration (run 3)"}
+pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite, pch = 19, upper.panel = NULL, cex.main=0.7)
 ```
 
 There are no obvious relationships observed between the length of the videos and the amount of views and features used for the videos. As the total number of views increases, so does the number of  captions used and transcripts used, which is to be expected. As there are no unexpected patterns that would indicate a dependence of e.g. the number of transcript reads on video duration, we will not continue with investigating these columns in our study.
@@ -215,7 +214,7 @@ There are no obvious relationships observed between the length of the videos and
 
 Figure 3 is a line chart to demonstrate the relationship between the video duration and the percentage of viewers who watched 25%, 50%, 75% and 100% of the video.
 
-```{r run3_allpct_duration_scat, echo=FALSE, fig.width=11, fig.height=7}
+```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Number of viewers watched 25%, 50%, 75% and 100% of videos (run 3)"}
 run3_allpct_duration_scat_V
 ```
 
@@ -290,16 +289,18 @@ Prior to plotting the data for each cycle, the resulting dataframes are transfor
 
 Figure 4 shows a line chart of the relative number of views as calculated in *Section 3.1.2 Construct data*,  against the video duration, i.e. the data that allows to draw comparisons of the behaviour within a continent. This plot shows whether the viewers of a particular continent show an increased or decreased drop-out rate compared to the viewers of other continents. As described in *Section 3.1.2 Construct data*, all data is normalised to the most viewed video (Welcome to the course, 99 seconds duration).[NOT SURE ABOUT LAST SENTENCE]
  
-```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
+```{r, echo=FALSE, fig.width=11, fig.height=5, fig.cap="Percentage of Viewers against Video duration (run 3)"}
 line_cont3_pct_dur_V
 ```
 
 The percentage of viewers from all continents fluctuate and appears to be independent of the duration of the videos. However it appears as if viewing rates from Africa, Asia and South America show a steeper decline from the *Welcome* video to all other videos in compared to the other continents. Viewing rates from Oceania show the smallest decline. 
+
 Due to potential noise on the data, the same plot is plotted using the data for all runs (Figure 5). 
 
-```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
+```{r, echo=FALSE, fig.width=11, fig.height=5, fig.cap="Percentage of Viewers against Video duration (all runs)"}
 line_cont_all_pct_dur_V
 ```
+
 Figure 5 shows the same pattern as the data of run 3 (Figure 4), in which there is no correlation between the duration of the videos and the number of viewers from each continents. However, it appears as if the steepest decline in viewing numbers can be observed for learners from Africa and Asia. South American viewing rates seemed to show a steeper decline for videos below approx. 220 seconds, whereas they increase compared to the other continents for longer video durations.  
 
 In summary, there is no clear correlation between the relative number of views within each continent and the video duration.
@@ -348,7 +349,7 @@ For the plots in this Section, the video topics will be reordered to the same or
 
 Figure 6 is a bar chart that shows the relationship between the video topics and the number of viewers from across different continents for run 3. The colours in each bar are split according to the continent of the viewers, as shown in the key. 
 
-```{r stack_cont3_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
+```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Total continental viewers against video topics (run 3)"}
 stack_cont3_AbV_topic_bar_V
 ```
 
@@ -358,7 +359,7 @@ There are three videos, in which the number of viewers slightly increased compar
 
 The same data, but with the relative number of viewers from each continent, were plotted on a line chart in Figure 7. Each line represents a different continent.
 
-```{r line_cont3_pct_topic, echo=FALSE, fig.width=11, fig.height=6}
+```{r, echo=FALSE, fig.width=11, fig.height=6, fig.cap="Percentage of viewers against Video Topics (run 3)"}
 line_cont3_pct_topic_V
 ```
 
@@ -369,16 +370,17 @@ There is an outlier from South American viewers on video *'2.1_Welcome to Week 2
 There is likely to be noise on the data which obscures trends. For the second cycle of analysis, we will plot these graphs again using the data from all of the runs combined. The result is shown in Figure 8.
 
 
-```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=5}
+```{r, echo=FALSE, fig.width=11, fig.height=5, fig.cap="Total continental viewers against video topics (all runs)"}
 stack_cont_all_AbV_topic_bar_V
 ```
+
 From the initial observation of the graph, the trend of the viewers from all runs combined, follow the same pattern as for run 3 viewers, with the largest drop in viewers occuring throughout week one of the course. The data shows that the drop in viewers throughout week one is very similar to run 3, from 7458 (at the start of week one) to 3154 (end of week one), which equates to 57.7% in week one alone. Then a smaller gradual decrease of viewers between week two to week three, from 2816 to 1910, which is 32.2%, can be observed. Again, this is a very similar drop as was seen for run 3. 
 
 The combination of data for all runs shows that there are two videos in which the number of viewers slightly increased compared to the previous video, these are *'1.19_Staying safe online: personal perspectives'* and *'3.2_Devices in the future house'*.
 
 Just as for run 3, the percentage viewers from each continent of all the runs were plotted on a line chart in Figure 9. Each line represents a different continent as shown in the key.
 
-```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=6}
+```{r, echo=FALSE, fig.width=11, fig.height=6, fig.cap="Percentage of viewers against Video Topics (all runs)"}
 line_cont_all_pct_topic_V
 ```
 
@@ -414,7 +416,7 @@ The resulting dataframe is then transformed to a 'long' format to enable the use
 ### Modelling 
 Figure 10 demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 25%, 50%, 75% and 100% of each video, for the data of all runs combined.
 
-```{r run3_7_allpct_duration_scat_V, echo=FALSE, fig.width=11, fig.height=7}
+```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Number of viewers watched 25%, 50%, 75% and 100% of videos (all runs)"}
 run3_7_allpct_duration_scat_V
 ```
 

@@ -12,7 +12,6 @@ line_cont3_pct_topic_V <- new_cont_3_df %>%
   ggplot( aes(x=step_title, y=Value, group=Continent, color=Continent))+
   geom_line(size=1)+
   geom_point(size=2)+
-  ggtitle("Figure 7: Percentage of viewers against Video Topics (run 3)")+
   theme_bw()+
   ylab("Percentage Viewers")+
   theme(
