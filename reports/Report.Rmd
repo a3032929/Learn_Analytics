@@ -1,7 +1,7 @@
 ---
 title: "CSC8631 Learning Analytics Report"
 author: "Selina So"
-date: "02/12/2021"
+date: "03/12/2021"
 output:
   bookdown::pdf_document2:
     toc: false
@@ -133,7 +133,7 @@ There are 7 runs of data. Each run of data was measured several months apart fro
 
 - *'Archetype-survey-responses'*: The data files consist of two sets of Id-related columns, a date and time stamps column and a categorical column *'archetype'*. As no descriptions were provided, it is difficult to deduce the exact meaning of the archetype data without further information. In addition, the data files for runs 1-3 are either empty or incomplete.
 
-- *'Enrolments'*: The data files contain information of learners' ID, enrollment and unenrollment date and time stamps. In addition, the files contain categorical data on gender, country, age, education and employment status and detected country. The columns *'fully_participated_at'* and *'purchased_statement_at'* contain date and time stamps, however the significance of these columns is unclear without further information. There are many *'Unknown'* in the data files.
+- *'Enrolments'*: The data files contain information of learners' ID, enrolment and unenrolment date and time stamps. In addition, the files contain categorical data on gender, country, age, education and employment status and detected country. The columns *'fully_participated_at'* and *'purchased_statement_at'* contain date and time stamps, however the significance of these columns is unclear without further information. There are many *'Unknown'* in the data files.
 
 - *'Leaving-survey-responses'*: The data files contain information about learners' ID, leaving date, and learners' feedback, which was given as what is assumed to be pre-set selection of feedback options. The assumption was made as the comments all fall within a small set of answers (e.g. 'I prefer not to say', 'The course required more time than I realised', 'The course was too hard', 'Other'). It contains information on the last step completed when the response was provided, however the data is incomplete as many rows contain missing data. The data files for runs 1 to 3 are empty.
 
@@ -145,7 +145,7 @@ There are 7 runs of data. Each run of data was measured several months apart fro
 
 - *'Team-members'* (not available for run 1): the data files contain IDs, the team role and user role of the individuals. The *'first_name'* and *'last_name'* columns have been anonymised by the provider of the data file by removing the names of the individual learners and replacing them with the words 'First' and 'Last' for the columns *'first_name'* and	*'last_name'*, respectively. 
 
-- *'Video-stats'* (not included in run 1 and 2): the data files contain information on the video topics, and numerical data on the number of viewers per video, devices and features used to view the videos, how long  individuals watched the videos and the percentage of viewers from each continent. The contents of this data file will be examined in more detail in section '2.2 Describe data'.
+- *'Video-stats'* (not included in run 1 and 2): the data files contain information on the video topics, and numerical data on the number of viewers per video, devices and features used to view the videos, how long individuals watched the videos and the percentage of viewers from each continent. The contents of this data file will be examined in more detail in section '2.2 Describe data'.
 
 ### Initial data file selection
 
@@ -435,26 +435,25 @@ The study was to understand the potential factors that could affect the learners
 
 The line chart in Figure 7 and 9, also indicates that there is a clear interest for video 2.1 from learners based in South America. The topic was *Welcome to Week 2: payment security*. Given more time, we could do further analysis to gain insights about the learners' from continents to understand whether there are other factors which could affect the learners’ engagement for certain topics, these factors could include but not limited to political factors of the continent, types of jobs and interest in cyber security within those continents.  
 
-*Question 3*: The results potentially show that the longer a video is the higher risk of the learners’ dropping out the videos earlier during the videos. As most learners drop out after 75% into a video, this could help course designers and providers decide whether to ensure that important course content are placed earlier on the videos. Alternatively, it would be interesting to analyse the video contents in the last 25% of the video for the outliers as discussed in Section 3.3.4. This could help understand if there are any triggers for the drop outs to inform the future design of the videos.
+*Question 3*: The results potentially show that the longer a video is the higher risk of the learners’ dropping out earlier during the videos. As most learners drop out after 75% into a video, this could help course designers and providers decide whether to ensure that important course content are placed earlier on the videos. Alternatively, it would be interesting to analyse the video contents in the last 25% of the video for the outliers as discussed in Section 3.3.4. This could help understand if there are any triggers for the drop outs to inform the future design of the videos.
 
 It would be interesting to see if the following would have an impact on the data: [???] If the decision is to be made to make important content appear towards the end of the videos, then a contents page could be provided in the video, to inform the learners what to expect throughout a video and this could potentially keep learners more engaged throughout the video. Depending on the interest of the content, it could affect the number of learners watching the entire length of the videos. 
 
 *Summary*: Based on the data and the analysis in this report, it appears that learners engagement with the course decreases throughout the course (and throughout the duration of the videos). Most learners appear to stop viewing the videos after the first week of the course. For the learners who are seriously interested in the course, they are likely to stay on for week two and week three, hence we see a smaller drop out rate to the course for those two weeks.  
 
+
 ## Review process 
-<!--*( resulting models appear to be satisfactory and to satisfy business needs. It is now appropriate to do a more thorough review of the data mining engagement in order to determine if there is any important factor or task that has somehow been overlooked.Summarize the process review and highlight activities that have been missed and those that should be repeated)* -->
+<!--*( resulting models appear to be satisfactory and to satisfy business needs. Did we find correlations to answer the business question?? It is now appropriate to do a more thorough review of the data mining engagement in order to determine if there is any important factor or task that has somehow been overlooked.Summarize the process review and highlight activities that have been missed and those that should be repeated)* -->
+
+The outcome of the investigation was satisfactory for the business needs. However, given more time, further analysis could be undertaken on the impact of video features made available for the viewers. With the right data, it would have been interesting to understand whether learners from different continents prefer to use certain devices to access the video content, depending on how widely available certain devices are in different continents. A interesting analysis could also be considered on whether the captions and transcript features are important for learners are based in continents (and countries)?? which do not speak English predominately. The outcome from this analysis could help optimise the content of videos to ensure that they are in the right format and have the correct features.
+
+In addition, the data could be combined with the data files (e.g. the enrolments.csv) to understand more about the types of learners from each continents, and if the data could be split into separate countries. This could provide further insight to determine if certain topics are of more interest for learners of certain continents and certain countries, which could inform the design of any future courses. For example, we saw that there was potentially more interest for the 'payment security' topics from learners of South America. The enrolment and unenrolment date and time stamps may also give an indication on the average duration that the learners stay on the course and if it indicates that learners drop out quicker after the first week of the course, as they appear to do with the video data. 
+
+As the data was originally collected between 2016-18, the recent pandemic has greatly affected the lives of everyone. Many people were forced to work and study at home, many people lost their jobs, many people had more time to reconsider their career options, many activities have moved online for everyone to access. It will be interesting to analyse and understand what impact has the pandemic had on learners and whether we see more or less engagement from learners viewing the videos.
+
 
 ## Determine next steps 
 <!--*(Depending on the results of the assessment and the process review, the project team decides how to proceed. The team decides whether to finish this project and move on to deployment, initiate further iterations, or set up new data mining projects. This task includes analyses of remaining resources and budget, which may influence the decisions.List the potential further actions, along with the reasons for and against each option.Describe the decision as to how to proceed, along with the rationale.)*-->
-
-Given more time, the data could be combined with the e.g. the _enrolments.csv data files to understand more about the types of learners from each continents, and if the data allows possibly split into separate countries. This could provide further insight if certain topics are of more interest for learners of certain continents and from different countries, which could inform the design of any future courses.  
-
-Did we find correlations to answer the business question?? 
-
-Whats the future work?? 
-May have to do some more analysis to compare with other MOOC courses
-
-Week 2 block is mainly on cybersecurity of payment infrastructure. Could be people are more interested on how to protect digital payments or there might be more people looking to work or already working in the cyber security / financial sector and are keen to learn about these topics. More investigation will need to be made.
 
 
 # References
