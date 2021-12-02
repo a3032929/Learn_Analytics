@@ -6,7 +6,7 @@ run3_7_allpct_duration_scat_V <- new_dur_view_df_pct %>%
   theme_classic()+
   theme(plot.title = element_text(size=12, face="bold"))+
   scale_y_continuous(name = "Percentage of viewers through phases of video duration")+
-  scale_x_continuous(name = "Video Duration")
+  scale_x_continuous(name = "Video Duration (sec)")
 
 cache("run3_7_allpct_duration_scat_V")
   
