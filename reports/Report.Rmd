@@ -220,7 +220,7 @@ Each line represents how many learners have watched a certain percentage of the 
 
 The graph shows that there is a steady drop off of learners watching the entire video. The majority of the drop off of learners happens between 75% and 100% of the video duration. There is potentially a tendency of learners to drop off more if the videos are longer, however there is too much noise in the data to be certain.
 
-Further investigation will look at this behaviour with data from all runs. This will help understanding two potential points: (1) Is a point throughout the duration of the videos (e.g. between 75% and 100%), independent of total duration of the video, where the drop off rate is the largest? (2) Is there a maximum duration of the video after which the learners are decide not to watch the video? This will help answer the question if (1) the content after a certain point in the videos is not of interest for the learners, and (2) how long learners stay engaged for.
+Further investigation will look at this behaviour with data from all runs. This will help understand two potential points: (1) Is there a point throughout the duration of the videos (e.g. between 75% and 100%), independent of total duration of the video, where the drop off rate is the largest? (2) Is there a maximum duration of the video after which the learners are decide not to watch the video? This will help answer the question if (1) the content after a certain point in the videos is not of interest for the learners, and (2) how long learners stay engaged for.
 
 ### 2.3.4 Hypothesis
 
@@ -228,7 +228,7 @@ The initial exploration in the previous Section has shown a number of interestin
 
 1. Does the *duration* of the videos have an impact on the viewing rates across different continents?
 2. Does the *content* of the videos have an impact on the viewing rates across different continents?
-3. Is there a correlation between duration of videos and drop out rate of the learners?
+3. Is there a correlation between the duration of videos and drop out rate of the learners?
 
 
 ## 2.4 Data Quality
@@ -393,7 +393,7 @@ The line chart with the data from all runs still shows a steady drop of viewers 
 
 The outlier on video *'2.1_Welcome to Week 2: payment security'* from South America that has been observed for run 3 is visible in Figure xy [ADD REF] too. The outlier is showing a smaller increase of viewers from South America for this particular topic in the second block of the course, with all the runs combined. It is unclear whether this is statistically relevant or due to noise. 
 
-## 3.3 Data Preparation and Modelling for Q3: Is there a correlation between duration of videos and drop out rate of the learners?
+## 3.3 Data Preparation and Modelling for Q3: Is there a correlation between the duration of videos and drop out rate of the learners?
 
 The last question is around whether there are any correlations between the duration of the videos and drop out rate of the learners while they are watching the video, as we have seen in Section 2.3.3, Figure xy [ADD REF] using the run 3 data. We want to understand whether the length of the videos will have an impact on how much of the entire video the learners will watch, e.g., how many learners have viewed 25%, 50%, 75% or 100% of the videos. This could potentially indicate whether the course provider should consider optimising the length of the videos to keep learners engaged.
 
