@@ -237,10 +237,10 @@ The data sets from each run have been compared and it was found that they all co
 
 The column *'antarctica_views_percentage'* only contains values of 0. Based on this, it can be assumed that there are no learners from Antarctica, which is reasonable as according to the *World Population Review*, there are only 1000-4000 seasonal residents in Antarctica (www.worldpopulationreview.com/continents/antarctica-population).
 
+
 #  3. Data preparation and modelling
 
-<!-- *[CHECK THE FOLLOWING STATEMENT - MAY BE INCORRECT]*  -->
-In the following Sections, we will discuss the steps that have been taken to analyse the data to answer the three questions in Section 2.3.4. The analysis has been done in 2 cycles for each question. In the first cycle, we analysed the data from run 3 only. Based on the results of the first cycle, we decided on the most promising route of analysis and performed the analysis taking runs 3-7 into account for the second cycle. For each of these questions, we will discuss the data preparation and modelling steps separately (Sections xx-yy [CHECK SECTION NUMBERS]), before evaluating the results in Section xy [CHECK SECTION NUMBERS].
+In the following Sections, we will discuss the steps that have been taken to pre-process and analyse the data to answer the three questions in Section 2.3.4. The analysis has been done in 2 cycles for each question. In the first cycle, we analysed the data from run 3 only. Based on the results of the first cycle, we decided on the most promising route of analysis and performed the analysis taking runs 3-7 into account for the second cycle. For each of these questions, we will discuss the data preparation and modelling steps separately (Sections 3.1-3.3 [CHECK SECTION NUMBERS]), before evaluating the results in Section 4.
 
 
 ## 3.1 Data Preparation and Modelling for Q1: Does the duration of the videos have an impact on the viewing rates across different continents?
@@ -258,7 +258,6 @@ The continent columns currently shows the split percentage of viewers from each 
 
 To see how the viewing rates changes within each continent throughout the course, we will need to transform the values from these columns. We will calculate the absolute number of viewings from each continent for each video.
 
-
 ### 3.1.2 Construct data 
 
 In order to calculate the absolute number of viewings from each continent for each video (i.e. each row), a function (**col_3_summary**) was developed to take the absolute number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. An example is the calculation of absolute number of views of the first video from African viewers, which is calculated as (*Total Viewed*[row 2]/100) x *africa_views_percentage*[row 2]. The resulting data frame is stored in the *'cache'* folder. Table xy [ADD TABLE REF] shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
@@ -268,7 +267,6 @@ run3_abs
 ```
 
 The resulting data frame then undergoes another transformation to calculate the relative number of views (percentage) for each abolute continent value. For example, for the Europe views, we will take the absolute value from the Europe column and divide it by the highest absolute value from within Europe, then multiply by 100 to calculate the percentage of viewers from within the continent for each video. The resulting percentage data frame is stored in the *'cache'*
-
 
 ### 3.1.3 Clean data
 
@@ -285,7 +283,6 @@ Prior to calculating the percentage of viewers within each continent, to sum of 
 ### 3.1.5 Format data 
 
 Prior to plotting the data for each cycle, the resulting dataframes are transformed to a 'long' format, i.e., a column for every variable, and a row for every observation (www.datacarpentry.org), to enable the use of ggplot2 to plot the data (see Section 3.1.6 *'Modelling'*).
-
 
 ### 3.1.6 Modelling 
 
@@ -329,7 +326,6 @@ as_tibble(output_3_abs[1:3,c(1,3:9)])
 
 Secondly, we will plot a line graph to show how the relative number of views changes throughout the course. As mentioned in *Section '3.1.2 Construct Data'*, we will take the data set with the absolute number of viewers, then calculate the relative number of view within each continent relative to the highest number of views across all videos within that continent. The resulting percentage data frame is stored in the *'cache'*.
 
-
 ### 3.2.3 Clean data
 
 As described in Section *'3.1.3 Clean Data'*, the new dataframe of percentage values will be combined with the '*step_title*' column and re-organised so that the columns match the original data set. Values are given with no decimal places to increase the readability of the results as explained in Section *'3.1.3 Clean Data'*. 
@@ -347,7 +343,6 @@ Prior to calculating the percentage of viewers within each continent, to sum of 
 
 ### 3.2.5 Format data 
 Prior to plotting the data for each cycle, the resulting dataframes are transformed to a 'long' format, i.e., a column for every variable, and a row for every observation (www.datacarpentry.org), to enable the use of ggplot2 to plot the data (see Section 3.1.6 *'Modelling'*).
-
 
 ### 3.2.6 Modelling 
 
@@ -393,6 +388,7 @@ The line chart with the data from all runs still shows a steady drop of viewers 
 
 The outlier on video *'2.1_Welcome to Week 2: payment security'* from South America that has been observed for run 3 is visible in Figure xy [ADD REF] too. The outlier is showing a smaller increase of viewers from South America for this particular topic in the second block of the course, with all the runs combined. It is unclear whether this is statistically relevant or due to noise. 
 
+
 ## 3.3 Data Preparation and Modelling for Q3: Is there a correlation between the duration of videos and drop out rate of the learners?
 
 The last question is around whether there are any correlations between the duration of the videos and drop out rate of the learners while they are watching the video, as we have seen in Section 2.3.3, Figure xy [ADD REF] using the run 3 data. We want to understand whether the length of the videos will have an impact on how much of the entire video the learners will watch, e.g., how many learners have viewed 25%, 50%, 75% or 100% of the videos. This could potentially indicate whether the course provider should consider optimising the length of the videos to keep learners engaged.
@@ -431,7 +427,6 @@ This graph shows the drop off rate for all runs and it appears to show very simi
 ## 4.1 Evaluate results - Assessment of data mining results with respect to business success criteria
 <!-- *(assesses the degree to which the model meets the business objectives and seeks to determine if there is some business reason why this model is deficient. Another option is to test the model(s) on test applications in the real application, if time and budget constraints permit.assesses other data mining results generated. Data mining results involve models that are necessarily related to the original business objectives and all other findings that are not necessarily related to the original business objectives, but might also unveil additional challenges, information, or hints for future directions.Summarize assessment results in terms of business success criteria, including a final statement regarding whether the project already meets the initial business objectives.After assessing models with respect to business success criteria, the generated models that meet the selected criteria become the approved models.???) think about history of data is it still relevant* -->
 
-
 The study was to understand the potential factors that could affect the learners’ engagement to a course through the video material provided.  
 
 *Question 1*: The results shown appear to indicate that there are no correlations between the length of the videos and how engaged the learners from each continent were. The length of the video does not seem to be a deciding factor for learner's engagement and retention. 
@@ -460,6 +455,7 @@ Whats the future work??
 May have to do some more analysis to compare with other MOOC courses
 
 Week 2 block is mainly on cybersecurity of payment infrastructure. Could be people are more interested on how to protect digital payments or there might be more people looking to work or already working in the cyber security / financial sector and are keen to learn about these topics. More investigation will need to be made.
+
 
 # 5. References
 
