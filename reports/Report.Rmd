@@ -81,7 +81,7 @@ The following assumptions have been made on the data:
 
 - Assumed that full consent to use the data for this study has been provided by FutureLearn. To comply with the legal and ethical standards, we will ensure any potentially identifying data will be anonymised to reduce the likelihood that an individual could be identified. 
 
-- Assumed that although *'Video_stats'* data are not provided for run 1 and 2, this does not indicate that video learning material were not used for these runs. 
+- Assumed that although *'Video-stats'* data are not provided for run 1 and 2, this does not indicate that video learning material were not used for these runs. 
 
 - As the data is provided by FutureLearn (via Newcastle University), it is assumed that the data provides an accurate and reliable reflection of the learners taking the course.
 
@@ -247,14 +247,13 @@ In the following Sections, we will discuss the steps that have been taken to pre
 
 ### 3.1.1 Select data 
 
-The first hypothesis will investigate on whether the duration of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the length of the videos will have a negative or positive impact on the learners' engagement globally. The key columns for this investigation will be *'video_duration', 'total_views', 'europe_views_percentage', 'oceania_views_percentage', 'asia_views_percentage', 'north_america_views_percentage', 'south_america_views_percentage', 'africa_views_percentage' and 'antarctica_views_percentage'* from the *'video_stats'* data file, which has been assigned to the *'run3unite'* variable for the first cycle and *'run3unite', 'run4unite', 'run5unite', 'run6unite', 'run7unite'* for the second cycle. Table xy [CHECK TABLE NUMBER] shows the raw data for run 3. The same selection of columns has been used for all remaining runs to include in the second cycle of analysis. 
-
+The first hypothesis will investigate on whether the duration of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the length of the videos will have a negative or positive impact on the learners' engagement globally. The key columns for this investigation will be *'video_duration'*, *'total_views'*, *'europe_views_percentage'*, *'oceania_views_percentage'*, *'asia_views_percentage'*, *'north_america_views_percentage'*, *'south_america_views_percentage'*, *'africa_views_percentage'* and *'antarctica_views_percentage'* from the *'video-stats'* data file, which has been assigned to the *'run3unite'* variable for the first cycle. For the second cycle, they will be assigned to *'run3unite', 'run4unite', 'run5unite', 'run6unite', 'run7unite'*. Table  xy [CHECK TABLE NUMBER] shows the raw data for run 3. The same selection of columns has been used for all remaining runs to include in the second cycle of analysis. 
 
 ```{r, echo=FALSE}
 head(run3unite[,c(4,5,23:29)], 3)
 ```
 
-The continent columns currently shows the split percentage of viewers from each continent for each video, i.e. the data only shows which proportion of viewers for a particular video come from a particular continent. The data does not show how the absolute number of students and relative viewing rates change within a continents. 
+The continent columns currently shows the split percentage of viewers from each continent for each video, i.e. the data only shows which proportion of viewers for a particular video come from a particular continent. The data does not show how the absolute number of students and relative viewing rates change within a continent. 
 
 To see how the viewing rates changes within each continent throughout the course, we will need to transform the values from these columns. We will calculate the absolute number of viewings from each continent for each video.
 
@@ -266,11 +265,11 @@ In order to calculate the absolute number of viewings from each continent for ea
 run3_abs
 ```
 
-The resulting data frame then undergoes another transformation to calculate the relative number of views (percentage) for each abolute continent value. For example, for the Europe views, we will take the absolute value from the Europe column and divide it by the highest absolute value from within Europe, then multiply by 100 to calculate the percentage of viewers from within the continent for each video. The resulting percentage data frame is stored in the *'cache'*
+The resulting data frame then undergoes another transformation to calculate the relative number of views (percentage) for each absolute continent value. For example, for the Europe views, we will take the absolute value from the Europe column and divide it by the highest absolute value from within Europe, then multiply by 100 to calculate the percentage of viewers from within the continent for each video. The resulting percentage data frame is stored in the *'cache'*
 
 ### 3.1.3 Clean data
 
-These values were then combined with the original '*video_duration*' column and re-organised so that the columns match the original data set. [CHECK THE FOLLWOING STATEMENT FOR ACCURACY:] Values are given with no decimal places to increase the readability of the results. Since the modelling and evaluation in this project is mainly based on visualisations and qualitative assessments, the accuracy of the data analysis is not affected by this decision. The calculation of the percentages has resulted in the values from the *'antarctica_views_percentage'* being '*NaN*'. Since we know that there were no viewers from Antarctica, all '*NaN*' values have been replaced by 0. Table xy [ADD TABLE REF] shows the relative number of viewers in percentage from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis.  
+These values were then combined with the original '*video_duration*' column and re-organised so that the columns match the original data set. Values are given with no decimal places to increase the readability of the results. Since the modelling and evaluation in this project is mainly based on visualizations and qualitative assessments, the accuracy of the data analysis is not affected by this decision. The calculation of the percentages has resulted in the values from the *'antarctica_views_percentage'* being '*NaN*'. Since we know that there were no viewers from Antarctica, all '*NaN*' values have been replaced by 0. Table xy [ADD TABLE REF] shows the relative number of viewers in percentage from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis.  
 
 ```{r, echo=FALSE}
 as_tibble(continent_3_pct_ro[1:3,c(2:9)])
@@ -278,7 +277,7 @@ as_tibble(continent_3_pct_ro[1:3,c(2:9)])
 
 ### 3.1.4 Integrate data 
 
-Prior to calculating the percentage of viewers within each continent, to sum of the absolute actual viewers for all runs for it to be added together, thus ensuring that the average is weighted according to the absolute number of learners within each run.
+Prior to calculating the percentage of viewers within each continent, the sum of the absolute actual viewers for all runs were added together, thus ensuring that the average is weighted according to the absolute number of learners within each run.
 
 ### 3.1.5 Format data 
 
@@ -286,10 +285,7 @@ Prior to plotting the data for each cycle, the resulting dataframes are transfor
 
 ### 3.1.6 Modelling 
 
-[CLARIFY THIS SENTENCE: DO YOU MEAN THE NUMBER OF VIEWS WITHIN EACH CONTINENT, OR THE NUMBER OF VIEWS THAT ALLOWS YOU TO COMPARE WITHIN A VIDEO?] 
-<!-- The following plot is to determine whether the duration of the videos have an impact on the viewing rates across different continents. The new run 3 dataframe was plotted on to a scatter plot. -->
-
-Figure 4 shows a plot of the relative number of views as calculated in *Section 3.1.2 Construct data*,  against the video duration, i.e. the data that allows to draw comparisons of the behaviour within a continent. This plot shows whether the viewers of a particular continent show an increased or decreased drop-out rate compared to the viewers of other continents. As described in *Section 3.1.2 Construct data*, all data is normalised to the most viewed video (Welcome to the course, 99 seconds duration).
+Figure 4 shows a line chart of the relative number of views as calculated in *Section 3.1.2 Construct data*,  against the video duration, i.e. the data that allows to draw comparisons of the behaviour within a continent. This plot shows whether the viewers of a particular continent show an increased or decreased drop-out rate compared to the viewers of other continents. As described in *Section 3.1.2 Construct data*, all data is normalised to the most viewed video (Welcome to the course, 99 seconds duration).[NOT SURE ABOUT LAST SENTENCE]
  
 ```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
 line_cont3_pct_dur_V
@@ -301,7 +297,7 @@ Due to potential noise on the data, the same plot is plotted using the data for 
 ```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
 line_cont_all_pct_dur_V
 ```
-Figure XX shows the same pattern as the data of run 3 (Figure xy [CHECK REF]), in which there is no correlation between the duration of the videos and the number of viewers from each continents. However, it appears as if the steepest decline in viewing numbers can be observed for learners from Africa and Asia. South American viewing rates seemed to show a steeper decline for videos below approx. 220 seconds, whereas they increase compared to the other continents for longer video durations.  
+Figure 5 shows the same pattern as the data of run 3 (Figure 4), in which there is no correlation between the duration of the videos and the number of viewers from each continents. However, it appears as if the steepest decline in viewing numbers can be observed for learners from Africa and Asia. South American viewing rates seemed to show a steeper decline for videos below approx. 220 seconds, whereas they increase compared to the other continents for longer video durations.  
 
 In summary, there is no clear correlation between the relative number of views within each continent and the video duration.
 
@@ -314,23 +310,23 @@ To answer the second question, we will investigate whether the topics of the vid
 
 ### 3.2.1 Select Data
 
-For the same reasons as explained in Section 3.1.1, the continent columns within the original *'video_stats'* data sets show the percentage of viewers from different continents for each video. To answer question 2, we want to firstly plot a bar chart using the absolute number of viewers from each continent. As explained in Section 3.1.1, we calculated the absolute number of learners by dividing the '*Total Viewed*' column by 100 and multiply by the  percentage viewed value for each continent. For the first cycle of analysis, we will use the data from run 3 only. For the second cycle of analysis, we will combine data from runs 3-7.
+For the same reasons as explained in Section 3.1.1, the continent columns within the original *'video-stats'* data sets show the percentage of viewers from different continents for each video. To answer question 2, we want to firstly plot a bar chart using the absolute number of viewers from each continent. As explained in Section 3.1.1, we calculated the absolute number of learners by dividing the '*Total Viewed*' column by 100 and multiply by the  percentage viewed value for each continent. For the first cycle of analysis, we will use the data from run 3 only. For the second cycle of analysis, we will combine data from runs 3-7.
 
 ### 3.2.2 Construct Data
 
-The columns of the new data set will be renamed to the corresponding continents. This will then be combined with the *'step_title'* column, which as discussed in *'2.3 Explore data'*, consist of combining the two first columns *'step_position'* and *'title'* from the *'video_stats'* data set,to allow quick reference to the order of which the videos appears throughout the course. The data set will be re-organised so that the columns match the original data set. Table xy [ADD TABLE REF] shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
+The columns of the new data frame will be renamed to the corresponding continents. This will then be combined with the *'step_title'* column, which as discussed in *'2.3 Explore data'*, consist of combining the two first columns *'step_position'* and *'title'* from the *'video-stats'* data set, to allow quick reference to the order of which the videos appears throughout the course. The data frame will be re-organised so that the columns match the original data set. Table xy [ADD TABLE REF] shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
 
 ```{r, echo=FALSE}
 as_tibble(output_3_abs[1:3,c(1,3:9)])
 ```
 
-Secondly, we will plot a line graph to show how the relative number of views changes throughout the course. As mentioned in *Section '3.1.2 Construct Data'*, we will take the data set with the absolute number of viewers, then calculate the relative number of view within each continent relative to the highest number of views across all videos within that continent. The resulting percentage data frame is stored in the *'cache'*.
+Secondly, we will plot a line graph to show how the relative number of views changes throughout the course. As mentioned in *Section '3.1.2 Construct Data'*, we will take the data frame with the absolute number of viewers, then calculate the relative number of view within each continent relative to the highest number of views across all videos within that continent. The resulting percentage data frame is stored in the *'cache'*.
 
 ### 3.2.3 Clean data
 
 As described in Section *'3.1.3 Clean Data'*, the new dataframe of percentage values will be combined with the '*step_title*' column and re-organised so that the columns match the original data set. Values are given with no decimal places to increase the readability of the results as explained in Section *'3.1.3 Clean Data'*. 
 
-The calculation of the percentages has resulted in the values from the *'antarctica_views_percentage'* being '*NaN*'. Since we know that there were no viewers from Antarctica, all '*NaN*' values have been replaced by 0. The resulting percentage data frame is stored in the *'cache'*
+The calculation of the percentages has resulted in the values from the *'antarctica_views_percentage'* being '*NaN*'. Since we know that there were no viewers from Antarctica, all '*NaN*' values have been replaced by 0. The resulting percentage data frame is stored in the *'cache'*.
 
 ```{r}
 as_tibble(continent_3_pct_ro[1:3,c(1,3:9)])
@@ -338,17 +334,16 @@ as_tibble(continent_3_pct_ro[1:3,c(1,3:9)])
 
 ### 3.2.4 Integrate data 
 
-<!-- The same data on the number of viewers from the continents will also be investigated for the data of all of the runs together.  -->
-Prior to calculating the percentage of viewers within each continent, to sum of the absolute actual viewers for all runs for it to be added together, thus ensuring that the average is weighted according to the absolute number of learners within each run.
+Prior to calculating the percentage of viewers within each continent, the sum of the absolute actual viewers for all runs were added together, thus ensuring that the average is weighted according to the absolute number of learners within each run.
 
 ### 3.2.5 Format data 
-Prior to plotting the data for each cycle, the resulting dataframes are transformed to a 'long' format, i.e., a column for every variable, and a row for every observation (www.datacarpentry.org), to enable the use of ggplot2 to plot the data (see Section 3.1.6 *'Modelling'*).
+Prior to plotting the data for each cycle, the resulting dataframes are transformed to a 'long' format for the plotting of graphs (see Section 3.1.6 *'Modelling'*).
 
 ### 3.2.6 Modelling 
 
-The video topics will be reordered to the same order as how they run throughout the course for the plots. This will show how the number of viewers have changed throughout the course. 
+For the plots in this Section, the video topics will be reordered to the same order as how they run throughout the course. This will show how the number of viewers have changed throughout the course. 
 
-Figure 6 is a bar chart to show the relationship between the video topics and the number of viewers from across different continents for run 3. The colours in each bar are split according to the continent of the viewers, as shown in the key. 
+Figure 6 is a bar chart that shows the relationship between the video topics and the number of viewers from across different continents for run 3. The colours in each bar are split according to the continent of the viewers, as shown in the key. 
 
 ```{r stack_cont3_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
 stack_cont3_AbV_topic_bar_V
@@ -364,7 +359,7 @@ The same data, but with the relative number of viewers from each continent, were
 line_cont3_pct_topic_V
 ```
 
-The line chart shows a steady drop of viewers throughout the course. More learners from Oceania have continued in the course and watched the videos compared to Europe, which was already seen in Section 3.1.6, Figure xy [FIRST PLOT IN THAT SECTION]. Asia and Africa show the lowest relative number of viewers. 
+The line chart shows a steady drop of viewers throughout the course. More learners from Oceania have continued in the course and watched the videos compared to Europe, which was already seen in Section 3.1.6, Figure 4. Asia and Africa show the lowest relative number of viewers. 
 
 There is an outlier from South American viewers on video *'2.1_Welcome to Week 2: payment security'*. This data point is showing a sudden increase of viewers from South America for this particular topic in the second block of the course.
 
@@ -386,26 +381,26 @@ line_cont_all_pct_topic_V
 
 The line chart with the data from all runs still shows a steady drop of viewers throughout the course. However, the gap between the percentage of learners from Oceania and Europe are a lot closer compared to what was seen in run 3. The relative numbers of views from Oceania and Europe decrease at a similar rate. The trend that the steepest decline in the relative number of viewers is seen for viewers from Asia and Africa is more pronounced when all data sets are combined. 
 
-The outlier on video *'2.1_Welcome to Week 2: payment security'* from South America that has been observed for run 3 is visible in Figure xy [ADD REF] too. The outlier is showing a smaller increase of viewers from South America for this particular topic in the second block of the course, with all the runs combined. It is unclear whether this is statistically relevant or due to noise. 
+The outlier on video *'2.1_Welcome to Week 2: payment security'* from South America that has been observed for run 3 is visible in Figure 9 too. The outlier is showing a smaller increase of viewers from South America for this particular topic in the second block of the course, with all the runs combined. It is unclear whether this is statistically relevant or due to noise. 
 
 
 ## 3.3 Data Preparation and Modelling for Q3: Is there a correlation between the duration of videos and drop out rate of the learners?
 
-The last question is around whether there are any correlations between the duration of the videos and drop out rate of the learners while they are watching the video, as we have seen in Section 2.3.3, Figure xy [ADD REF] using the run 3 data. We want to understand whether the length of the videos will have an impact on how much of the entire video the learners will watch, e.g., how many learners have viewed 25%, 50%, 75% or 100% of the videos. This could potentially indicate whether the course provider should consider optimising the length of the videos to keep learners engaged.
+The last question is around whether there are any correlations between the duration of the videos and drop out rate of the learners while they are watching the video, as we have seen in Section 2.3.3, Figure 3 using the run 3 data. We want to understand whether the length of the videos will have an impact on how much of the entire video the learners will watch, e.g., how many learners have viewed 25%, 50%, 75% or 100% of the videos. This could potentially indicate whether the course provider should consider optimising the length of the videos to keep learners engaged.
 
 ### 3.3.1 Select data 
 
-The key columns for this investigation will be *'video_duration', 'total_views', 'viewed_twentyfive_percentage', 'viewed_fifty_percentage', 'viewed_seventyfive_percentage', and 'viewed_onehundred_percentage'* from the *'video_stats'* data sets. 
+The key columns for this investigation will be *'video_duration', 'total_views', 'viewed_twentyfive_percentage', 'viewed_fifty_percentage', 'viewed_seventyfive_percentage', and 'viewed_onehundred_percentage'* from the *'video-stats'* data sets. 
 
 The range of 'viewed_percentage' columns shows the percentage of viewers who have viewed 25%, 50%, 75% and 100% of the videos.  
 
-The 5%, 10% and 95% range of 'viewed_percentage' columns have been excluded from this investigation because the selected columns provided an even split of data collection points. [CHECK THE FOLLOWING STATEMENT] A prelimary plot of run 3 data showed that there is no additional information in these columns, and their inclusions obscures the trends that can be observed. 
+The 5%, 10% and 95% range of 'viewed_percentage' columns have been excluded from this investigation because the selected columns provided an even split of data collection points. A prelimary plot of run 3 data showed that there is no additional information in these columns, and their inclusions obscures the trends that can be observed. 
 
 ### 3.3.2 Construct data
 
-In order to combine the relative values within the 'viewed_percentage' columns from all of the runs, we will need to create a new data set that contains the absolute number of viewers. This will allow us to calculate the weighted average as explained in Section 3.1.4. The absolute number of views will be calculated using a similar function to question 1 and question 2, we will take the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the relative number of views value from each cell of the 'viewed_percentage' columns. This will calculate the absolute number of viewers who have watched 25%, 50%, 75% and 100% of the videos. 
+In order to combine the relative values within the 'viewed_percentage' columns from all of the runs, we will need to create a new data frame that contains the absolute number of viewers. This will allow us to calculate the weighted average as explained in Section 3.1.4. The absolute number of views will be calculated using a similar function to question 1 and question 2, we will take the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the relative number of views value from each cell of the 'viewed_percentage' columns. This will calculate the absolute number of viewers who have watched 25%, 50%, 75% and 100% of the videos. 
 
-To combine the data sets, the new data set containing the absolute number of views for each 'viewed_percentage' column in all runs will be added together. The resulting data frame is stored in the *'cache'*. The new dataset is then transformed to re-calculate the percentage for each of the 'viewed_percentage' column and then be combined with the *’video_duration’* column. The columns of this data set will be re-organised and renamed to the corresponding relative views (in percent) so that they match the original data set. 
+To combine the data sets, the new data frame containing the absolute number of views for each 'viewed_percentage' column in all runs will be added together. The resulting data frame is stored in the *'cache'*. The new data frame is then transformed to re-calculate the percentage for each of the 'viewed_percentage' column and then be combined with the *’video_duration’* column. The columns of this data frame will be re-organised and renamed to the corresponding relative views (in percent) so that they match the original data set. 
 
 Values are given with no decimal places to increase the readability of the results as explained in Section *'3.1.3 Clean Data'*. The resulting percentage data frame is stored in the *'cache'*. We will use this data set to plot a line graph to show how the percentage of viewers have changed against the duration of the videos.  
 
@@ -420,7 +415,7 @@ Figure 10 demonstrates the relationship between the video duration and the numbe
 run3_7_allpct_duration_scat_V
 ```
 
-This graph shows the drop off rate for all runs and it appears to show very similar behaviour of the learners drop off rate as was seen in run 3 (Section xy, Figure xy [ADD REFS]). It appears as if three videos have particularly high dropout rates between 75% and 100% of the video duration. However, there does not seem to be any correlation to the video duration. More data would be required to establish whether the trend is real or due to noise. If it is real, it would be interesting to analyse the video content to find potential triggers for the drop-outs.
+This graph shows the drop off rate for all runs and it appears to show very similar behaviour of the learners drop off rate as was seen in run 3 (Section 2.3.3, Figure 3). It appears as if three videos have particularly high dropout rates between 75% and 100% of the video duration. However, there does not seem to be any correlation to the video duration. More data would be required to establish whether the trend is real or due to noise. If it is real, it would be interesting to analyse the video content to find potential triggers for the drop-outs.
 
 
 # 4. Evaluation
@@ -431,13 +426,13 @@ The study was to understand the potential factors that could affect the learners
 
 *Question 1*: The results shown appear to indicate that there are no correlations between the length of the videos and how engaged the learners from each continent were. The length of the video does not seem to be a deciding factor for learner's engagement and retention. 
 
-*Question 2*: The results clearly show that most learners will watch the first video of the course, and the number of learners viewing the videos throughout the course drop significantly within the first week. However between week two and three the drop off of learners is not as high. It is unclear whether the data provided by FutureLearn also collects the number of learners watching preview of videos for the course, or whether FutureLearn gives free access to their learning material for a short period of time, which could reflect on the sudden drop of learners watching the videos within the first week. WHAT WERE THE TOPICS OF THESE BLOCK WEEKS? 
+*Question 2*: The results clearly show that most learners will watch the first video of the course, and the number of learners viewing the videos throughout the course drop significantly within the first week. However between week two and three the drop off of learners is not as high. It is unclear whether the data provided by FutureLearn also collects the number of learners watching preview of videos for the course, or whether FutureLearn gives free access to their learning material for a short period of time, which could reflect on the sudden drop of learners watching the videos within the first week. WHAT WERE THE TOPICS OF THESE BLOCK WEEKS? The first week block contained videos surrounding the topic of *Exploring personal privacy online*. The second week block is on *Online payment security* and the third week block is on *Security in the future home*.
 
-The line chart in Figure xy [ADD REF], also indicates that there is a clear interest for video 2.1 from learners based in South America. The topic was *Welcome to Week 2: payment security*. Given more time, we could do further analysis to gain insights about the learners' from continents to understand whether there are other factors which could affect the learners’ engagement for certain topics, there factors could include political factors of the continent, types of jobs and interest in cyber security within those continents.  
+The line chart in Figure 7 and 9, also indicates that there is a clear interest for video 2.1 from learners based in South America. The topic was *Welcome to Week 2: payment security*. Given more time, we could do further analysis to gain insights about the learners' from continents to understand whether there are other factors which could affect the learners’ engagement for certain topics, these factors could include but not limited to political factors of the continent, types of jobs and interest in cyber security within those continents.  
 
-*Question 3*: The results potentially show that the long a video is the higher risk of the learners’ dropping off the videos earlier during the videos. As most learners drop off after 75% into a video, this could help course designers and providers to decide whether to ensure that important course content are placed earlier on the videos. Alternatively, it would be interesting to analyse the video contents in the last 25% of the video for the outliers as discussed in Section 3.3.4. This could help understand if there are any triggers for the drop-outs to inform the future design of the videos.
+*Question 3*: The results potentially show that the longer a video is the higher risk of the learners’ dropping off the videos earlier during the videos. As most learners drop off after 75% into a video, this could help course designers and providers decide whether to ensure that important course content are placed earlier on the videos. Alternatively, it would be interesting to analyse the video contents in the last 25% of the video for the outliers as discussed in Section 3.3.4. This could help understand if there are any triggers for the drop-outs to inform the future design of the videos.
 
-It would be interesting to see if the following would have an impact on the data: If the decision is to be made to make important content to appear towards the end of the videos, then a contents page could be provided in the video, to inform the learners what to expect throughout a video and this could potentially keep learners more engaged throughout the video. Depending on the interest of the content, it could affect the number of learners watching the entire length of the videos. 
+It would be interesting to see if the following would have an impact on the data: [???] If the decision is to be made to make important content appear towards the end of the videos, then a contents page could be provided in the video, to inform the learners what to expect throughout a video and this could potentially keep learners more engaged throughout the video. Depending on the interest of the content, it could affect the number of learners watching the entire length of the videos. 
 
 *Summary*: Based on the data and the analysis in this report, it appears that learners engagement with the course decreases throughout the course (and throughout the duration of the videos). Most learners appear to stop viewing the videos after the first week of the course. For the learners who are seriously interested in the course, they are likely to stay on for week two and week three, hence we see a smaller drop off rate to the course for those two weeks.  
 
