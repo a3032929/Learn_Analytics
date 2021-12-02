@@ -2,7 +2,9 @@
 title: "CSC8631 Learning Analytics Report"
 author: "Selina So"
 date: "02/12/2021"
-output: pdf_document
+output:
+  bookdown::pdf_document2:
+    toc: false
 bibliography: EDA_reference.bib
 ---
 
@@ -15,20 +17,20 @@ knitr::opts_knit$set(root.dir = normalizePath('..'))
 library(ProjectTemplate)
 load.project()
 ```
-# 1. Business Understanding
+# Business Understanding
 
-## 1.1 Business Objectives 
+## Business Objectives 
 
-### 1.1.1 Background
+### Background
 Learning Analytics is a study of the *"measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the information system in which it occurs"* [@RN22]. The benefits of Learning Analytics is that it will provide insights to the factors which influences learners' retention. Learners' retention is one of the key drivers for institutes to implement Learning Analytics, as retaining students and their associated fees has a significant economical impact on the institutions' income [@RN21].  The insights from the Learning Analytics will enable course designers from educational institutes and MOOC (Massive open online course) providers to make informed decisions on the design and improvements of their courses, thus improving the learning environment for learners and drive more influx of learners enrolling. 
 
 FutureLearn is an MOOC provider, which collaborates with universities globally to offer online courses. Since their launch in 2013, they have attracted over seven million learners across the world (www.futurelearn.com). With a global reach of this extent, it is therefore crucial for FutureLearn to understand their performance in engaging with learners and providing an enhanced learning experience, which will retain and improve the learners' retention rate. The insights derived from Learning Analytics will therefore enable FutureLearn to understand areas of design or improvements which could create a positive impact for FutureLearn, their collaborators and their learners, in addition, to understand the key factors that could influence the retention rate of students. 
 
-### 1.1.2 Business Objectives
+### Business Objectives
 This study will investigate the *Cyber Security Safety at Home, Online, in Life* online course, which is a course delivered by Newcastle University on the FutureLearn platform (www.futurelearn.com/courses/cyber-security). There are many factors which could influence the learners' retention rate. Data from activities, such as videos, could act as engagement indicators of the learners and potentially allow early detection of learners' disengagement [@RN23]. In this study, we will examine data from the course to understand the factors which influence the learners' retention rate. We will look into if and how the continent the learners come from has an impact on the engagement of learners with the course. This insight will help to ensure that informed decisions can be taken to ensure the course appeals to learners from across the world. 
 
 
-## 1.2 Assess situation 
+## Assess situation 
 
 The *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University). There are 53 .csv data files which provide information on the learners and the course. The remaining 7 .pdf files provide an overview of the course structure.
 
@@ -36,11 +38,11 @@ The course is divided into three weekly blocks of study. For each weekly block, 
 
 The 53 .csv data files are split into 7 runs. Each run represents different time-frames of when the data was collected. All courses ran between mid-2016 and mid-2018. All runs consists of the following data files: *'Archetype-survey-responses', 'Enrolments', 'Leaving-survey-responses', 'Question-response', 'Step-activity', 'Weekly-sentiment-survey-response, 'Team-members', 'Video-stats'*, with the exception of run 1, which does not contain the  *'Team-members'* and *'Video-stats'* datafiles, and run 2, which does not contain the *'Video-stats'* data file.
 
-### 1.2.1 Inventory of Resources 
+### Inventory of Resources 
 
 The following sections will list the resources available to the project.
 
-#### 1.2.1.1 Software Sources
+#### Software Sources
 
 The following software sources have been used and are described below under section '1.2.2.1 Requirements':
 
@@ -48,21 +50,21 @@ The following software sources have been used and are described below under sect
 - RStudio
 - Git
 
-#### 1.2.1.2 Sources of Data and Knowledge
+#### Sources of Data and Knowledge
 
 - The CRISP-DM methodology (Cross-Industry Standard Process for Data Mining) will be applied to structure the project life cycle [@RN24]. 
 - 53 .csv data files and 7 .pdf files on the *Cyber Security Safety at Home, Online, in Life* course, provided by FutureLearn (via Newcastle University).
 
-#### 1.2.1.3 Personnel Sources
+#### Personnel Sources
 
 The following personnel will be used for expert domain knowledge and technical support, as well as to gain stakeholder guidance on the business perspective.
 
 - Newcastle University lecturers (Dr Matthew Forshaw and Joe Matthews)  
 - External teaching experts
 
-### 1.2.2 Requirements, assumptions, and constraints 
+### Requirements, assumptions, and constraints 
 
-#### 1.2.2.1 Requirements
+#### Requirements
 
 Applying best programming practice is crucial for this project to enable reproducibility. Therefore the following software and packages will be implemented to apply best practice:
 
@@ -75,7 +77,7 @@ Applying best programming practice is crucial for this project to enable reprodu
 
 There are legal obligations and privacy policies, such as *GDPR (General Data Protection Regulation)* and the *Data Protection Act (2018)*, to consider before using the data (see section '1.2.2.2 Assumptions').
 
-#### 1.2.2.2 Assumptions
+#### Assumptions
 
 The following assumptions have been made on the data:
 
@@ -87,27 +89,27 @@ The following assumptions have been made on the data:
 
 - There were no descriptions for the data, therefore assumptions will be made as to what the data means. The assumptions are clearly stated throughout the report in the appropriate sections. 
 
-#### 1.2.2.3 Constraints
+#### Constraints
 
 The project is to be completed by 3rd December 2021. 
 
 Due to the time constraints, the key phases from the CRISP-DM methodology which require focus are *Business Understanding*, *Data Understanding*, *Data Preparation and Modelling* and *Evaluation*. 
 
 
-## 1.3 Data Mining Goals 
+## Data Mining Goals 
 
 For this study, we will investigate the course data and initially decide on a set of data to analyse in more detail to understand students' engagement with the online course. This set of data will be chosen according to (a) the richness of information contained in the data, and (b) the completeness of the data that is available. Based on this, the most promising lines of investigation will be decided. 
 
 The goal is to derive insight from the data on engagement and retention during the course which will enable  Newcastle University and FutureLearn to potentially modify and improve the course content to achieve optimised learner engagement and retention. 
 
 
-## 1.4 Project plan 
+## Project plan 
 
 We will utilize the CRISP-DM process to understand the data and ensuring that the insights meet the business objectives. We will perform initial investigation of the data (using a combination of simple descriptive statistical and visualization techniques) to identify potential trends and form hypotheses. Depending on the outcome of the previous phase, this shall initiate further in-depth analysis with the vision of providing better understanding and valuable insights for Newcastle University and FutureLearn.  
 
 Throughout the course of the study and depending on the outcome of the results, certain phases of the CRISP-DM methodology will be re-iterated multiply times, to further support the previous findings. 
 
-### 1.4.1 Initial assessment of tools and techniques 
+### Initial assessment of tools and techniques 
 
 The use of the CRISP-DM methodology is useful to provide structure to the lifecycle of this study and ensuring the analysis remains relevant to the business objective.
 
@@ -120,9 +122,9 @@ Simple statistical description and visualisation of the data provides insight in
 Discussions with domain experts provided technical support for the delivery of the data analysis, and critical feedback to ensure the project objectives are aligned to the requirements of key stakeholders.
 
 
-# 2. Data Understanding (Initial Observation)
+# Data Understanding (Initial Observation)
 
-## 2.1 Collect initial data 
+## Collect initial data 
 
 The 53 .csv data files of the *Cyber Security Safety at Home, Online, in Life* course data is provided by FutureLearn (via Newcastle University) and are loaded and cached in the *'data'* folder, as designed by the ProjectTemplate package.  
 
@@ -144,16 +146,16 @@ There are 7 runs of data. Each run of data was measured several months apart fro
 
 - *'Video-stats'* (not included in run 1 and 2): the data files contain information on the video topics, and numerical data on the number of viewers per video, devices and features used to view the videos, how long  individuals watched the videos and the percentage of viewers from each continent. The contents of this data file will be examined in more detail in section '2.2 Describe data'.
 
-### 2.1.1 Initial data file selection
+### Initial data file selection
 
 The initial data file of interest was the *'Weekly-sentiment-survey-response'* data. These data would have been useful to combine with the data from the *'Leaving-survey-responses'* data files to potentially obtain a mixture of feedback which will provide direct insight into the learners' experience to the course provider. The *'reason'* column was interesting as it contains free text, therefore provided a direct source of feedback that could be analysed using Natural Language Processing (NLP). However, after an initial assessment, it appears that the data contained positively biased views of the individuals' experience with the course. The unstructured free text were also of poor quality as they contained incomplete sentences, single word feedback with lack of context and some text contained random symbols. In addition, there were many missing feedback data and as only runs 6 and 7 contained a small selection of feedback, there is insufficient data to draw substantial conclusions with the data. The *'Leaving-survey-responses'* data files also contain pre-selected responses, which indicates that the learners were only allowed to select from a very narrow range of opinions. We concluded that the data file does not provide meaningful insight into the sentiments of the learners. Lastly, the two sets of data files do not contain the same type of ID columns. The *'Leaving-survey-responses'* data files contained *'Learner_ID'*, which leads to the assumption that the responses were provided by the learners. The *'Weekly-sentiment-survey-response'* data files contained *'ID'*, which we cannot assume that the responses were from the learners only, as other data files (such as, the *'Team-members'* data files) have already shown that 'educators', 'mentors', etc all have an ID number assigned to each one of them. The responses could potentially come from individuals with conflicted interest to the course, therefore the responses will not be a reliable source of information to draw conclusions on the course. 
 
-### 2.1.2 Final data file selection
+### Final data file selection
 
 As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore use the video data to understand students' engagement with the course, and consequently the retention rate of the learners throughout the course. This will enable the course provider to make informed decisions on the design and improvements of the course. To achieve this, the focus will be on the '*video-stats*' data files provided by FutureLearn. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data is available. There appears to be no missing values from the data, therefore the data files for '*video-stats*' are complete. 
 
 
-## 2.2 Describe data 
+## Describe data 
 
 Displaying below is the list of column names of the '*video-stats*'.
 
@@ -177,13 +179,13 @@ The data files contain information on the video topics and the absolute number o
 - From the 'viewed_percent' columns, it is clear from the basic statistical analysis that there is a downward trend in the number of viewers throughout the duration of the videos. Further analysis may help to identify if a maximal duration of the video exist in order to keep learners engaged.
 
 
-## 2.3 Explore data 
+## Explore data 
 
 The following initial visualisations will be used to explore the data and help determine the areas to consider for further investigation. As the first set of video data begins from run 3, the data file *'cyber-security-3_video-stats.csv'* will be used for the initial exploration.
 
 The two first columns *'step_position'* and *'title'* will be combined to allow quick reference to the order of which the videos appears throughout the course. This new column will be called *'step_title'*
 
-### 2.3.1 Number of viewers against video topics
+### Number of viewers against video topics
 
 Part of the data mining goal is to understand whether there is a trend on learners' engagement, therefore we will look at how the number of viewers have changed throughout the course. 
 
@@ -195,7 +197,7 @@ run3_totalview_topic_bar_V
 
 The bar chart clearly indicated that as the learners progresses throughout the course, there is a drop of viewers watching the videos. As the learners are watching from different continents, we will investigate if this trend continues in a similar manner for the learners from different continents and whether certain topics appear to attract learners more. 
 
-### 2.3.2 Total number of views and features used throughout the videos
+### Total number of views and features used throughout the videos
 
 A scatterplot matrix will be used to visualize any pairs of relationships. For the plots below the headings, the headings will be on the x-axis, and the corresponding rows will be on the y-axis.
 
@@ -208,7 +210,7 @@ pairs(~video_duration + total_views + total_caption_views + total_transcript_vie
 
 There are no obvious relationships observed between the length of the videos and the amount of views and features used for the videos. As the total number of views increases, so does the number of  captions used and transcripts used, which is to be expected. As there are no unexpected patterns that would indicate a dependence of e.g. the number of transcript reads on video duration, we will not continue with investigating these columns in our study.
 
-### 2.3.3 Number of viewers for video duration
+### Number of viewers for video duration
 
 Figure 3 is a line chart to demonstrate the relationship between the video duration and the percentage of viewers who watched 25%, 50%, 75% and 100% of the video.
 
@@ -222,7 +224,7 @@ The graph shows that there is a steady drop off of learners watching the entire 
 
 Further investigation will look at this behaviour with data from all runs. This will help understand two potential points: (1) Is there a point throughout the duration of the videos (e.g. between 75% and 100%), independent of total duration of the video, where the drop off rate is the largest? (2) Is there a maximum duration of the video after which the learners are decide not to watch the video? This will help answer the question if (1) the content after a certain point in the videos is not of interest for the learners, and (2) how long learners stay engaged for.
 
-### 2.3.4 Hypothesis
+### Hypothesis
 
 The initial exploration in the previous Section has shown a number of interesting areas which we will further analyse, particularly around the viewing rates from learners of different continents and whether the video topics and length of the videos are a contributing factor to the learners' retention rate. We will investigate the video data from the course to answer the following questions:
 
@@ -231,21 +233,21 @@ The initial exploration in the previous Section has shown a number of interestin
 3. Is there a correlation between the duration of videos and drop out rate of the learners?
 
 
-## 2.4 Data Quality
+## Data Quality
 
 The data sets from each run have been compared and it was found that they all contain the same number of rows and columns, and the labels for rows and columns are consistent across all 5 runs. The data sets are mostly complete with no visible missing data. The format, variables and completeness of the data files are all consistent. Therefore the quality of the data is good and the merging of the data files will be straightforward.
 
 The column *'antarctica_views_percentage'* only contains values of 0. Based on this, it can be assumed that there are no learners from Antarctica, which is reasonable as according to the *World Population Review*, there are only 1000-4000 seasonal residents in Antarctica (www.worldpopulationreview.com/continents/antarctica-population).
 
 
-#  3. Data preparation and modelling
+# Data preparation and modelling
 
 In the following Sections, we will discuss the steps that have been taken to pre-process and analyse the data to answer the three questions in Section 2.3.4. The analysis has been done in 2 cycles for each question. In the first cycle, we analysed the data from run 3 only. Based on the results of the first cycle, we decided on the most promising route of analysis and performed the analysis taking runs 3-7 into account for the second cycle. For each of these questions, we will discuss the data preparation and modelling steps separately (Sections 3.1-3.3 [CHECK SECTION NUMBERS]), before evaluating the results in Section 4.
 
 
-## 3.1 Data Preparation and Modelling for Q1: Does the duration of the videos have an impact on the viewing rates across different continents?
+## Data Preparation and Modelling for Q1: Does the duration of the videos have an impact on the viewing rates across different continents?
 
-### 3.1.1 Select data 
+### Select data 
 
 The first hypothesis will investigate on whether the duration of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the length of the videos will have a negative or positive impact on the learners' engagement globally. The key columns for this investigation will be *'video_duration'*, *'total_views'*, *'europe_views_percentage'*, *'oceania_views_percentage'*, *'asia_views_percentage'*, *'north_america_views_percentage'*, *'south_america_views_percentage'*, *'africa_views_percentage'* and *'antarctica_views_percentage'* from the *'video-stats'* data file, which has been assigned to the *'run3unite'* variable for the first cycle. For the second cycle, they will be assigned to *'run3unite', 'run4unite', 'run5unite', 'run6unite', 'run7unite'*. Table  xy [CHECK TABLE NUMBER] shows the raw data for run 3. The same selection of columns has been used for all remaining runs to include in the second cycle of analysis. 
 
@@ -257,7 +259,7 @@ The continent columns currently shows the split percentage of viewers from each 
 
 To see how the viewing rates changes within each continent throughout the course, we will need to transform the values from these columns. We will calculate the absolute number of viewings from each continent for each video.
 
-### 3.1.2 Construct data 
+### Construct data 
 
 In order to calculate the absolute number of viewings from each continent for each video (i.e. each row), a function (**col_3_summary**) was developed to take the absolute number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. An example is the calculation of absolute number of views of the first video from African viewers, which is calculated as (*Total Viewed*[row 2]/100) x *africa_views_percentage*[row 2]. The resulting data frame is stored in the *'cache'* folder. Table xy [ADD TABLE REF] shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
 
@@ -267,7 +269,7 @@ run3_abs
 
 The resulting data frame then undergoes another transformation to calculate the relative number of views (percentage) for each absolute continent value. For example, for the Europe views, we will take the absolute value from the Europe column and divide it by the highest absolute value from within Europe, then multiply by 100 to calculate the percentage of viewers from within the continent for each video. The resulting percentage data frame is stored in the *'cache'*
 
-### 3.1.3 Clean data
+### Clean data
 
 These values were then combined with the original '*video_duration*' column and re-organised so that the columns match the original data set. Values are given with no decimal places to increase the readability of the results. Since the modelling and evaluation in this project is mainly based on visualizations and qualitative assessments, the accuracy of the data analysis is not affected by this decision. The calculation of the percentages has resulted in the values from the *'antarctica_views_percentage'* being '*NaN*'. Since we know that there were no viewers from Antarctica, all '*NaN*' values have been replaced by 0. Table xy [ADD TABLE REF] shows the relative number of viewers in percentage from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis.  
 
@@ -275,15 +277,15 @@ These values were then combined with the original '*video_duration*' column and 
 as_tibble(continent_3_pct_ro[1:3,c(2:9)])
 ```
 
-### 3.1.4 Integrate data 
+### Integrate data 
 
 Prior to calculating the percentage of viewers within each continent, the sum of the absolute actual viewers for all runs were added together, thus ensuring that the average is weighted according to the absolute number of learners within each run.
 
-### 3.1.5 Format data 
+### Format data 
 
 Prior to plotting the data for each cycle, the resulting dataframes are transformed to a 'long' format, i.e., a column for every variable, and a row for every observation (www.datacarpentry.org), to enable the use of ggplot2 to plot the data (see Section 3.1.6 *'Modelling'*).
 
-### 3.1.6 Modelling 
+### Modelling 
 
 Figure 4 shows a line chart of the relative number of views as calculated in *Section 3.1.2 Construct data*,  against the video duration, i.e. the data that allows to draw comparisons of the behaviour within a continent. This plot shows whether the viewers of a particular continent show an increased or decreased drop-out rate compared to the viewers of other continents. As described in *Section 3.1.2 Construct data*, all data is normalised to the most viewed video (Welcome to the course, 99 seconds duration).[NOT SURE ABOUT LAST SENTENCE]
  
@@ -304,15 +306,15 @@ In summary, there is no clear correlation between the relative number of views w
 We will investigate on whether there are correlations between the topics of the video and the number of viewers from each continent in Section 3.2.
 
 
-## 3.2 Data Preparation and Modelling for Q2: Does the content of the videos have an impact on the viewing rates across different continents?
+## Data Preparation and Modelling for Q2: Does the content of the videos have an impact on the viewing rates across different continents?
 
 To answer the second question, we will investigate whether the topics of the videos have an impact on the viewing rates across different continents. This could indicate whether the learners from certain continents engage more with certain topics from the course or whether the learners find certain topics less interesting.
 
-### 3.2.1 Select Data
+### Select Data
 
 For the same reasons as explained in Section 3.1.1, the continent columns within the original *'video-stats'* data sets show the percentage of viewers from different continents for each video. To answer question 2, we want to firstly plot a bar chart using the absolute number of viewers from each continent. As explained in Section 3.1.1, we calculated the absolute number of learners by dividing the '*Total Viewed*' column by 100 and multiply by the  percentage viewed value for each continent. For the first cycle of analysis, we will use the data from run 3 only. For the second cycle of analysis, we will combine data from runs 3-7.
 
-### 3.2.2 Construct Data
+### Construct Data
 
 The columns of the new data frame will be renamed to the corresponding continents. This will then be combined with the *'step_title'* column, which as discussed in *'2.3 Explore data'*, consist of combining the two first columns *'step_position'* and *'title'* from the *'video-stats'* data set, to allow quick reference to the order of which the videos appears throughout the course. The data frame will be re-organised so that the columns match the original data set. Table xy [ADD TABLE REF] shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
 
@@ -322,7 +324,7 @@ as_tibble(output_3_abs[1:3,c(1,3:9)])
 
 Secondly, we will plot a line graph to show how the relative number of views changes throughout the course. As mentioned in *Section '3.1.2 Construct Data'*, we will take the data frame with the absolute number of viewers, then calculate the relative number of view within each continent relative to the highest number of views across all videos within that continent. The resulting percentage data frame is stored in the *'cache'*.
 
-### 3.2.3 Clean data
+### Clean data
 
 As described in Section *'3.1.3 Clean Data'*, the new dataframe of percentage values will be combined with the '*step_title*' column and re-organised so that the columns match the original data set. Values are given with no decimal places to increase the readability of the results as explained in Section *'3.1.3 Clean Data'*. 
 
@@ -332,14 +334,14 @@ The calculation of the percentages has resulted in the values from the *'antarct
 as_tibble(continent_3_pct_ro[1:3,c(1,3:9)])
 ```
 
-### 3.2.4 Integrate data 
+### Integrate data 
 
 Prior to calculating the percentage of viewers within each continent, the sum of the absolute actual viewers for all runs were added together, thus ensuring that the average is weighted according to the absolute number of learners within each run.
 
-### 3.2.5 Format data 
+### Format data 
 Prior to plotting the data for each cycle, the resulting dataframes are transformed to a 'long' format for the plotting of graphs (see Section 3.1.6 *'Modelling'*).
 
-### 3.2.6 Modelling 
+### Modelling 
 
 For the plots in this Section, the video topics will be reordered to the same order as how they run throughout the course. This will show how the number of viewers have changed throughout the course. 
 
@@ -384,11 +386,11 @@ The line chart with the data from all runs still shows a steady drop of viewers 
 The outlier on video *'2.1_Welcome to Week 2: payment security'* from South America that has been observed for run 3 is visible in Figure 9 too. The outlier is showing a smaller increase of viewers from South America for this particular topic in the second block of the course, with all the runs combined. It is unclear whether this is statistically relevant or due to noise. 
 
 
-## 3.3 Data Preparation and Modelling for Q3: Is there a correlation between the duration of videos and drop out rate of the learners?
+## Data Preparation and Modelling for Q3: Is there a correlation between the duration of videos and drop out rate of the learners?
 
 The last question is around whether there are any correlations between the duration of the videos and drop out rate of the learners while they are watching the video, as we have seen in Section 2.3.3, Figure 3 using the run 3 data. We want to understand whether the length of the videos will have an impact on how much of the entire video the learners will watch, e.g., how many learners have viewed 25%, 50%, 75% or 100% of the videos. This could potentially indicate whether the course provider should consider optimising the length of the videos to keep learners engaged.
 
-### 3.3.1 Select data 
+### Select data 
 
 The key columns for this investigation will be *'video_duration', 'total_views', 'viewed_twentyfive_percentage', 'viewed_fifty_percentage', 'viewed_seventyfive_percentage', and 'viewed_onehundred_percentage'* from the *'video-stats'* data sets. 
 
@@ -396,7 +398,7 @@ The range of 'viewed_percentage' columns shows the percentage of viewers who hav
 
 The 5%, 10% and 95% range of 'viewed_percentage' columns have been excluded from this investigation because the selected columns provided an even split of data collection points. A prelimary plot of run 3 data showed that there is no additional information in these columns, and their inclusions obscures the trends that can be observed. 
 
-### 3.3.2 Construct data
+### Construct data
 
 In order to combine the relative values within the 'viewed_percentage' columns from all of the runs, we will need to create a new data frame that contains the absolute number of viewers. This will allow us to calculate the weighted average as explained in Section 3.1.4. The absolute number of views will be calculated using a similar function to question 1 and question 2, we will take the total number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the relative number of views value from each cell of the 'viewed_percentage' columns. This will calculate the absolute number of viewers who have watched 25%, 50%, 75% and 100% of the videos. 
 
@@ -404,11 +406,11 @@ To combine the data sets, the new data frame containing the absolute number of v
 
 Values are given with no decimal places to increase the readability of the results as explained in Section *'3.1.3 Clean Data'*. The resulting percentage data frame is stored in the *'cache'*. We will use this data set to plot a line graph to show how the percentage of viewers have changed against the duration of the videos.  
 
-### 3.3.3 Format Data 
+### Format Data 
 
 The resulting dataframe is then transformed to a 'long' format to enable the use of ggplot2 to plot the data.
 
-### 3.3.4 Modelling 
+### Modelling 
 Figure 10 demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 25%, 50%, 75% and 100% of each video, for the data of all runs combined.
 
 ```{r run3_7_allpct_duration_scat_V, echo=FALSE, fig.width=11, fig.height=7}
@@ -418,8 +420,8 @@ run3_7_allpct_duration_scat_V
 This graph shows the drop off rate for all runs and it appears to show very similar behaviour of the learners drop off rate as was seen in run 3 (Section 2.3.3, Figure 3). It appears as if three videos have particularly high dropout rates between 75% and 100% of the video duration. However, there does not seem to be any correlation to the video duration. More data would be required to establish whether the trend is real or due to noise. If it is real, it would be interesting to analyse the video content to find potential triggers for the drop-outs.
 
 
-# 4. Evaluation
-## 4.1 Evaluate results - Assessment of data mining results with respect to business success criteria
+# Evaluation
+## Evaluate results - Assessment of data mining results with respect to business success criteria
 <!-- *(assesses the degree to which the model meets the business objectives and seeks to determine if there is some business reason why this model is deficient. Another option is to test the model(s) on test applications in the real application, if time and budget constraints permit.assesses other data mining results generated. Data mining results involve models that are necessarily related to the original business objectives and all other findings that are not necessarily related to the original business objectives, but might also unveil additional challenges, information, or hints for future directions.Summarize assessment results in terms of business success criteria, including a final statement regarding whether the project already meets the initial business objectives.After assessing models with respect to business success criteria, the generated models that meet the selected criteria become the approved models.???) think about history of data is it still relevant* -->
 
 The study was to understand the potential factors that could affect the learners’ engagement to a course through the video material provided.  
@@ -436,10 +438,10 @@ It would be interesting to see if the following would have an impact on the data
 
 *Summary*: Based on the data and the analysis in this report, it appears that learners engagement with the course decreases throughout the course (and throughout the duration of the videos). Most learners appear to stop viewing the videos after the first week of the course. For the learners who are seriously interested in the course, they are likely to stay on for week two and week three, hence we see a smaller drop off rate to the course for those two weeks.  
 
-## 4.2 Review process 
+## Review process 
 <!--*( resulting models appear to be satisfactory and to satisfy business needs. It is now appropriate to do a more thorough review of the data mining engagement in order to determine if there is any important factor or task that has somehow been overlooked.Summarize the process review and highlight activities that have been missed and those that should be repeated)* -->
 
-## 4.3 Determine next steps 
+## Determine next steps 
 <!--*(Depending on the results of the assessment and the process review, the project team decides how to proceed. The team decides whether to finish this project and move on to deployment, initiate further iterations, or set up new data mining projects. This task includes analyses of remaining resources and budget, which may influence the decisions.List the potential further actions, along with the reasons for and against each option.Describe the decision as to how to proceed, along with the rationale.)*-->
 
 Given more time, the data could be combined with the e.g. the _enrolments.csv data files to understand more about the types of learners from each continents, and if the data allows possibly split into separate countries. This could provide further insight if certain topics are of more interest for learners of certain continents and from different countries, which could inform the design of any future courses.  
@@ -452,6 +454,6 @@ May have to do some more analysis to compare with other MOOC courses
 Week 2 block is mainly on cybersecurity of payment infrastructure. Could be people are more interested on how to protect digital payments or there might be more people looking to work or already working in the cyber security / financial sector and are keen to learn about these topics. More investigation will need to be made.
 
 
-# 5. References
+# References
 
 
