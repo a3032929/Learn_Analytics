@@ -3,7 +3,7 @@ run3_allpct_duration_scat_V <- new_dur_3_df_pct %>%
   geom_line()+
   geom_point()+
   geom_hline(yintercept = 100)+
-  ggtitle("Figure XX: Number of viewers watched 100% of videos")+
+  ggtitle("Figure 3: Number of viewers watched 25%, 50%, 75% and 100% of videos (run 3)")+
   theme_classic()+
   theme(plot.title = element_text(size=12, face="bold"))+
   scale_y_continuous(name = "Percentage of viewers through phases of video duration")+

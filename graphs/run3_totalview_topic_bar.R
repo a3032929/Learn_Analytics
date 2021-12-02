@@ -12,7 +12,7 @@ run3_totalview_topic_bar_V <- run3unite %>%
   ggplot( aes(x=step_title, y=total_views))+
   geom_bar(stat = 'identity', fill="#0099f9")+
   geom_text(aes(label=total_views), hjust=-0.2, size=3.5)+
-  labs(title="Figure XX: Total number of Viewed per Video Topic")+
+  labs(title="Figure 1: Total Number of Views per Video Topic (run 3)")+
   theme(plot.title = element_text(size=12,face = "bold"))+
   theme_classic()+
   coord_flip()+

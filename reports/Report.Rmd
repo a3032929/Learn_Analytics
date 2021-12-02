@@ -179,15 +179,15 @@ The data files contain information on the video topics and the absolute number o
 
 ## 2.3 Explore data 
 
-The following initial visualisations will be used to explore the data and help determine the areas to consider for further investigation. As the first set of video data begins from run 3, the data file 'cyber-security-3_video-stats.csv' will be used for the initial exploration.
+The following initial visualisations will be used to explore the data and help determine the areas to consider for further investigation. As the first set of video data begins from run 3, the data file *'cyber-security-3_video-stats.csv'* will be used for the initial exploration.
 
 The two first columns *'step_position'* and *'title'* will be combined to allow quick reference to the order of which the videos appears throughout the course. This new column will be called *'step_title'*
 
-### 2.3.1 Number of viewers for each video topic
+### 2.3.1 Number of viewers against video topics
 
 Part of the data mining goal is to understand whether there is a trend on learners' engagement, therefore we will look at how the number of viewers have changed throughout the course. 
 
-Figure XX shows the number of viewers for each video based on the topic of the videos and the absolute number of views for each other these videos (run 3 data).
+Figure 1 shows the number of viewers for each video based on the topic of the videos and the absolute number of views for each other these videos (run 3 data).
 
 ```{r run3_totalview_topic_bar, echo=FALSE, , fig.width=11, fig.height=5.5}
 run3_totalview_topic_bar_V
@@ -195,22 +195,22 @@ run3_totalview_topic_bar_V
 
 The bar chart clearly indicated that as the learners progresses throughout the course, there is a drop of viewers watching the videos. As the learners are watching from different continents, we will investigate if this trend continues in a similar manner for the learners from different continents and whether certain topics appear to attract learners more. 
 
-### 2.3.2 Total number of viewing and features used through the duration of videos (TO DELETE??)
+### 2.3.2 Total number of views and features used throughout the videos
 
-A scatterplot matrix will be used to visualize any pairs of relationships. For the plots below the headings, the headings will be the x-axis, and the corresponding rows will be the y-axis.
+A scatterplot matrix will be used to visualize any pairs of relationships. For the plots below the headings, the headings will be on the x-axis, and the corresponding rows will be on the y-axis.
 
-Figure XX attempts to demonstrate the relationships between the length of the videos and the number of views, captions and transcripts for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
+Figure 2 attempts to demonstrate the relationships between the length of the videos and the number of views, captions and transcripts used for each video. It is assumed that the column '*total_transcript_views*' refer to the number of learners reading the transcript version of the videos rather than watching the videos.
 
 ```{r run3_duration_features_scatMx, echo=FALSE, fig.width=11, fig.height=7}
 pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite,
-      main = "Figure XX: Total Views and Features used through Video duration", pch = 19, upper.panel = NULL, cex.main=0.7)
+      main = "Figure 2: Total Views and Features used through Video duration (run 3)", pch = 19, upper.panel = NULL, cex.main=0.7)
 ```
 
 There are no obvious relationships observed between the length of the videos and the amount of views and features used for the videos. As the total number of views increases, so does the number of  captions used and transcripts used, which is to be expected. As there are no unexpected patterns that would indicate a dependence of e.g. the number of transcript reads on video duration, we will not continue with investigating these columns in our study.
 
 ### 2.3.3 Number of viewers for video duration
 
-Figure XX is a line chart to demonstrate the relationship between the video duration and the percentage of viewers who watched 25%, 50%, 75% and 100% of the video.
+Figure 3 is a line chart to demonstrate the relationship between the video duration and the percentage of viewers who watched 25%, 50%, 75% and 100% of the video.
 
 ```{r run3_allpct_duration_scat, echo=FALSE, fig.width=11, fig.height=7}
 run3_allpct_duration_scat_V
@@ -292,14 +292,14 @@ Prior to plotting the data for each cycle, the resulting dataframes are transfor
 [CLARIFY THIS SENTENCE: DO YOU MEAN THE NUMBER OF VIEWS WITHIN EACH CONTINENT, OR THE NUMBER OF VIEWS THAT ALLOWS YOU TO COMPARE WITHIN A VIDEO?] 
 <!-- The following plot is to determine whether the duration of the videos have an impact on the viewing rates across different continents. The new run 3 dataframe was plotted on to a scatter plot. -->
 
-Figure xy [CHECK REF] shows a plot of the relative number of views as calculated in *Section 3.1.2 Construct data*,  against the video duration, i.e. the data that allows to draw comparisons of the behaviour within a continent. This plot shows whether the viewers of a particular continent show an increased or decreased drop-out rate compared to the viewers of other continents. As described in *Section 3.1.2 Construct data*, all data is normalised to the most viewed video (Welcome to the course, 99 seconds duration).
+Figure 4 shows a plot of the relative number of views as calculated in *Section 3.1.2 Construct data*,  against the video duration, i.e. the data that allows to draw comparisons of the behaviour within a continent. This plot shows whether the viewers of a particular continent show an increased or decreased drop-out rate compared to the viewers of other continents. As described in *Section 3.1.2 Construct data*, all data is normalised to the most viewed video (Welcome to the course, 99 seconds duration).
  
 ```{r line_cont3_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
 line_cont3_pct_dur_V
 ```
 
 The percentage of viewers from all continents fluctuate and appears to be independent of the duration of the videos. However it appears as if viewing rates from Africa, Asia and South America show a steeper decline from the *Welcome* video to all other videos in compared to the other continents. Viewing rates from Oceania show the smallest decline. 
-Due to potential noise on the data, the same plot is plotted using the data for all runs (Figure xy [CHECk REF]). 
+Due to potential noise on the data, the same plot is plotted using the data for all runs (Figure 5). 
 
 ```{r line_cont_all_pct_dur, echo=FALSE, fig.width=11, fig.height=5}
 line_cont_all_pct_dur_V
@@ -353,7 +353,7 @@ Prior to plotting the data for each cycle, the resulting dataframes are transfor
 
 The video topics will be reordered to the same order as how they run throughout the course for the plots. This will show how the number of viewers have changed throughout the course. 
 
-Figure XX is a bar chart to show the relationship between the video topics and the number of viewers from across different continents for run 3. The colours in each bar are split according to the continent of the viewers, as shown in the key. 
+Figure 6 is a bar chart to show the relationship between the video topics and the number of viewers from across different continents for run 3. The colours in each bar are split according to the continent of the viewers, as shown in the key. 
 
 ```{r stack_cont3_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=7}
 stack_cont3_AbV_topic_bar_V
@@ -363,7 +363,7 @@ There are clear observations that the number of viewers decrease throughout the 
 
 There are three videos, in which the number of viewers slightly increased compared to the previous video, for example for video *'1.19_Staying safe online: personal perspectives', '3.2_Devices in the future house'* and *'3.15_Exploring security: the Access Control Live Lab'*.
 
-The same data, but with the relative number of viewers from each continent, were plotted on a line chart in Figure xy [CHECK REF]. Each line represents a different continent.
+The same data, but with the relative number of viewers from each continent, were plotted on a line chart in Figure 7. Each line represents a different continent.
 
 ```{r line_cont3_pct_topic, echo=FALSE, fig.width=11, fig.height=6}
 line_cont3_pct_topic_V
@@ -373,7 +373,7 @@ The line chart shows a steady drop of viewers throughout the course. More learne
 
 There is an outlier from South American viewers on video *'2.1_Welcome to Week 2: payment security'*. This data point is showing a sudden increase of viewers from South America for this particular topic in the second block of the course.
 
-There is likely to be noise on the data which obscures trends. For the second cycle of analysis, we will plot these graphs again using the data from all of the runs combined. The result is shown in Figure xy [ADD REF].
+There is likely to be noise on the data which obscures trends. For the second cycle of analysis, we will plot these graphs again using the data from all of the runs combined. The result is shown in Figure 8.
 
 
 ```{r stack_cont_all_AbV_topic_bar, echo=FALSE, fig.width=11, fig.height=5}
@@ -383,7 +383,7 @@ From the initial observation of the graph, the trend of the viewers from all run
 
 The combination of data for all runs shows that there are two videos in which the number of viewers slightly increased compared to the previous video, these are *'1.19_Staying safe online: personal perspectives'* and *'3.2_Devices in the future house'*.
 
-Just as for run 3, the percentage viewers from each continent of all the runs were plotted on a line chart in Figure xy [ADD REF]. Each line represents a different continent as shown in the key.
+Just as for run 3, the percentage viewers from each continent of all the runs were plotted on a line chart in Figure 9. Each line represents a different continent as shown in the key.
 
 ```{r line_cont_all_pct_topic, echo=FALSE, fig.width=11, fig.height=6}
 line_cont_all_pct_topic_V
@@ -418,7 +418,7 @@ Values are given with no decimal places to increase the readability of the resul
 The resulting dataframe is then transformed to a 'long' format to enable the use of ggplot2 to plot the data.
 
 ### 3.3.4 Modelling 
-Figure XX [ADD REF] demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 25%, 50%, 75% and 100% of each video, for the data of all runs combined.
+Figure 10 demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 25%, 50%, 75% and 100% of each video, for the data of all runs combined.
 
 ```{r run3_7_allpct_duration_scat_V, echo=FALSE, fig.width=11, fig.height=7}
 run3_7_allpct_duration_scat_V
