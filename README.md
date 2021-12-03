@@ -45,6 +45,7 @@ each file could be found in the README.md saved in the 'munge' directory.
 'graph' folder:
 - contains all of the codes to plot the graphs. Further detail of 
 each file could be found in the README.md saved in the 'graph' directory.
+- Used graphs scripts contains details of munge files used for data
 
 'data' folder:
 - contains the 53 .csv raw data 
