@@ -22,9 +22,9 @@ loading this project.
 
 The key directories, you can find the following files:
 'reports' directory:
-- RMarkdown document saved as 'Report.Rmd' (it contains a code for the scatter
+- RMarkdown document saved as 'Selina_So_A3032929_Report.Rmd' (it contains a code for the scatter
 plot matrix which can be ran from within the report).
-- RMarkdown document pdf output saved as 'Report.pdf'.
+- RMarkdown document pdf output saved as 'Selina_So_A3032929_Report.pdf'.
 - A bib file of references used for the project saved as 'EDA_reference.bib'.
 - Reflective report (design and implementation) pdf saved as 
 'Selina_So_A3032929_Design_Implementation_Report_final.pdf'
