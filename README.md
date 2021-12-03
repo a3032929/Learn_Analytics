@@ -31,7 +31,7 @@ plot matrix which can be ran from within the report).
 
 'log' directory:
 - Git log saved as a3032929GitLogFile.txt
-The Git log will not show the last final commit after saving the file to the 
+- The Git log will not show the last final commit after saving the file to the 
 directory, however it will be completed.
 
 'lib' directory:
