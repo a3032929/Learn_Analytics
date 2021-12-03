@@ -1,4 +1,4 @@
-# Example preprocessing script.
+# codes for initial viewing of run 3 data, check number of rows and columns in dataframe, combine columns 'step_position' and 'title' together and assign to 'run3unite'.
 
 # initial loading of run 3 video stats data
 run3 <- cyber.security.3_video.stats

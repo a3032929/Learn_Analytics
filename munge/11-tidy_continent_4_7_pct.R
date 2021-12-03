@@ -1,3 +1,5 @@
+# reorganise columns of df 'continent_4_pct' to 'continent_7_pct', remove decimal points and replace NaN to 0, assign to 'continent_4_pct_ro' to 'continent_7_pct_ro'.
+
 # run4 reorganise columns
 # remove decimal points
 continent_4_pct_ro <- continent_4_pct[,c(8,9,1,2,3,4,5,6,7)]%>% 
