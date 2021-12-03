@@ -220,7 +220,7 @@ run3_allpct_duration_scat_V
 
 Each line represents how many learners have watched a certain percentage of the videos. This is plotted against the duration of the videos on the x-axis.
 
-The graph shows that there is a steady drop of learners watching the entire video. The majority of the drop out of learners happen between 75% and 100% of the video duration. There is potentially a tendency of learners to drop out more if the videos are longer, however there is too much noise in the data to be certain.
+The graph shows that there is a steady drop of learners watching the entire video. The majority of the drop out of learners happen within the last 25% of the video duration. There is potentially a tendency of learners to drop out more if the videos are longer, however there is too much noise in the data to be certain.
 
 Further investigation will look at this behaviour with data from all runs. This will help understand two potential points: (1) Is there a point throughout the duration of the videos (e.g. between 75% and 100%), independent of total duration of the video, where the drop out rate is the largest? (2) Is there a maximum duration of the video after which the learners decide not to watch the video? This will help answer the question if (1) the content after a certain point in the videos is not of interest for the learners, and (2) how long learners stay engaged for.
 
