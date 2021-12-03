@@ -27,10 +27,6 @@ plot matrix which can be ran from within the report).
 - RMarkdown document pdf output saved as 'Report.pdf'.
 - A bib file of references used for the project saved as 'EDA_reference.bib'.
 
-'munge' folder:
-- contains all of the codes to clean and pre-process data. Further detail of 
-each file could be found in the README.md saved in the 'munge' directory.
-
 'lib' folder:
 - contains 2 sets of functions:
 - col_'num'_summary - a function to calculate the absolute values from 
@@ -41,6 +37,10 @@ run 3 data).
 percentage values, for all cells in the viewed_percent columns. Each of the 
 view_'num'_summary takes the corresponding run of data (ie. view_3_summary for 
 run 3 data).
+
+'munge' folder:
+- contains all of the codes to clean and pre-process data. Further detail of 
+each file could be found in the README.md saved in the 'munge' directory.
 
 'graph' folder:
 - contains all of the codes to plot the graphs. Further detail of 
