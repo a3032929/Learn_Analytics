@@ -1,4 +1,7 @@
-# make pct for each continent
+# to create a percentage_df of joint_data: convert 'joint_data' variable (from file '14-join_3_7_AbV.R') to percent using maximum absolute value within each column (continent), 
+# copy the step_title and video_duration columns to new pct-df, then reorganise columns + remove decimal points + replace NaN with 0 + rename columns, then assign to 'joint_data_pct_ro'
+
+# select columns for pct to be calculated
 joint_data_pct <- joint_data[3:9] / joint_data[3:9] %>% lapply(max) * 100
 
 # copy the step_title and video duration columns to new pct df

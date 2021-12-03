@@ -1,4 +1,5 @@
-# join all runs together
+# join all absolute-value-df of all runs together (from '13-add_cols_output3_7_AbV.R') and assign to 'joint_data'
+
 joint_data <- rbind(output_3_ro, output_4_ro, output_5_ro, output_6_ro, output_7_ro) %>% 
   group_by(step_title, video_duration) %>% 
   summarise(europe_views = sum(europe_views),

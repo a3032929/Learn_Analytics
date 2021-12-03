@@ -1,3 +1,5 @@
+# rename columns of 'output_3' to 'output_7' (df came from files '02-call_c3s_func.R' and '08-call_cs_func_run4_7.R')
+
 names(output_3) = c("europe_views", "oceania_views", "asia_views", "n_america_views", "s_america_views", "africa_views", "antarctica_views")
 cache('output_3')
 names(output_4) = c("europe_views", "oceania_views", "asia_views", "n_america_views", "s_america_views", "africa_views", "antarctica_views")

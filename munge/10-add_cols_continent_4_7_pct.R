@@ -1,4 +1,5 @@
-# copy the step_title and video duration columns to new pct df
+# copy step_title and video_duration columns from original dataset to new df from file '09-continent_4_7_pct.R' (assign to same variable as in '09-continent_4_7_pct.R').
+
 continent_4_pct$step_title <- run4unite$step_title
 continent_4_pct$video_duration <- run4unite$video_duration
 

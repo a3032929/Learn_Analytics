@@ -1,4 +1,6 @@
-# add step_title and video_duration columns to tables
+# copy step_title and video_duration columns from original dataset to new absolute-value-df from file '12-rename_output3_7.R', then reorganise columns 
+# and assign to 'output_3_ro' to 'output_7_ro'. 
+
 output_3$step_title <- run3unite$step_title
 output_3$video_duration <- run3unite$video_duration
 cache('output_3')

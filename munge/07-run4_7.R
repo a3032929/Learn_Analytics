@@ -1,7 +1,5 @@
-# Example preprocessing script.
+# for runs 4-7 video.stats data combine columns 'step_position' and 'title' together and assign to 'run4unite', 'run5unite', 'run6unite', 'run7unite'
 
-# set run4-7 video.stats data to run3unite
-# combine step_position and title together
 run4unite <- cyber.security.4_video.stats %>% 
   unite("step_title", step_position:title, remove = FALSE)
 cache('run4unite')
