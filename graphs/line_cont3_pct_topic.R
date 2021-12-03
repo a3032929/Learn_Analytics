@@ -1,4 +1,5 @@
 # line graph of percentage viewers per continent vs video topic run 3 data.
+# used files (1, 2, 3, 4, 5, 6) in munge for data and col_3_summary function
 line_cont3_pct_topic_V <- new_cont_3_df %>% 
   mutate(step_title = fct_relevel(step_title, "1.1_Welcome to the course", "1.5_Privacy online and offline",
                                   "1.14_Why would anyone want your data?", "1.17_Preserving privacy in cloud storage: privacy by design",

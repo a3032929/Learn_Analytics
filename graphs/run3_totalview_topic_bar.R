@@ -1,4 +1,5 @@
 # plot horizontal bar chart of video topic vs total number of viewers for run 3 data
+# used file (1) in munge for data
 run3_totalview_topic_bar_V <- run3unite %>% 
   mutate(step_title = fct_relevel(step_title, "1.1_Welcome to the course", "1.5_Privacy online and offline",
                                   "1.14_Why would anyone want your data?", "1.17_Preserving privacy in cloud storage: privacy by design",

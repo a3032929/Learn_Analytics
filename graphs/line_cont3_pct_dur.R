@@ -1,4 +1,5 @@
 # line graph of percentage viewers per continent vs video duration run 3 data
+# used files (1, 2, 3, 4, 5, 27) in munge for data and col_3_summary function
 line_cont3_pct_dur_V <- new_cont_3_df_dur %>% 
   ggplot( aes(x=video_duration, y=Value, group=Continent, color=Continent))+
   geom_line(size=1)+

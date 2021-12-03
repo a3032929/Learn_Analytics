@@ -1,4 +1,5 @@
 # stacked bar chart of absolute number of viewers per continent vs video topics all run data.
+# used files (1, 2, 7, 8, 12, 13, 14, 16) in munge for data and col_num_summary functions
 stack_cont_all_AbV_topic_bar_V <- new_cont_all_df_AbV %>% 
   ungroup %>% 
   mutate(step_title = fct_relevel(step_title, "1.1_Welcome to the course", "1.5_Privacy online and offline",
