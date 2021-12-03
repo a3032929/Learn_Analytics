@@ -45,7 +45,7 @@ The following sections will list the resources available to the project.
 
 #### Software Sources
 
-The following software sources have been used and are described below under section '1.2.2.1 Requirements':
+The following software sources will be used and are described below under section '1.2.2.1 Requirements':
 
 - R
 - RStudio
@@ -169,7 +169,7 @@ There are 28 columns. The first column of each dataset describes the weekly bloc
 
 We will make two assumptions for this project: (1) The number of views is equal to the number of learners, i.e. they either do not include the views of tutors or hosts or these are neglible, and (2) each viewer only viewed each video once. 
 
-The data files contain information on the video topics and the absolute number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file provide a rich source of information to gain insight into the learners behaviour to inform the business objectives of the project. Due to time constraints during this project, the data on the type of devices, downloads, as well as the number of HD users will not be selected for this study. These columns may be interesting for further analysis on how to optimise the content of videos to ensure they are in the right format and have the correct features.
+The data files contain information on the video topics and the absolute number of viewers. This will inform which topics appears to attract the most number of learners. One can also use the range of columns on the 'viewed_percentage', to deduct how the number of learners' engagement changes throughout the duration of the videos. Finally, from the percentage of viewers across the continents, we can observe how engaged the learners from different continents have been throughout the course. Therefore the data file provide a rich source of information to gain insight into the learners behaviour to inform the business objectives of the project. Due to time constraints surrounding this project, the data on the type of devices, downloads, as well as the number of HD users will not be selected for this study. These columns may be interesting for further analysis on how to optimise the content of videos to ensure they are in the right format and have the correct features.
 
 - Basic statistical analysis for run 3 shows that there is some skewness in the *'total_views'* data, ranging from a minimum of 446 total views to 1659 total views. By analysing the number of learners for each topic, it potentially show whether certain topics attract more viewers. 
 
@@ -190,7 +190,7 @@ The two first columns *'step_position'* and *'title'* will be combined to allow 
 
 Part of the data mining goal is to understand whether there is a trend on learners' engagement, therefore we will look at how the number of viewers have changed throughout the course. 
 
-Figure 1 shows the number of viewers for each video based on the topic of the videos and the absolute number of views for each other these videos (run 3 data).
+Figure 1 shows the number of viewers for each video based on the topic of the videos and the absolute number of views for each of these videos.
 
 ```{r, echo=FALSE, fig.width=11, fig.height=5.5, fig.cap="Total Number of Views per Video Topic (run 3)"}
 run3_totalview_topic_bar_V
@@ -208,13 +208,13 @@ Figure 2 attempts to demonstrate the relationships between the length of the vid
 pairs(~video_duration + total_views + total_caption_views + total_transcript_views, data = run3unite, pch = 19, upper.panel = NULL, cex.main=0.7)
 ```
 
-There are no obvious relationships observed between the length of the videos and the amount of views and features used for the videos. As the total number of views increases, so does the number of  captions used and transcripts used, which is to be expected. As there are no unexpected patterns that would indicate a dependence of e.g. the number of transcript reads on video duration, we will not continue with investigating these columns in our study.
+There are no obvious relationships observed between the length of the videos and the amount of views and features used for the videos. As the total number of views increases, so does the number of  captions used and transcripts used, which is to be expected. As there are no unexpected patterns that would indicate a dependence of, e.g. the number of transcript views on video duration, we will not continue with investigating these columns in our study.
 
 ### Number of viewers for video duration
 
 Figure 3 is a line chart to demonstrate the relationship between the video duration and the percentage of viewers who watched 25%, 50%, 75% and 100% of the video.
 
-```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Number of viewers watched 25%, 50%, 75% and 100% of videos (run 3)"}
+```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Number of viewers watched 25%, 50%, 75% and 100% of Videos (run 3)"}
 run3_allpct_duration_scat_V
 ```
 
@@ -222,7 +222,7 @@ Each line represents how many learners have watched a certain percentage of the 
 
 The graph shows that there is a steady drop of learners watching the entire video. The majority of the drop out of learners happen between 75% and 100% of the video duration. There is potentially a tendency of learners to drop out more if the videos are longer, however there is too much noise in the data to be certain.
 
-Further investigation will look at this behaviour with data from all runs. This will help understand two potential points: (1) Is there a point throughout the duration of the videos (e.g. between 75% and 100%), independent of total duration of the video, where the drop out rate is the largest? (2) Is there a maximum duration of the video after which the learners are decide not to watch the video? This will help answer the question if (1) the content after a certain point in the videos is not of interest for the learners, and (2) how long learners stay engaged for.
+Further investigation will look at this behaviour with data from all runs. This will help understand two potential points: (1) Is there a point throughout the duration of the videos (e.g. between 75% and 100%), independent of total duration of the video, where the drop out rate is the largest? (2) Is there a maximum duration of the video after which the learners decide not to watch the video? This will help answer the question if (1) the content after a certain point in the videos is not of interest for the learners, and (2) how long learners stay engaged for.
 
 ### Hypothesis
 
@@ -242,14 +242,14 @@ The column *'antarctica_views_percentage'* only contains values of 0. Based on t
 
 # Data preparation and modelling
 
-In the following Sections, we will discuss the steps that have been taken to pre-process and analyse the data to answer the three questions in Section 2.3.4. The analysis has been done in 2 cycles for each question. In the first cycle, we analysed the data from run 3 only. Based on the results of the first cycle, we decided on the most promising route of analysis and performed the analysis taking runs 3-7 into account for the second cycle. For each of these questions, we will discuss the data preparation and modelling steps separately (Sections 3.1-3.3 [CHECK SECTION NUMBERS]), before evaluating the results in Section 4.
+In the following Sections, we will discuss the steps that have been taken to pre-process and analyse the data to answer the three questions in Section 2.3.4. The analysis has been done in 2 cycles for each question. In the first cycle, we analysed the data from run 3 only. Based on the results of the first cycle, we decided on the most promising route of analysis and performed the analysis taking runs 3-7 into account for the second cycle. For each of these questions, we will discuss the data preparation and modelling steps separately (Sections 3.1-3.3), before evaluating the results in Section 4.
 
 
 ## Data Preparation and Modelling for Q1: Does the duration of the videos have an impact on the viewing rates across different continents?
 
 ### Select data 
 
-The first hypothesis will investigate on whether the duration of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the length of the videos will have a negative or positive impact on the learners' engagement globally. The key columns for this investigation will be *'video_duration'*, *'total_views'*, *'europe_views_percentage'*, *'oceania_views_percentage'*, *'asia_views_percentage'*, *'north_america_views_percentage'*, *'south_america_views_percentage'*, *'africa_views_percentage'* and *'antarctica_views_percentage'* from the *'video-stats'* data file, which has been assigned to the *'run3unite'* variable for the first cycle. For the second cycle, they will be assigned to *'run3unite', 'run4unite', 'run5unite', 'run6unite', 'run7unite'*. Table  xy [CHECK TABLE NUMBER] shows the raw data for run 3. The same selection of columns has been used for all remaining runs to include in the second cycle of analysis. 
+The first hypothesis will investigate on whether the duration of the videos have an impact on the viewing rates across different continents. Therefore it could indicate whether the length of the videos will have a negative or positive impact on the learners' engagement globally. The key columns for this investigation will be *'video_duration'*, *'total_views'*, *'europe_views_percentage'*, *'oceania_views_percentage'*, *'asia_views_percentage'*, *'north_america_views_percentage'*, *'south_america_views_percentage'*, *'africa_views_percentage'* and *'antarctica_views_percentage'* from the *'video-stats'* data file, which has been assigned to the *'run3unite'* variable for the first cycle. For the second cycle, they will be assigned to *'run3unite', 'run4unite', 'run5unite', 'run6unite', 'run7unite'*. The table below shows the raw data for run 3. The same selection of columns has been used for all remaining runs to include in the second cycle of analysis. 
 
 ```{r, echo=FALSE}
 head(run3unite[,c(4,5,23:29)], 3)
@@ -261,7 +261,7 @@ To see how the viewing rates changes within each continent throughout the course
 
 ### Construct data 
 
-In order to calculate the absolute number of viewings from each continent for each video (i.e. each row), a function (**col_3_summary**) was developed to take the absolute number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. An example is the calculation of absolute number of views of the first video from African viewers, which is calculated as (*Total Viewed*[row 2]/100) x *africa_views_percentage*[row 2]. The resulting data frame is stored in the *'cache'* folder. Table xy [ADD TABLE REF] shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
+In order to calculate the absolute number of viewings from each continent for each video (i.e. each row), a function (**col_3_summary**) was developed to take the absolute number of learners from the '*Total Viewed*' column, divided by 100, then multiply by the current percentage viewed value from each continent. An example is the calculation of absolute number of views of the first video from African viewers, which is calculated as (*Total Viewed*[row 2]/100) x *africa_views_percentage*[row 2]. The resulting data frame is stored in the *'cache'* folder. The table below shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
 
 ```{r, echo=FALSE}
 run3_abs
@@ -271,7 +271,7 @@ The resulting data frame then undergoes another transformation to calculate the 
 
 ### Clean data
 
-These values were then combined with the original '*video_duration*' column and re-organised so that the columns match the original data set. Values are given with no decimal places to increase the readability of the results. Since the modelling and evaluation in this project is mainly based on visualizations and qualitative assessments, the accuracy of the data analysis is not affected by this decision. The calculation of the percentages has resulted in the values from the *'antarctica_views_percentage'* being '*NaN*'. Since we know that there were no viewers from Antarctica, all '*NaN*' values have been replaced by 0. Table xy [ADD TABLE REF] shows the relative number of viewers in percentage from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis.  
+These values were then combined with the original '*video_duration*' column and re-organised so that the columns match the original data set. Values are given with no decimal places to increase the readability of the results. Since the modelling and evaluation in this project is mainly based on visualizations and qualitative assessments, the accuracy of the data analysis is not affected by this decision. The calculation of the percentages has resulted in the values from the *'antarctica_views_percentage'* being '*NaN*'. Since we know that there were no viewers from Antarctica, all '*NaN*' values have been replaced by 0. The table below shows the relative number of viewers in percentage from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis.  
 
 ```{r, echo=FALSE}
 as_tibble(continent_3_pct_ro[1:3,c(2:9)])
@@ -287,13 +287,13 @@ Prior to plotting the data for each cycle, the resulting dataframes are transfor
 
 ### Modelling 
 
-Figure 4 shows a line chart of the relative number of views as calculated in *Section 3.1.2 Construct data*,  against the video duration, i.e. the data that allows to draw comparisons of the behaviour within a continent. This plot shows whether the viewers of a particular continent show an increased or decreased drop out rate compared to the viewers of other continents. As described in *Section 3.1.2 Construct data*, all data is normalised to the most viewed video (Welcome to the course, 99 seconds duration).[NOT SURE ABOUT LAST SENTENCE]
+Figure 4 shows a line chart of the relative number of views as calculated in *Section 3.1.2 Construct data*, against the video duration, i.e. the data that allows to draw comparisons of the behaviour within a continent. This plot shows whether the viewers of a particular continent show an increased or decreased drop out rate compared to the viewers of other continents. As described in *Section 3.1.2 Construct data*, all data is normalised to the most viewed video (*'1.1_Welcome to the course'*, 99 seconds duration).
  
 ```{r, echo=FALSE, fig.width=11, fig.height=5, fig.cap="Percentage of Viewers against Video duration (run 3)"}
 line_cont3_pct_dur_V
 ```
 
-The percentage of viewers from all continents fluctuate and appears to be independent of the duration of the videos. However it appears as if viewing rates from Africa, Asia and South America show a steeper decline from the *Welcome* video to all other videos in compared to the other continents. Viewing rates from Oceania show the smallest decline. 
+The percentage of viewers from all continents fluctuate and appears to be independent of the duration of the videos. However it appears as if viewing rates from Africa, Asia and South America show a steeper decline from the *'1.1_Welcome to the course'* video to all other videos in comparison to the other continents. Viewing rates from Oceania show the smallest decline. 
 
 Due to potential noise on the data, the same plot is plotted using the data for all runs (Figure 5). 
 
@@ -318,7 +318,7 @@ For the same reasons as explained in Section 3.1.1, the continent columns within
 
 ### Construct Data
 
-The columns of the new data frame will be renamed to the corresponding continents. This will then be combined with the *'step_title'* column, which as discussed in *'2.3 Explore data'*, consist of combining the two first columns *'step_position'* and *'title'* from the *'video-stats'* data set, to allow quick reference to the order of which the videos appears throughout the course. The data frame will be re-organised so that the columns match the original data set. Table xy [ADD TABLE REF] shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
+The columns of the new data frame will be renamed to the corresponding continents. This will then be combined with the *'step_title'* column, which as discussed in *'2.3 Explore data'*, consist of combining the two first columns *'step_position'* and *'title'* from the *'video-stats'* data set, to allow quick reference to the order of which the videos appears throughout the course. The data frame will be re-organised so that the columns match the original data set. The table below shows the absolute number of viewers from each continent for run 3. The data in all remaining runs has been treated in the same way to be included in the second cycle of analysis. 
 
 ```{r, echo=FALSE}
 as_tibble(output_3_abs[1:3,c(1,3:9)])
@@ -349,7 +349,7 @@ For the plots in this Section, the video topics will be reordered to the same or
 
 Figure 6 is a bar chart that shows the relationship between the video topics and the number of viewers from across different continents for run 3. The colours in each bar are split according to the continent of the viewers, as shown in the key. 
 
-```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Total continental viewers against video topics (run 3)"}
+```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Total continental viewers against Video Topics (run 3)"}
 stack_cont3_AbV_topic_bar_V
 ```
 
@@ -370,7 +370,7 @@ There is an outlier from South American viewers on video *'2.1_Welcome to Week 2
 There is likely to be noise on the data which obscures trends. For the second cycle of analysis, we will plot these graphs again using the data from all of the runs combined. The result is shown in Figure 8.
 
 
-```{r, echo=FALSE, fig.width=11, fig.height=5, fig.cap="Total continental viewers against video topics (all runs)"}
+```{r, echo=FALSE, fig.width=11, fig.height=5, fig.cap="Total continental viewers against Video Topics (all runs)"}
 stack_cont_all_AbV_topic_bar_V
 ```
 
@@ -384,7 +384,7 @@ Just as for run 3, the percentage viewers from each continent of all the runs we
 line_cont_all_pct_topic_V
 ```
 
-The line chart with the data from all runs still shows a steady drop of viewers throughout the course. However, the gap between the percentage of learners from Oceania and Europe are a lot closer compared to what was seen in run 3. The relative numbers of views from Oceania and Europe decrease at a similar rate. The trend that the steepest decline in the relative number of viewers is seen for viewers from Asia and Africa is more pronounced when all data sets are combined. 
+The line chart with the data from all runs still shows a steady drop of viewers throughout the course. However, the gap between the percentage of learners from Oceania and Europe are a lot closer compared to what was seen in run 3. The relative numbers of views from Oceania and Europe decrease at a similar rate. The trend that the steepest decline in the relative number of viewers from Asia and Africa is more pronounced when all data sets are combined. 
 
 The outlier on video *'2.1_Welcome to Week 2: payment security'* from South America that has been observed for run 3 is visible in Figure 9 too. The outlier is showing a smaller increase of viewers from South America for this particular topic in the second block of the course, with all the runs combined. It is unclear whether this is statistically relevant or due to noise. 
 
@@ -399,7 +399,7 @@ The key columns for this investigation will be *'video_duration', 'total_views',
 
 The range of 'viewed_percentage' columns shows the percentage of viewers who have viewed 25%, 50%, 75% and 100% of the videos.  
 
-The 5%, 10% and 95% range of 'viewed_percentage' columns have been excluded from this investigation because the selected columns provided an even split of data collection points. A prelimary plot of run 3 data showed that there is no additional information in these columns, and their inclusions obscures the trends that can be observed. 
+The 5%, 10% and 95% range of 'viewed_percentage' columns have been excluded from this investigation because the selected columns provided an even split of data collection points. A preliminary plot of run 3 data showed that there is no additional information in these columns, and their inclusions obscures the trends that can be observed. 
 
 ### Construct data
 
@@ -416,44 +416,39 @@ The resulting dataframe is then transformed to a 'long' format to enable the use
 ### Modelling 
 Figure 10 demonstrates the relationship between the video duration and the number of views throughout the duration of the videos, at 25%, 50%, 75% and 100% of each video, for the data of all runs combined.
 
-```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Number of viewers watched 25%, 50%, 75% and 100% of videos (all runs)"}
+```{r, echo=FALSE, fig.width=11, fig.height=7, fig.cap="Number of viewers watched 25%, 50%, 75% and 100% of Videos (all runs)"}
 run3_7_allpct_duration_scat_V
 ```
 
-This graph shows the drop out rate for all runs and it appears to show very similar behaviour of the learners drop out rate as was seen in run 3 (Section 2.3.3, Figure 3). It appears as if three videos have particularly high drop out rates between 75% and 100% of the video duration. However, there does not seem to be any correlation to the video duration. More data would be required to establish whether the trend is real or due to noise. If it is real, it would be interesting to analyse the video content to find potential triggers for the drop outs.
+This graph shows the drop out rate for all runs and it appears to show very similar behaviour of the learners drop out rate as was seen in run 3 (Section 2.3.3, Figure 3). It appears as if three videos have particularly high drop out rates between 75% and 100% of the video duration. However, there does not seem to be any correlation to the video duration. More data would be required to establish whether the trend is real or due to noise. If it is real, it would be interesting to analyse the video content to find potential triggers for the drop outs, or to assess whether this just reflects the lack of content in the last few seconds of the video.
 
 
 # Evaluation
-## Evaluate results - Assessment of data mining results with respect to business success criteria
-<!-- *(assesses the degree to which the model meets the business objectives and seeks to determine if there is some business reason why this model is deficient. Another option is to test the model(s) on test applications in the real application, if time and budget constraints permit.assesses other data mining results generated. Data mining results involve models that are necessarily related to the original business objectives and all other findings that are not necessarily related to the original business objectives, but might also unveil additional challenges, information, or hints for future directions.Summarize assessment results in terms of business success criteria, including a final statement regarding whether the project already meets the initial business objectives.After assessing models with respect to business success criteria, the generated models that meet the selected criteria become the approved models.???) think about history of data is it still relevant* -->
+## Evaluate results
 
 The study was to understand the potential factors that could affect the learners’ engagement to a course through the video material provided.  
 
-*Question 1*: The results shown appear to indicate that there are no correlations between the length of the videos and how engaged the learners from each continent were. The length of the video does not seem to be a deciding factor for learner's engagement and retention. 
+*Question 1*: The results appear to indicate that there are no correlations between the length of the videos and how engaged the learners from each continent were. The length of the video does not seem to be a deciding factor for the learners' engagement and retention. 
 
-*Question 2*: The results clearly show that most learners will watch the first video of the course, and the number of learners viewing the videos throughout the course drop significantly within the first week. However between week two and three the drop out of learners is not as high. It is unclear whether the data provided by FutureLearn also collects the number of learners watching preview of videos for the course, or whether FutureLearn gives free access to their learning material for a short period of time, which could reflect on the sudden drop of learners watching the videos within the first week. WHAT WERE THE TOPICS OF THESE BLOCK WEEKS? The first week block contained videos surrounding the topic of *Exploring personal privacy online*. The second week block is on *Online payment security* and the third week block is on *Security in the future home*.
+*Question 2*: The results clearly show that the maximum number of learners will watch the first video of the course, and the number of learners viewing the videos throughout the course drop significantly within the first week. The data suggests that a larger proportion of learners from Africa, Asia, and partially South America drop out compared to the other continents. However, across all continents the drop out of learners between week two and three is not as high as during the first week. It is unclear whether the data provided by FutureLearn also collects the number of learners watching previews of videos, or whether FutureLearn gives free access to their learning material for a short period of time, which could reflect on the sudden drop of learners watching the videos within the first week. The first week block contained videos surrounding the topic of *'Exploring personal privacy online'*. The second week block is on *'Online payment security'* and the third week block is on *'Security in the future home'*.
 
-The line chart in Figure 7 and 9, also indicates that there is a clear interest for video 2.1 from learners based in South America. The topic was *Welcome to Week 2: payment security*. Given more time, we could do further analysis to gain insights about the learners' from continents to understand whether there are other factors which could affect the learners’ engagement for certain topics, these factors could include but not limited to political factors of the continent, types of jobs and interest in cyber security within those continents.  
+The line chart in Figures 7 and 9 also indicate that there is a spike in interest for video 2.1 from learners based in South America. The topic was *'Welcome to Week 2: payment security'*. Given more time, we could do further analysis to gain insights about the learners from different continents to understand whether there are other factors which could affect the learners’ interest in certain topics. These factors could include e.g. cultural, economical or political factors of the continent, types of jobs and interest in cyber security within those continents.  
 
-*Question 3*: The results potentially show that the longer a video is the higher risk of the learners’ dropping out earlier during the videos. As most learners drop out after 75% into a video, this could help course designers and providers decide whether to ensure that important course content are placed earlier on the videos. Alternatively, it would be interesting to analyse the video contents in the last 25% of the video for the outliers as discussed in Section 3.3.4. This could help understand if there are any triggers for the drop outs to inform the future design of the videos.
+*Question 3*: The results potentially show that the longer a video is, the higher risk of the learners dropping out earlier during the videos. As most learners drop out before they watched 100% of the video, this could help course designers and providers decide whether to ensure that important course content is placed earlier on the videos. Alternatively, it would be interesting to analyse the video contents in the last 25% of the video for the outliers as discussed in Section 3.3.4. This could help understand if there are any triggers for the drop outs to inform the future design of the videos.
 
-It would be interesting to see if the following would have an impact on the data: [???] If the decision is to be made to make important content appear towards the end of the videos, then a contents page could be provided in the video, to inform the learners what to expect throughout a video and this could potentially keep learners more engaged throughout the video. Depending on the interest of the content, it could affect the number of learners watching the entire length of the videos. 
+It would be interesting to see if the following would have an impact on the data: if the decision is to be made to make important content appear towards the end of the videos, then a contents page could be provided in the video, to inform the learners what to expect throughout a video. This could potentially keep learners more engaged throughout the video. Depending on the interest of the content, it could affect the number of learners watching the entire length of the videos. 
 
-*Summary*: Based on the data and the analysis in this report, it appears that learners engagement with the course decreases throughout the course (and throughout the duration of the videos). Most learners appear to stop viewing the videos after the first week of the course. For the learners who are seriously interested in the course, they are likely to stay on for week two and week three, hence we see a smaller drop out rate to the course for those two weeks.  
+*Summary*: Based on the data and the analysis in this report, it appears that learners engagement with the course decreases throughout the course and throughout the duration of the videos. Most learners appear to stop viewing the videos after the first week of the course. The learners who stay after the first week are more likely to be seriously interested in the course, as they are more likely to stay on for week two and week three. This can be seen by the smaller drop out rate to the course for those two weeks across all continents.  
 
 
 ## Review process 
-<!--*( resulting models appear to be satisfactory and to satisfy business needs. Did we find correlations to answer the business question?? It is now appropriate to do a more thorough review of the data mining engagement in order to determine if there is any important factor or task that has somehow been overlooked.Summarize the process review and highlight activities that have been missed and those that should be repeated)* -->
 
-The outcome of the investigation was satisfactory for the business needs. However, given more time, further analysis could be undertaken on the impact of video features made available for the viewers. With the right data, it would have been interesting to understand whether learners from different continents prefer to use certain devices to access the video content, depending on how widely available certain devices are in different continents. A interesting analysis could also be considered on whether the captions and transcript features are important for learners are based in continents (and countries)?? which do not speak English predominately. The outcome from this analysis could help optimise the content of videos to ensure that they are in the right format and have the correct features.
-
-In addition, the data could be combined with the data files (e.g. the enrolments.csv) to understand more about the types of learners from each continents, and if the data could be split into separate countries. This could provide further insight to determine if certain topics are of more interest for learners of certain continents and certain countries, which could inform the design of any future courses. For example, we saw that there was potentially more interest for the 'payment security' topics from learners of South America. The enrolment and unenrolment date and time stamps may also give an indication on the average duration that the learners stay on the course and if it indicates that learners drop out quicker after the first week of the course, as they appear to do with the video data. 
-
-As the data was originally collected between 2016-18, the recent pandemic has greatly affected the lives of everyone. Many people were forced to work and study at home, many people lost their jobs, many people had more time to reconsider their career options, many activities have moved online for everyone to access. It will be interesting to analyse and understand what impact has the pandemic had on learners and whether we see more or less engagement from learners viewing the videos.
+The outcome of the investigation was satisfactory for the business needs. However, given more time, further analysis could be undertaken on the impact of video features made available for the viewers. With the right quality and quantity of data, it would have been interesting to understand whether learners from different continents prefer to use certain devices to access the video content. This could help inform the future design of course material to ensure it is suitable for all relevant devices. An interesting analysis could also be on whether the captions and transcript features are important for learners who are based in continents and/or countries where English is not the native language of the majority of people. The outcome from this analysis could help optimise the content of videos to ensure that they are in the right format and have the correct features to increase the appeal to learners from across the world. 
 
 
-## Determine next steps 
-<!--*(Depending on the results of the assessment and the process review, the project team decides how to proceed. The team decides whether to finish this project and move on to deployment, initiate further iterations, or set up new data mining projects. This task includes analyses of remaining resources and budget, which may influence the decisions.List the potential further actions, along with the reasons for and against each option.Describe the decision as to how to proceed, along with the rationale.)*-->
+In addition, the data could be combined with the data files (e.g. *'enrolments.csv'*) to understand more about the types of learners from each continents, and if the data could be split into separate countries. This could provide further insight to determine if certain topics are of more interest for learners of certain continents and certain countries, which could inform the design of any future courses. For example, we saw that there was potentially more interest for the 'payment security' topics from learners of South America. The enrolment and unenrolment date and time stamps may also give an indication on the average duration that the learners stay on the course. This data may help to confirm that learners are more likely to drop out after the first week of the course.  
+
+As the data was originally collected between 2016 and 2018, the recent pandemic has greatly affected the lives of everyone. Many people were forced to work and study at home, many people lost their jobs, many people had more time to reconsider their career options and many activities have moved online for everyone to access. It will be interesting to analyse and understand what impact has the pandemic had on learners and whether we see more or less engagement from learners viewing the videos.
 
 
 # References
