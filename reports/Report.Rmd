@@ -153,7 +153,7 @@ The initial data file of interest was the *'Weekly-sentiment-survey-response'* d
 
 ### Final data file selection
 
-As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore use the video data to understand students' engagement with the course, and consequently the retention rate of the learners throughout the course. This will enable the course provider to make informed decisions on the design and improvements of the course. To achieve this, the focus will be on the '*video-stats*' data files provided by FutureLearn. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data is available. There appears to be no missing values from the data, therefore the data files for '*video-stats*' are complete. 
+As data from videos could act as engagement indicators, Newcastle University and FutureLearn could therefore use the video data to understand students' engagement with the course, and consequently the retention rate of the learners throughout the course. This will enable the course provider to make informed decisions on the design and improvements of the course. To achieve this, the focus will be on the '*video-stats*' data files provided by FutureLearn. These data sets are only available for 5 (out of 7) runs. Therefore runs 1 and 2 will not be considered in this study as no data is available. There appears to be no missing values from the data, therefore the data files for '*video-stats*' are complete.
 
 
 ## Describe data 
