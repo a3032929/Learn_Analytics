@@ -29,5 +29,3 @@ viewers in different duration of video for all run data. (Fig10)
 
 The used graphs scripts contains information on which munge files were used 
 to create the data to plot the graphs.
-
-All other graphs in 'graph' folder are not used therefore redundant.
