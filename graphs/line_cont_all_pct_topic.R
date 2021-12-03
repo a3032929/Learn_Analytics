@@ -1,4 +1,4 @@
-# line graph of each continent throughout course using all runs pct
+# line graph of percentage viewers per continent vs video topic all run data.
 line_cont_all_pct_topic_V <- new_cont_all_df_pct %>% 
   mutate(step_title = fct_relevel(step_title, "1.1_Welcome to the course", "1.5_Privacy online and offline",
                                   "1.14_Why would anyone want your data?", "1.17_Preserving privacy in cloud storage: privacy by design",

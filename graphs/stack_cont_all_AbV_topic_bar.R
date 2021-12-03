@@ -1,4 +1,4 @@
-# stacked bar chart of each video by continent of all runs
+# stacked bar chart of absolute number of viewers per continent vs video topics all run data.
 stack_cont_all_AbV_topic_bar_V <- new_cont_all_df_AbV %>% 
   ungroup %>% 
   mutate(step_title = fct_relevel(step_title, "1.1_Welcome to the course", "1.5_Privacy online and offline",

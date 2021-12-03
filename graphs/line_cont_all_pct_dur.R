@@ -1,4 +1,4 @@
-# line graph of each continent throughout course using duration for all runs
+# line graph of percentage viewers per continent vs video duration all run data
 line_cont_all_pct_dur_V <- joint_data_dur %>% 
   ggplot( aes(x=video_duration, y=Value, group=Continent, color=Continent))+
   geom_line(size=1)+

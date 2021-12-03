@@ -1,3 +1,4 @@
+# line chart of video duration vs percentage viewers in different duration of video for run 3 data
 run3_allpct_duration_scat_V <- new_dur_3_df_pct %>% 
   ggplot( aes(video_duration, Value, color = Phase))+
   geom_line()+
