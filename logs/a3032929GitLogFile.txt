@@ -1,0 +1,1404 @@
+commit 87516742c5b0aa7e6f8fd19cad11a0dfd97f4a03
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 13:32:03 2021 +0000
+
+    Finalised rmd doc and README
+
+commit 44e59777221aae1b5c371c856770b08b9cfbb96c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 13:28:49 2021 +0000
+
+    doc: finalised rmd doc
+
+commit 621a41e5099df70866098c72da7a9b61f9408049
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 13:24:55 2021 +0000
+
+    main: finalised readme file
+
+commit 7c20884dc3643d849689e698613034bfb39db1d1
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 13:23:29 2021 +0000
+
+    main: finalised readme file
+
+commit c33546f6c8f081018bce3b5af3dbe21cb27fcc5c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 13:17:01 2021 +0000
+
+    report: added reflective report
+
+commit ded950f537d94ececcc01815c7d56be50c660bbc
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 13:09:25 2021 +0000
+
+    doc: finalised rmd doc
+
+commit 6cf3a15cb204adf0804c446311d0aa35b10f0a99
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 12:41:04 2021 +0000
+
+    config: finalised config munge off
+
+commit 35adf6a4507261c7bc26e81befddef25b0edaaf3
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 12:38:04 2021 +0000
+
+    munge: final tidy munge folder
+
+commit 7f3030e7ac66ea1a5d39c487bb41557cc597e082
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 12:04:29 2021 +0000
+
+    chore: tidy munge folder
+
+commit 4dd6698c9671d980ca8ab5df1ce7a9dfb62e6372
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 11:28:08 2021 +0000
+
+    doc: updated rmd doc
+
+commit 0babdd2191afbd32927bf63174b86010330cd940
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 11:26:15 2021 +0000
+
+    chore: tidy munge folder
+
+commit 76688568d1f227743e0f7e877007605a92a1c2f5
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 11:11:00 2021 +0000
+
+    chore: tidy munge folder
+
+commit dcd7a2bf03586190a9106b034780c510d9200629
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 10:23:47 2021 +0000
+
+    chore: tidy munge folder
+
+commit f63138735eabbf5755c2a62d1111c1003b2f727e
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 09:58:51 2021 +0000
+
+    chore: tidy munge folder
+
+commit b6e03144e8b7d5fc774561e31e23e4ac0a715e34
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 09:46:33 2021 +0000
+
+    doc: updated rmd doc
+
+commit 1b0c3400174ec7803e6ce19b4481cebc74389876
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 09:32:24 2021 +0000
+
+    graph: final tidy graph folder
+
+commit 9a7de7a47cba131753211a46978cf839c0cead8a
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 04:06:48 2021 +0000
+
+    chore: updated readme in main
+
+commit a2b444876bc4635fe0239540b459d9eb05791507
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 04:04:51 2021 +0000
+
+    chore: updated graphs and readme in graph
+
+commit 805002778d6733bde16652dd4291a47abae97388
+Merge: 04d4aad c3aa54f
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 03:31:42 2021 +0000
+
+    Merge branch 'readme_dev'
+
+commit c3aa54f26ac38c29646594e4bdb5a221f6ba3942
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 03:30:47 2021 +0000
+
+    feat: created readme file graph folder
+
+commit 04d4aad0481decb482bb6be22d9048c8083c5615
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 02:59:30 2021 +0000
+
+    chore: updated readme file main folder
+
+commit a44250d51be0d0e6670684e016afb076163497ab
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 02:57:12 2021 +0000
+
+    feat: created readme file main folder
+
+commit 8d2136ad204e69b3dc9158597bca0c59a7d11c2e
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 01:21:56 2021 +0000
+
+    doc: updated rmd doc
+
+commit 82bcccb3000caadb8f563edc8a6d60791806fdc7
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Dec 3 01:21:49 2021 +0000
+
+    doc: updated rmd doc
+
+commit 465dc02d1a5e94bc777560b3d4412fe4a13920ef
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 23:06:14 2021 +0000
+
+    doc: updated rmd doc
+
+commit 333bf94e214198d40fc45d2c5083d57d0d323406
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 18:27:46 2021 +0000
+
+    doc: updated rmd doc
+
+commit d11c4d5dea373af95f2f80e1cf9e6e1d7f8c3bc5
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 16:44:37 2021 +0000
+
+    doc: updated rmd doc and graphs
+
+commit e953759e95f7cef414b6e2836d3268e277f2dccc
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 10:57:36 2021 +0000
+
+    doc: updated rmd doc
+
+commit b8380ba4309e5eedd272c81baa360bebb7e73ec6
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 10:47:02 2021 +0000
+
+    doc: updated rmd doc
+
+commit 475bd028eb7dec6baea77f20a507f7d93ed9f840
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 10:22:51 2021 +0000
+
+    doc: updated rmd doc and graphs
+
+commit 4acba9c4862560b4591893f89a7076fd42d8b25d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 09:28:26 2021 +0000
+
+    doc: updated rmd doc
+
+commit f9dee9791edb1f4053b2c7291a2816534113b1f7
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 09:10:22 2021 +0000
+
+    doc: updated rmd doc
+
+commit 394b9185396e18980c5846fdb51586a394357234
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 02:53:13 2021 +0000
+
+    doc: updated rmd doc
+
+commit 1495b5cc876eb32ecabfe4f20caaf85997354b13
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 00:57:22 2021 +0000
+
+    doc: updated rmd doc
+
+commit efed6d8cdb3fd854697ee6aba85cf2de593ffe14
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 00:50:55 2021 +0000
+
+    doc: updated rmd doc
+
+commit d2536bd4023c50253d593e0efb9df076d287d94f
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 00:45:21 2021 +0000
+
+    graph: added new graph
+
+commit 02e5c9d5c166f2d97d47bef2d31b8143e484c01d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 00:31:20 2021 +0000
+
+    doc: updated rmd doc and ref graphs
+
+commit f532ef28ea98b1eb8548f488c83b74f868718977
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Dec 2 00:04:03 2021 +0000
+
+    doc: updated rmd doc
+
+commit 1c8ce6e32a11239acd77eef8014532b606bd0623
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 23:38:38 2021 +0000
+
+    doc: updated rmd doc
+
+commit 4c3c9d5f29fa7e85d33c300a2767060643e09eab
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 22:21:07 2021 +0000
+
+    doc: updated rmd doc
+
+commit bc8b4ebad810fe95a09b276262e9e0ef051e6247
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 21:34:20 2021 +0000
+
+    doc: updated rmd doc
+
+commit fe78c0b56d73ea763529ace07a98fbe95c5fb2d8
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 20:52:09 2021 +0000
+
+    doc: updated rmd doc
+
+commit 91ea0a26d2f5c1ee596e6d138d9910e8869940ac
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 19:08:12 2021 +0000
+
+    doc: updated rmd doc
+
+commit 789fa4332e1f9f6da27868d854ec36a50f0916e3
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 16:30:25 2021 +0000
+
+    doc: updated rmd doc
+
+commit 85b9afbc13406134c1aa2005efa3eeede5845d1d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 16:19:42 2021 +0000
+
+    doc: updated rmd doc
+
+commit 53e35576beec0b98cad3e6489a48aa495e837578
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 14:38:17 2021 +0000
+
+    doc: updated rmd doc
+
+commit 860e2594d1e66ecbb8f7202f30637710f2a23180
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 13:52:56 2021 +0000
+
+    doc: updated rmd doc
+
+commit 0553c7e8d1b57739547bbf62c3fba76694f98f72
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 12:24:37 2021 +0000
+
+    doc: updated rmd doc
+
+commit 7e45c8a93e968dbf2a95d9d3fd6ee4759ba04771
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 11:46:26 2021 +0000
+
+    updated rmd doc and added to munge
+
+commit 9bb682110cac5b135fac4519dbd7797388494368
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 09:50:49 2021 +0000
+
+    doc: updated rmd doc
+
+commit ee4bdf337c7a874ba009118d1e80fbc769ecaf05
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Dec 1 09:43:44 2021 +0000
+
+    doc: updated rmd doc
+
+commit b5a4e78d1992b8c711410c502549082b9ee276b9
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 22:16:02 2021 +0000
+
+    doc: updated rmd doc
+
+commit 611240e109167596db740aadecc8b3377eae9bcd
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 20:55:52 2021 +0000
+
+    doc: updated rmd doc
+
+commit dfc2e0f9ce935ed9e80d42b38725fa3e7a9af678
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 19:55:02 2021 +0000
+
+    doc: updated rmd doc
+
+commit 261aead86837f71847c8e7433e3e228de225886c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 18:30:11 2021 +0000
+
+    updated rmd doc and added graph
+
+commit 4254e54f3200c0e14b317e5fe02969d1583217f2
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 16:43:47 2021 +0000
+
+    doc: updated rmd doc
+
+commit ac28a94804a8eefe89e0e44814a0ff52282a0517
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 14:36:14 2021 +0000
+
+    doc: updated rmd doc
+
+commit 0754992eeca5ba9a5fd44c042ce6d8168cf02e2c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 14:25:28 2021 +0000
+
+    doc: updated rmd doc
+
+commit f7c300c0dbedf799cc2acac5845978e5d5c19e98
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 13:36:09 2021 +0000
+
+    doc: updated rmd doc
+
+commit 3ec9347deb2f58adf0e173031e74fa50e038e8f5
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 13:20:00 2021 +0000
+
+    munge: updated munge folder
+
+commit 241517dff1996684ae9e8eabf6ab4427816b1a1b
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 13:15:32 2021 +0000
+
+    doc: updated rmd doc
+
+commit 097af47415dc2e6e3d14d0908d08a743f5f8ac16
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 10:43:59 2021 +0000
+
+    doc: updated rmd doc and graphs
+
+commit a37c2d4a83fa77f7302fe9503afb3544df01d70d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 00:34:12 2021 +0000
+
+    doc: updated rmd doc and graphs
+
+commit ae8c03061fe6d5aeacea4f840370400ae7c6b1e5
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 30 00:15:51 2021 +0000
+
+    doc: updated rmd doc
+
+commit 951bde6e3bc1515677c67753e03067a92906e720
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 23:56:44 2021 +0000
+
+    doc: updated rmd doc
+
+commit 9bbf01f96676a81d49785569f0996f894c1829bf
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 23:36:21 2021 +0000
+
+    doc: updated rmd doc
+
+commit 4e53ba575c3bdfd6b3bc0f164f1ac4ac016414aa
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 23:15:50 2021 +0000
+
+    doc: updated rmd doc
+
+commit e536ed185736b85339e4bcd0bb2aa1e536a7a0d2
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 23:03:29 2021 +0000
+
+    doc: updated rmd doc
+
+commit c8959fa189b6ae88c316e5e02b66cc64856d6e9a
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 21:59:34 2021 +0000
+
+    doc: updated rmd doc
+
+commit 66486aa52ae7bb7978cd2386460da01e353c1d84
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 21:44:33 2021 +0000
+
+    doc: updated rmd doc
+
+commit cd72a5e490db9b40aac1c7c73409c38a94a89476
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 21:17:31 2021 +0000
+
+    doc: updated rmd doc
+
+commit 257df5ab54ec0438c21c4a55e1caed06f01f061c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 21:03:05 2021 +0000
+
+    doc: updated rmd doc
+
+commit 49077425d25df03367e3a92e5eb77a3a1be5f429
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 20:58:02 2021 +0000
+
+    config: turned off munge
+
+commit 4bdb2b53628528cb290d1c2007de7333b900d730
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 20:01:08 2021 +0000
+
+    test3
+
+commit 68d88565c1eb6aa9f8f0ae089bc41da74d0f34e4
+Merge: 28ceb7a b3afb06
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 19:58:27 2021 +0000
+
+    Merge branch 'report_dev'
+
+commit b3afb0610522e095d625f821f73a774ca4822682
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 19:55:57 2021 +0000
+
+    test 2
+
+commit 28ceb7a492545ed550ef4115ab26848cdcb58821
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 12:18:52 2021 +0000
+
+    doc: updated rmd report
+
+commit bd7ce01c5f29c10c1dd83e9596c71ed2fdfc04b0
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 11:17:01 2021 +0000
+
+    doc: updated rmd report
+
+commit 3b1e254b38a5e952d2f689786fc5a1ad5bcd85eb
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 11:11:23 2021 +0000
+
+    graph: created new graph
+
+commit 25e5d1578b402a9dcb972231e3380b4125d2fa74
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 10:38:51 2021 +0000
+
+    doc: updated rmd report
+
+commit cb82db268fb57b83b888e38ec7877e972a3117ab
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 10:05:06 2021 +0000
+
+    graphs: updated graphs
+
+commit e19f4b3f9dc64d0a57bf599815f32f97ca502321
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 29 09:00:15 2021 +0000
+
+    doc: updated rmd report
+
+commit bf5a1ef7b2ff2d0a5f39d28439bff70c6c7718af
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 26 12:23:55 2021 +0000
+
+    doc: updated rmd report
+
+commit ec11e7a9ff369558c4c0f0260e2d7fbb22b86dc0
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 26 11:33:15 2021 +0000
+
+    doc: updated rmd report
+
+commit ded37e016eefb19121050c7f22e48d8464ad8ee5
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 26 11:14:11 2021 +0000
+
+    doc: updated rmd report
+
+commit 801300a69f4a490be94fd40b51218a12f4af886c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 26 10:28:49 2021 +0000
+
+    doc: updated rmd report and munge file
+
+commit bc0a5ec88e596d9b6717786845bf830bb32c8aa6
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 26 09:49:30 2021 +0000
+
+    doc: updated rmd report and munge file
+
+commit 99fef8f33ea24891b0fa198ec1888522c6dd2fc4
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 21:45:11 2021 +0000
+
+    doc: updated rmd report
+
+commit 366598181cae9e66e3c51fdb1bcd3e8200b4ebab
+Merge: ed3bbd4 ef98810
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 20:45:15 2021 +0000
+
+    Merge branch 'report_dev'
+
+commit ef9881039273e3e5f32d09162b05fe23d1bcdb80
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 20:44:06 2021 +0000
+
+    doc: updated rmd report
+
+commit a5b96064bb69dd35e9e7e92c291398c1532f47d6
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 19:51:04 2021 +0000
+
+    doc: updated rmd report
+
+commit d44bc39131abace399bec9ac51dfd30fe372794e
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 19:24:54 2021 +0000
+
+    doc: updated rmd report
+
+commit ed3bbd4da92bba3c94e4a6b6319f281750ad3ce0
+Merge: 42c2f39 bf5a2a3
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 16:24:50 2021 +0000
+
+    Merge branch 'report_dev'
+
+commit bf5a2a3a1555bc726c05541b7ff37623e7d69699
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 16:24:21 2021 +0000
+
+    doc: updated rmd report
+
+commit f210b2f8a01909d72b4251c3233e9aff48f55e1e
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 16:16:19 2021 +0000
+
+    doc: updated rmd report
+
+commit 287827ce90ec6d885960f1c50d64277097269be4
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 14:33:04 2021 +0000
+
+    doc: updated rmd report
+
+commit 2e76f03de5bec3dc73fb09121483271ee7a0fb18
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 14:22:35 2021 +0000
+
+    doc: updated rmd report
+
+commit 6c302f86245099cb58383e27010877a42df0deb5
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 12:27:58 2021 +0000
+
+    doc: updated rmd report
+
+commit a2232f8b3c6ea8abac7d2e61bb3f752164a48d67
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 11:03:13 2021 +0000
+
+    doc: updated rmd report
+
+commit 82f4a1a00b14a0688870a73ad79acf9bdb7aef56
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 25 10:34:56 2021 +0000
+
+    doc: updated rmd report
+
+commit ab3c6d48c3766c407b4059a32074e1bf19928072
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 24 22:14:59 2021 +0000
+
+    doc: updated rmd report
+
+commit 87106245239cdbd0ffc81dd91112f702ce0638ba
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 24 20:28:40 2021 +0000
+
+    doc: updated rmd report
+
+commit cbbc0f99339cead810dbf131000deeffc958c339
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 24 20:08:03 2021 +0000
+
+    doc: updated rmd report
+
+commit 25cb5b9c8e401a91e5d56b5fc09634caa52c09a4
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 24 13:29:48 2021 +0000
+
+    doc: updated rmd report
+
+commit 777b3a1c9caa077591abcb12ac385fb19224ea15
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 24 10:34:37 2021 +0000
+
+    doc: updated rmd report
+
+commit 42c2f3967f2f97dec9c3e03713e0f657ddfc7f3e
+Merge: d83af93 29a5516
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 23 21:14:02 2021 +0000
+
+    Merge branch 'report_dev'
+
+commit 29a551666dd633f23eae0cac72b26145ff546f96
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 23 21:08:58 2021 +0000
+
+    doc: added notes to report
+
+commit d83af93de291fa8d9024beed5a6c46189efc3b93
+Merge: a93e9c3 19c9838
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 23 20:45:31 2021 +0000
+
+    Merge branch 'report_dev'
+
+commit 19c98388b751def6090d9687c355fd7d8b9f9c04
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 23 20:44:02 2021 +0000
+
+    doc: restructured report
+
+commit 057d4d7c087253abc4be070a58c93144845b7d78
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 23 19:54:41 2021 +0000
+
+    doc: restructured report
+
+commit a93e9c3dd946e3fc42732325556d7cd1a2ecd81a
+Merge: 383c706 1b9dfaa
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 21:09:03 2021 +0000
+
+    Merge branch 'report_dev'
+
+commit 1b9dfaadd654636e87c7550440c2b64ec6af6d97
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 21:08:46 2021 +0000
+
+    doc: updated rmd
+
+commit 383c7067b7dc29c995354e0f06c1b66eb25b2efd
+Merge: 8161aaa 1017793
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 21:04:35 2021 +0000
+
+    Merge branch 'report_dev'
+
+commit 1017793fece50c3b55aaf6e5de2fe2a8398d9c0c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 21:03:47 2021 +0000
+
+    doc: updated rmd
+
+commit 8161aaac804859bdff7b8648ad1ad0d3e95d0b18
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 20:23:51 2021 +0000
+
+    doc: updated rmd
+
+commit e9d90c1e8b1e609830b51dd770a651976cf60259
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 16:26:41 2021 +0000
+
+    doc: updated rmd with cache
+
+commit 6c252ee23e9362a4ae941aba388882c823867b10
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 16:19:20 2021 +0000
+
+    doc: updated rmd with cache
+
+commit 52c3b947c8070776ea18a90319ad7d98c6a93189
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 16:12:10 2021 +0000
+
+    doc: updated rmd with cache
+
+commit 3e95fa0f6de419c73f1209aa739baf6f9028243c
+Merge: af34cd2 f4c0019
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 16:01:02 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit f4c001934934d864e66a8ff51940658ba1c512d1
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 16:00:29 2021 +0000
+
+    graph: created new graph
+
+commit af34cd2bc5fb82bf8d9fdefcd9bfd3309c5a070b
+Merge: 93ef165 0c88e4c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 15:56:52 2021 +0000
+
+    Merge branch 'munge_dev'
+
+commit 0c88e4c17a38a8b9cb0e0af309b92d521b1bcb67
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 15:56:18 2021 +0000
+
+    feat: created new munge
+
+commit 93ef165b3ef39eb028a972cd91d4d21c312e9eb8
+Merge: 578af4a ec5cf14
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 15:45:24 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit ec5cf14273fb6e3407c5c5722fbc207b95188753
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 15:44:26 2021 +0000
+
+    graph: created new graph
+
+commit 578af4ae413f296efbaa1b1422bfd18dbe61f188
+Merge: 4ffe5af fab42c8
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 15:39:17 2021 +0000
+
+    Merge branch 'munge_dev'
+
+commit fab42c892e41d7403f2c9208563d9a031ec3ff06
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 15:38:47 2021 +0000
+
+    chore: updated munge
+
+commit 4ffe5afe44dc348c8f67492f4cd06f13ef5916e6
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Mon Nov 22 15:30:41 2021 +0000
+
+    updated rmd
+
+commit 6d7b11b88d0306b2d8a4aef1ba988a4623cd37b6
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 13:52:47 2021 +0000
+
+    updated rmd and add graph
+
+commit 43e38d6cf8b154a4d1ee279a4e10c3e743989376
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 13:40:22 2021 +0000
+
+    updated rmd and add graph
+
+commit 86b185abc98016148664b2e665a94c52d6c1d386
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 13:29:30 2021 +0000
+
+    updated rmd and add graph
+
+commit 998cc1fc4cd84a87a771b7fe32a0eeac2479ced8
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 13:19:49 2021 +0000
+
+    doc: updated rmd
+
+commit 8ae91253c439fc42b335bd38b9f43578872c76b3
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 12:58:48 2021 +0000
+
+    feat: added new feat to munge
+
+commit b7e9ba4daeb680239b68f9d8255871b216b183bd
+Merge: 3c43001 6f956e9
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 10:48:41 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit 6f956e98bea93210409bd2b7134917e3482454c1
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 10:48:23 2021 +0000
+
+    graph: added new graph
+
+commit 3c4300158ce60cd4830a3d160d8c31dcf51fd161
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 10:31:38 2021 +0000
+
+    feat: added new feat to munge
+
+commit 6e25dd300b345e2b2c8a8f0268690df8d45041c0
+Merge: c96497c 98ab2c8
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 10:28:43 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit 98ab2c88f70c78970dad7f4276e7cbefe20e426d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 10:27:51 2021 +0000
+
+    graph: added new and updated graph scripts
+
+commit c96497c941a15822dfb03e4e9685b5fba34ccbd3
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 10:21:48 2021 +0000
+
+    feat: added new feat to munge
+
+commit 8a1f88c93de1d38addb0315d09206604544a54c0
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 10:10:45 2021 +0000
+
+    chore: updated munges
+
+commit e7d135c40b01f0952b88f44abd7a3ee4a36dfd87
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 19 10:07:13 2021 +0000
+
+    chore: updated functions
+
+commit 8d6d334b0a00f0597884916b4de10ff4fb3c147e
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 16:52:51 2021 +0000
+
+    graph: tidied graph
+
+commit b9b8836b0f53fec0630e51364d4b4c944867fa37
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 16:28:45 2021 +0000
+
+    feat: created new feats
+
+commit 10d19fb0da9347483e6f8da29a73398a4503aeaa
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 16:02:29 2021 +0000
+
+    feat: created new feat to call out
+
+commit 575569a56b281471cc7e2aa63b81195b22273ccc
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 15:57:49 2021 +0000
+
+    feat: created new loops
+
+commit 420d7ee5bbe29944f32a0eab9f4d030057a2fb40
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 15:25:11 2021 +0000
+
+    feat: created new plot charts
+
+commit 5f5f8016eb3a5ad523e98b646ab0ec4058e95c2d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 15:19:37 2021 +0000
+
+    feat: created new df
+
+commit ec1f3a510a70c87f37f8e6bcc30735e8cce2de4c
+Merge: b133344 8995a3d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 14:46:07 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit 8995a3da14ec6e32adc788a20b54c893030067de
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 14:45:49 2021 +0000
+
+    feat: created new stack bar graph
+
+commit b133344f78f4f0241cf557e0df0805a2132e9931
+Merge: 832c273 ad5b621
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 14:36:41 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit ad5b6217415df7ce5c956a64554f33c317cc5464
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 14:35:52 2021 +0000
+
+    feat: created new stack bar graph
+
+commit 832c2738505090e7e3bafc8e8ed56392a0ed781e
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 14:21:04 2021 +0000
+
+    feat: new feat to transform df
+
+commit 504a8c46d2ef6c8cb2252d2b71dacd1193f1ea2f
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 14:18:51 2021 +0000
+
+    chore: update munge code
+
+commit 8264a4087cfd5d45f57d659652528600b8ad5aec
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 14:13:20 2021 +0000
+
+    feat: new feat to transform df
+
+commit 2ffdfe623f44d6fa686c6889e351c619c454a0ea
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 13:16:52 2021 +0000
+
+    doc: tided and updated rmd
+
+commit 738774891a08df7efab5cb96e4c6d59f83be8c49
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 18 13:09:18 2021 +0000
+
+    doc: tided and updated rmd
+
+commit a268c0b3d5b1dd862e1d1c09cc9ca0886d6c06c6
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 17 21:26:31 2021 +0000
+
+    chore: updated functions
+
+commit ddd1d9ffd7e28fb1b00e7f58df29da6dcfb8be97
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 17 17:51:08 2021 +0000
+
+    feat: new feat to join data
+
+commit a654da80144e299a06a0ee36fa424060e2f7452e
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 17 17:31:21 2021 +0000
+
+    chore: tided cache
+
+commit c2a01c727c8c239ea4e52a57591a50e69892b163
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 17 17:29:55 2021 +0000
+
+    chore: tided codes in munge
+
+commit ca2f013e9ab3b73993c3c9eda4c8d96c06045516
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 17 16:05:00 2021 +0000
+
+    feat: added extra feat to join all runs
+
+commit b92e7109bc5c6dbb6749677f3fef0e2d6baae9bb
+Merge: 9de3cc5 3fd740c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 18:21:58 2021 +0000
+
+    Merge branch 'munge_dev'
+
+commit 3fd740cf0131baf08abd7a84b9d96757f4060149
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 18:21:40 2021 +0000
+
+    feat: added feat to munge
+
+commit 9de3cc5cb5abf76fa316c85ab9ff4ff64fbab8e0
+Merge: 7477f83 c399d1a
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 18:15:31 2021 +0000
+
+    Merge branch 'munge_dev'
+
+commit c399d1a62416ed1e467c10ed64feaddf02b6a7e1
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 18:15:13 2021 +0000
+
+    feat: added feat to munge
+
+commit 7477f836cdcbc5969f7ca89c6b5462d6817f14da
+Merge: e59c67c 9dc900b
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 18:05:01 2021 +0000
+
+    Merge branch 'munge_dev'
+
+commit 9dc900b8d6e3c0455bfbac6a860e7589be687f88
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 18:04:26 2021 +0000
+
+    feat: added new feat to munge
+
+commit e59c67c417cbb6dcc68014c687245f41a025c63c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 17:23:57 2021 +0000
+
+    feat: added functions for runs
+
+commit 3304448b87c51ef92fbf4cc9b1e85dc32b2ad827
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 16:55:06 2021 +0000
+
+    feat: new feature to read all files
+
+commit 4dae4eaee723ae0661f3b24bd7bd20c294e0209c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 16:18:23 2021 +0000
+
+    chore: renamed munge files
+
+commit a6b06d0925ca073ec6bedee83d380b6e52a785aa
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 15:56:17 2021 +0000
+
+    chore: tidied code and graph names
+
+commit bdd36c214ed59ec6f2d9ce1dc5e734db548a4d8b
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 16 14:56:09 2021 +0000
+
+    folder: add output to cache
+
+commit 0005c4ec66b4280cc636f345ee0ea3aea02b4897
+Merge: 48d6131 77cb5c3
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 21:13:13 2021 +0000
+
+    Merge branch 'dev'
+
+commit 77cb5c336a85209b0be0408d1848c40d4544d7d4
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 21:12:45 2021 +0000
+
+    chore: tidied rmd
+
+commit 48d613115b2700117f7b8f664dc239d9b0447ca2
+Merge: 3ec1d42 047095a
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 21:08:23 2021 +0000
+
+    Merge branch 'dev'
+
+commit 047095a14d38489221db56c69bcce134ec6288ea
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 21:07:27 2021 +0000
+
+    style: tided graphs
+
+commit 3ec1d422d2c2ee9850d90baed7effcb1cf487cda
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 18:26:51 2021 +0000
+
+    doc: updated rmd
+
+commit a398646ef8d45c7a8f4cde9bfd176dd78d1bfda3
+Merge: f0f464d 6d69912
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 17:57:46 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit 6d69912b3bfd7bd23d60e87de4c36faeb01e2a70
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 17:57:27 2021 +0000
+
+    chore: tidied graph for doc
+
+commit f0f464d2d7510ee30bfbd6142f0a5c7821101003
+Merge: c1661d8 6203572
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 17:29:16 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit 6203572676a0a6ad09caa08f2ca683fabc38e76d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 17:28:40 2021 +0000
+
+    graph: added new line graph
+
+commit c1661d8751ed5157e3addadfb2fec63a3e828ab6
+Merge: e4f062d f83b18d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 15:28:58 2021 +0000
+
+    Merge branch 'munge_dev'
+
+commit f83b18df0a8783f407713e58171f696242a392f6
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 15:27:47 2021 +0000
+
+    feat: added new feat in munge
+
+commit e4f062d089cf3acf7092752db7d53150caa5bb07
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 14 11:18:20 2021 +0000
+
+    test: testing git3
+
+commit 7f3b57507a62f571836bc18ba21c7f916a813bdd
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 22:01:04 2021 +0000
+
+    graph: created stacked bars in graph
+
+commit 95a814124845292f455a219c529faa11ed75331f
+Merge: 90bd90f e840a9d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 21:42:38 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit e840a9d5b32a912f109ecd1848bb27e4160e9b9a
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 21:42:14 2021 +0000
+
+    feat: added new feat to munge
+
+commit 90bd90f3434cb092cc0b7c5b9c4cd014a535f99d
+Merge: c4abbe9 00e048f
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 20:24:52 2021 +0000
+
+    Merge branch 'graph_dev'
+
+commit 00e048f50cc846505177efee27663903bd908b73
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 20:24:15 2021 +0000
+
+    feat: new script for copy columns in munge
+
+commit c4abbe963d6f4d644d680cbbd99357dba9d2ea75
+Merge: 5e7b235 c706324
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 17:19:34 2021 +0000
+
+    Merge branch 'report'
+
+commit c706324a736937446aeaa4ef8400de2208730667
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 17:18:54 2021 +0000
+
+    updated report and tidied folders
+
+commit 5e7b235c5fe6083576e9a9ea3cdc2bfa658f3f77
+Merge: f73ccca b293e24
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 16:28:18 2021 +0000
+
+    Merge branch 'data_prep'
+
+commit b293e240333031e8b8cbb4ed6e62a81105cac867
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 16:27:51 2021 +0000
+
+    feat: created new percentage calc feat in munge
+
+commit f73ccca2cad83ebf64c209ac7eb6ee3087e797f6
+Merge: af1af9a 7f48d3a
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 14:02:43 2021 +0000
+
+    Merge branch 'data_prep'
+
+commit 7f48d3a671ce10cb5cf2118620c6d948c096251c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 14:02:01 2021 +0000
+
+    chore: updated function in munge
+
+commit af1af9adf6f0114a0048ac35f84f93b61565bcc4
+Merge: 829bb4e 3682c07
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 11:25:22 2021 +0000
+
+    Merge branch 'report'
+
+commit 3682c070af2ba1f85c20af76c5c55a49536ef8d7
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 13 11:24:35 2021 +0000
+
+    doc: updated rmd with graphs
+
+commit 829bb4eb97503eebb32272ecf768827f5b50be5f
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 22:23:23 2021 +0000
+
+    feat: created new function in munge
+
+commit a1074f1ff20c6df45bc3cdf9fb1b0b379a31c4bd
+Merge: 9bde762 af0ff49
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 21:24:22 2021 +0000
+
+    Merge branch 'graph_update'
+
+commit af0ff494be3d8624d0a786127e0e89a667360c3b
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 21:23:48 2021 +0000
+
+    graph: updated graphs
+
+commit 9bde762368467d4b701826fc6dbfda880f91e66a
+Merge: 327b1d6 bb875e3
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 19:08:26 2021 +0000
+
+    Merge branch 'graph_update'
+
+commit bb875e3baaa3af4d64957c5e72739e6dd8f96367
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 19:07:53 2021 +0000
+
+    doc: updated rmd
+
+commit 327b1d6d2e85987b668fa773421e864828243891
+Merge: 9dabb0f 9dceae1
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 19:06:28 2021 +0000
+
+    Merge branch 'graph_update'
+
+commit 9dceae195237ffee0754657a1bd4a9c56877b095
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 19:05:43 2021 +0000
+
+    graphs: updated scatterplot matrices
+
+commit 9dabb0f11a72538e6aad8eac4a49c3a71e4e1349
+Merge: 999eae6 466b54b
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 17:32:09 2021 +0000
+
+    Merge branch 'graph_update'
+
+commit 466b54b8b744ca674d3d7184b34a37746586dd91
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 17:31:08 2021 +0000
+
+    graph: updated bar chart
+
+commit 999eae620f759a44b6b2d6db8d2c130d9bd84793
+Merge: cad4e11 0a53920
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 17:22:41 2021 +0000
+
+    Merge branch 'graph_update'
+
+commit 0a539201f2a2acbc8638d01d761955acaa320527
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 17:18:47 2021 +0000
+
+    graph: updated bar chart
+
+commit 7a245f5bebebf81ac5d9e2212c7baa4affdfcf33
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 12:12:59 2021 +0000
+
+    graphs: updated with new df
+
+commit 9f192f37ab96bafbc48b08e7698fad7b7b14d340
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Fri Nov 12 11:55:13 2021 +0000
+
+    graphs: updated graphs with comments
+
+commit cad4e116e891f01f99285fc0bcdfb8db83a03c21
+Merge: 4d0aa78 e0fa44d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 11 22:44:52 2021 +0000
+
+    Merge branch 'business_update'
+
+commit e0fa44d3784f8ef018580466d17b8c915863e8e1
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 11 22:42:51 2021 +0000
+
+    doc: updated business section with initial observations
+
+commit 4d0aa7887c6943f74dc6fe6e4117fe59b93f632a
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Thu Nov 11 11:39:15 2021 +0000
+
+    doc: updated business understanding section
+
+commit d4d7184341f0dcc70ded76bdfcdcc119f9007216
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 10 18:27:11 2021 +0000
+
+    chore: moved code to munge folder and updated report
+
+commit 76f9c85ab92426f24a2e93f95fa139fb56be9355
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 10 17:43:52 2021 +0000
+
+    feat: added new graph to graph folder
+
+commit 1de185366f3cb16e85ad76b1a429b9ba83cca191
+Merge: 7908b6f 6a36c2d
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 10 17:36:55 2021 +0000
+
+    Merge branch 'development'
+
+commit 6a36c2d4a652ad57c13416b646147a95383ef59c
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 10 17:32:51 2021 +0000
+
+    chore: updated graph folder
+
+commit 7908b6fa82efc9063b594231dfc83072e5106680
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 10 16:47:08 2021 +0000
+
+    doc: plotted scatterplot matrix
+
+commit 2660a7d19a95ac4c69e4c5a19d8c608201da38ce
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 10 15:48:53 2021 +0000
+
+    doc: added total viewed plot to report
+
+commit 132bad0ecda5a34287cd0d40a739dc51d8431427
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Wed Nov 10 11:21:47 2021 +0000
+
+    doc: updated business understanding and plot graph to data understanding
+
+commit 016b87a6165fb4b084c33c4e25048e7ad9cb5dbc
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Tue Nov 9 21:21:45 2021 +0000
+
+    doc: added business understanding to report
+
+commit 1983b480cd8d2cad051f15244050bd211aa12c20
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 7 18:10:08 2021 +0000
+
+    Changed content in .gitignore
+
+commit 28e06b7cbd14825fba94d96a42cebb83bd810d48
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 7 18:08:31 2021 +0000
+
+    Ignore content in Cache folder
+
+commit 435d443fdbee22cee135e01772d327bcd5e76802
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 7 18:05:05 2021 +0000
+
+    Added RData to root .gitignore
+
+commit d9a69103ba24e6079e97699fb404a8f16b59728b
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 7 17:53:52 2021 +0000
+
+    Deleted testing file
+
+commit c5bded6b78a86f2513ccb0ca71cc28ebb345e959
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 7 17:53:17 2021 +0000
+
+    created file to test .gitignore folder
+
+commit 8ff4ca5838365f608ae900f8387bb42dd8199e60
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sun Nov 7 13:59:07 2021 +0000
+
+    Set up project with existing directory in RStudio to enable Git
+
+commit 80ea6ae14c6fc6d83db8da3f387274474c01e815
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 6 10:05:49 2021 +0000
+
+    Imported data and set up Markdown report
+
+commit 8523dcc1befd50afd5d14a6416220866bfb1f82e
+Author: a3032929 <91320050+a3032929@users.noreply.github.com>
+Date:   Sat Nov 6 09:50:11 2021 +0000
+
+    Set Up ProjectTemplate
