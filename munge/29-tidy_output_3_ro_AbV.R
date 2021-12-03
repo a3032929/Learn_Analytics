@@ -1,4 +1,5 @@
-# tidy absolute values of run 3
+# tidy absolute values of 'output_3_ro': by using summarise to remove decimal points + remove unwanted .name from columns (by removing df held within)
+
 output_3_abs <- output_3_ro %>% 
   group_by(step_title, video_duration) %>% 
   summarise(europe_views = sum(europe_views),

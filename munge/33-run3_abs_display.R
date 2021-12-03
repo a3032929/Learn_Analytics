@@ -1,4 +1,4 @@
-# a tibble to unnest and show output_3 and rename columns
+# create a tibble to unnest and show output_3 (absolute values from run 3 continent), rename columns
 # for display purposes
 
 run3_abs <- as_tibble(output_3[1:3,c(1:7)]) %>% 
